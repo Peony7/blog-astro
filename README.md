@@ -31,10 +31,13 @@ tags: ["css"]
 
 ## 部署
 
-本站使用 `gh-pages` 分支部署到 GitHub Pages：
+本站由 GitHub Actions 自动部署到 GitHub Pages：
 https://peony7.github.io/blog-astro/
 
-发布新版本：
+推送到 `main` 分支后会自动构建发布，也可以手动触发：
+GitHub → Actions → Deploy to GitHub Pages → Run workflow。
+
+本地手动发布（备用）：
 
 ```bash
 npm run deploy
