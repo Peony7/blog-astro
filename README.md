@@ -31,5 +31,11 @@ tags: ["css"]
 
 ## 部署
 
-推送到 `main` 分支后，GitHub Actions 会自动构建并发布到 GitHub Pages：
+本站使用 `gh-pages` 分支部署到 GitHub Pages：
 https://peony7.github.io/blog-astro/
+
+发布新版本：
+
+```bash
+npm run deploy
+```
