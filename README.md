@@ -2,6 +2,8 @@
 
 基于 [Astro](https://astro.build) 构建的个人博客，由 Hexo 迁移而来。
 
+[![Deploy to GitHub Pages](https://github.com/Peony7/blog-astro/actions/workflows/deploy.yml/badge.svg)](https://github.com/Peony7/blog-astro/actions/workflows/deploy.yml)
+
 ## 本地开发
 
 需要 Node.js >= 22。
