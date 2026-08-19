@@ -1,0 +1,1988 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-tldeq5d5><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/blog-astro/favicon.svg"><link rel="icon" href="/blog-astro/favicon.ico"><link rel="sitemap" href="/blog-astro/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Peony7 的博客" href="/blog-astro/rss.xml"><meta name="generator" content="Astro v7.2.3"><style>@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/89758defcfa85239.woff") format("woff");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff") format("woff");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.3717%;ascent-override:80.1033%;descent-override:25.2587%;line-gap-override:0%;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial Bold";src:local("Arial Bold");font-display:swap;font-weight:700;font-style:normal;size-adjust:92.2954%;ascent-override:86.2448%;descent-override:27.1953%;line-gap-override:0%;}:root{--font-atkinson:Atkinson-c7f4c4e8b285552f,"Atkinson-c7f4c4e8b285552f fallback: Arial","Atkinson-c7f4c4e8b285552f fallback: Arial Bold",sans-serif;}</style><link rel="preload" href="/blog-astro/_astro/fonts/89758defcfa85239.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://peony7.github.io/blog-astro/blog/shell-base/"><!-- Primary Meta Tags --><title>C语言中文网：Shell教程</title><meta name="description" content="Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令…"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://peony7.github.io/blog-astro/blog/shell-base/"><meta property="og:title" content="C语言中文网：Shell教程"><meta property="og:description" content="Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令…"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><style>:root{--accent:#2337ff;--accent-dark:#000d8a;--black:15, 18, 25;--gray:96, 115, 159;--gray-light:229, 233, 240;--gray-dark:34, 41, 57;--gray-gradient:rgba(var(--gray-light), 50%), #fff;--box-shadow:0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}body{font-family:var(--font-atkinson);text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));background-size:100% 600px;margin:0;padding:0;font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));margin:0 0 .5rem;line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{border-radius:8px;max-width:100%;height:auto}code{background-color:rgb(var(--gray-light));border-radius:2px;padding:2px 5px}pre{border-radius:8px;padding:1.5em}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);margin:0;padding:0 0 0 20px;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (width<=720px){body{font-size:18px}main{padding:1em}}.sr-only{clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%);white-space:nowrap;border:0;width:1px;height:1px;margin:0;padding:0;overflow:hidden;position:absolute!important}footer[data-astro-cid-jo6i4kqk]{background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center;padding:2em 1em 6em}.social-links[data-astro-cid-jo6i4kqk]{justify-content:center;gap:1em;margin-top:1em;display:flex}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]{color:rgb(var(--gray));text-decoration:none}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-evkijfd6]{text-decoration:none;display:inline-block}a[data-astro-cid-evkijfd6].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-nen7h5rs]{box-shadow:0 2px 8px rgba(var(--black), 5%);background:#fff;margin:0;padding:0 1em}h2[data-astro-cid-nen7h5rs]{margin:0;font-size:1em}h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs],h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{text-decoration:none}nav[data-astro-cid-nen7h5rs]{justify-content:space-between;align-items:center;display:flex}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{color:var(--black);border-bottom:4px solid #0000;padding:1em .5em;text-decoration:none}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{border-bottom-color:var(--accent);text-decoration:none}.social-links[data-astro-cid-nen7h5rs],.social-links[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{display:flex}@media (width<=720px){.social-links[data-astro-cid-nen7h5rs]{display:none}}
+main[data-astro-cid-tldeq5d5]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-tldeq5d5]{width:100%}.hero-image[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{box-shadow:var(--box-shadow);border-radius:12px;margin:0 auto;display:block}.prose[data-astro-cid-tldeq5d5]{width:720px;max-width:calc(100% - 2em);color:rgb(var(--gray-dark));margin:auto;padding:1em}.title[data-astro-cid-tldeq5d5]{text-align:center;margin-bottom:1em;padding:1em 0;line-height:1}.title[data-astro-cid-tldeq5d5] h1[data-astro-cid-tldeq5d5]{margin:0 0 .5em}.date[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));margin-bottom:.5em}.meta[data-astro-cid-tldeq5d5]{flex-wrap:wrap;justify-content:center;gap:.75em;margin-top:.5em;display:flex}.meta[data-astro-cid-tldeq5d5] .category[data-astro-cid-tldeq5d5]{color:var(--accent);background:#2337ff1f;border-radius:999px;padding:.15em .6em;font-size:.85em}.meta[data-astro-cid-tldeq5d5] .tags[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));font-size:.85em}.last-updated-on[data-astro-cid-tldeq5d5]{font-style:italic}
+</style></head><body data-astro-cid-tldeq5d5><header data-astro-cid-nen7h5rs><nav data-astro-cid-nen7h5rs><h2 data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs>Peony7 的博客</a></h2><div class="internal-links" data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>首页</a><a href="/blog-astro/blog" class="active" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>博客</a><a href="/blog-astro/about" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>关于</a></div><div class="social-links" data-astro-cid-nen7h5rs><a href="https://github.com/Peony7" target="_blank" data-astro-cid-nen7h5rs><span class="sr-only" data-astro-cid-nen7h5rs>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-nen7h5rs><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-nen7h5rs></path></svg></a></div></nav></header><main data-astro-cid-tldeq5d5><article data-astro-cid-tldeq5d5><div class="hero-image" data-astro-cid-tldeq5d5></div><div class="prose" data-astro-cid-tldeq5d5><div class="title" data-astro-cid-tldeq5d5><div class="date" data-astro-cid-tldeq5d5><time datetime="2017-07-04T00:00:00.000Z">2017年7月4日</time><div class="meta" data-astro-cid-tldeq5d5><span class="category" data-astro-cid-tldeq5d5>shell</span></div></div><h1 data-astro-cid-tldeq5d5>C语言中文网：Shell教程</h1><hr data-astro-cid-tldeq5d5></div><h1 id="shell简介什么是shellshell命令的两种执行方式-">**Shell简介：什么是Shell，Shell命令的两种执行方式 ******</h1>
+<p>Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。Shell既是一种命令语言，又是一种程序设计语言。作为命令语言，它交互式地解释和执行用户输入的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。
+它虽然不是Unix/Linux系统内核的一部分，但它调用了系统核心的大部分功能来执行程序、建立文件并以并行的方式协调各个程序的运行。因此，对于用户来说，shell是最重要的实用程序，深入了解和熟练掌握shell的特性极其使用方法，是用好Unix/Linux系统的关键。
+可以说，shell使用的熟练程度反映了用户对Unix/Linux使用的熟练程度。
+注意：单独地学习 Shell 是没有意义的，请先参考<a href="http://c.biancheng.net/cpp/linux/">Unix/Linux入门教程</a>，了解 Unix/Linux 基础。</p>
+<h2 id="shell有两种执行命令的方式"><strong>Shell有两种执行命令的方式：</strong>****</h2>
+<p>· 交互式（Interactive）：解释执行用户的命令，用户输入一条命令，Shell就解释执行一条。</p>
+<p>· 批处理（Batch）：用户事先写一个Shell脚本(Script)，其中有很多条命令，让Shell一次把这些命令执行完，而不必一条一条地敲命令。</p>
+<p>Shell脚本和编程语言很相似，也有变量和流程控制语句，但Shell脚本是解释执行的，不需要编译，Shell程序从脚本中一行一行读取并执行这些命令，相当于一个用户把脚本中的命令一行一行敲到Shell提示符下执行。
+Shell初学者请注意，在平常应用中，建议不要用 root 帐号运行 Shell 。作为普通用户，不管您有意还是无意，都无法破坏系统；但如果是 root，那就不同了，只要敲几个字母，就可能导致灾难性后果。</p>
+<h1 id="几种常见的shell"><strong>几种常见的Shell</strong>****</h1>
+<p>上面提到过，Shell是一种脚本语言，那么，就必须有解释器来执行这些脚本。
+Unix/Linux上常见的Shell脚本解释器有bash、sh、csh、ksh等，习惯上把它们称作一种Shell。我们常说有多少种Shell，其实说的是Shell脚本解释器。</p>
+<h2 id="bash"><strong>bash</strong>****</h2>
+<p>bash是Linux标准默认的shell，本教程也基于bash讲解。bash由Brian Fox和Chet Ramey共同完成，是BourneAgain Shell的缩写，内部命令一共有40个。
+Linux使用它作为默认的shell是因为它有诸如以下的特色：</p>
+<p>· 可以使用类似DOS下面的doskey的功能，用方向键查阅和快速输入并修改命令。</p>
+<p>· 自动通过查找匹配的方式给出以某字符串开头的命令。</p>
+<p>· 包含了自身的帮助功能，你只要在提示符下面键入help就可以得到相关的帮助。</p>
+<h2 id="sh"><strong>sh</strong>****</h2>
+<p>sh 由Steve Bourne开发，是Bourne Shell的缩写，sh 是Unix 标准默认的shell。</p>
+<h2 id="ash"><strong>ash</strong>****</h2>
+<p>ash shell 是由Kenneth Almquist编写的，Linux中占用系统资源最少的一个小shell，它只包含24个内部命令，因而使用起来很不方便。</p>
+<h2 id="csh"><strong>csh</strong>****</h2>
+<p>csh 是Linux比较大的内核，它由以William Joy为代表的共计47位作者编成，共有52个内部命令。该shell其实是指向/bin/tcsh这样的一个shell，也就是说，csh其实就是tcsh。</p>
+<h2 id="ksh"><strong>ksh</strong>****</h2>
+<p>ksh 是Korn shell的缩写，由Eric Gisin编写，共有42条内部命令。该shell最大的优点是几乎和商业发行版的ksh完全兼容，这样就可以在不用花钱购买商业版本的情况下尝试商业版本的性能了。
+注意：bash是 Bourne Again Shell 的缩写，是linux标准的默认shell ，它基于Bourne shell，吸收了C shell和Korn shell的一些特性。bash完全兼容sh，也就是说，用sh写的脚本可以不加修改的在bash中执行。</p>
+<h1 id="shell脚本语言与编译型语言的差异"><strong>Shell脚本语言与编译型语言的差异</strong>****</h1>
+<p>大体上，可以将程序设计语言可以分为两类：编译型语言和解释型语言。</p>
+<h2 id="编译型语言"><strong>编译型语言</strong>****</h2>
+<p>很多传统的程序设计语言，例如Fortran、Ada、Pascal、C、C++和Java，都是编译型语言。这类语言需要预先将我们写好的源代码(source code)转换成目标代码(object code)，这个过程被称作“编译”。
+运行程序时，直接读取目标代码(object code)。由于编译后的目标代码(object code)非常接近计算机底层，因此执行效率很高，这是编译型语言的优点。
+但是，由于编译型语言多半运作于底层，所处理的是字节、整数、浮点数或是其他机器层级的对象，往往实现一个简单的功能需要大量复杂的代码。例如，在C++里，就很难进行“将一个目录里所有的文件复制到另一个目录中”之类的简单操作。</p>
+<h2 id="解释型语言"><strong>解释型语言</strong>****</h2>
+<p>解释型语言也被称作“脚本语言”。执行这类程序时，解释器(interpreter)需要读取我们编写的源代码(source code)，并将其转换成目标代码(object code)，再由计算机运行。因为每次执行程序都多了编译的过程，因此效率有所下降。
+使用脚本编程语言的好处是，它们多半运行在比编译型语言还高的层级，能够轻易处理文件与目录之类的对象；缺点是它们的效率通常不如编译型语言。不过权衡之下，通常使用脚本编程还是值得的：花一个小时写成的简单脚本，同样的功能用C或C++来编写实现，可能需要两天，而且一般来说，脚本执行的速度已经够快了，快到足以让人忽略它性能上的问题。脚本编程语言的例子有awk、Perl、Python、Ruby与Shell。</p>
+<h1 id="什么时候使用shell"><strong>什么时候使用Shell</strong>****</h1>
+<p>因为Shell似乎是各UNIX系统之间通用的功能，并且经过了POSIX的标准化。因此，Shell脚本只要“用心写”一次，即可应用到很多系统上。因此，之所以要使用Shell脚本是基于：</p>
+<p>· 简单性：Shell是一个高级语言；通过它，你可以简洁地表达复杂的操作。</p>
+<p>· 可移植性：使用POSIX所定义的功能，可以做到脚本无须修改就可在不同的系统上执行。</p>
+<p>· 开发容易：可以在短时间内完成一个功能强大又妤用的脚本。</p>
+<p>但是，考虑到Shell脚本的命令限制和效率问题，下列情况一般不使用Shell：</p>
+<ol>
+<li>
+<p>资源密集型的任务，尤其在需要考虑效率时（比如，排序，hash等等）。</p>
+</li>
+<li>
+<p>需要处理大任务的数学操作，尤其是浮点运算，精确运算，或者复杂的算术运算（这种情况一般使用C++或FORTRAN 来处理）。</p>
+</li>
+<li>
+<p>有跨平台（操作系统）移植需求（一般使用C 或Java）。</p>
+</li>
+<li>
+<p>复杂的应用，在必须使用结构化编程的时候（需要变量的类型检查，函数原型，等等）。</p>
+</li>
+<li>
+<p>对于影响系统全局性的关键任务应用。</p>
+</li>
+<li>
+<p>对于安全有很高要求的任务，比如你需要一个健壮的系统来防止入侵、破解、恶意破坏等等。</p>
+</li>
+<li>
+<p>项目由连串的依赖的各个部分组成。</p>
+</li>
+<li>
+<p>需要大规模的文件操作。</p>
+</li>
+<li>
+<p>需要多维数组的支持。</p>
+</li>
+<li>
+<p>需要数据结构的支持，比如链表或数等数据结构。</p>
+</li>
+<li>
+<p>需要产生或操作图形化界面 GUI。</p>
+</li>
+<li>
+<p>需要直接操作系统硬件。</p>
+</li>
+<li>
+<p>需要 I/O 或socket 接口。</p>
+</li>
+<li>
+<p>需要使用库或者遗留下来的老代码的接口。</p>
+</li>
+<li>
+<p>私人的、闭源的应用（shell 脚本把代码就放在文本文件中，全世界都能看到）。</p>
+</li>
+</ol>
+<p>如果你的应用符合上边的任意一条，那么就考虑一下更强大的语言吧——或许是Perl、Tcl、Python、Ruby——或者是更高层次的编译语言比如C/C++，或者是Java。即使如此，你会发现，使用shell来原型开发你的应用，在开发步骤中也是非常有用的。</p>
+<h1 id="第一个shell脚本"><strong>第一个Shell脚本</strong>****</h1>
+<p>打开文本编辑器，新建一个文件，扩展名为sh（sh代表shell），扩展名并不影响脚本执行，见名知意就好，如果你用php写shell 脚本，扩展名就用php好了。
+输入一些代码：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Hello World !"</span></span></code></pre>
+<p>“#!” 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种Shell。echo命令用于向窗口输出文本。
+运行Shell脚本有两种方法。</p>
+<h2 id="作为可执行程序"><strong>作为可执行程序</strong>****</h2>
+<p>将上面的代码保存为test.sh，并 cd 到相应目录：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> chmod</span><span style="color:#9ECBFF"> +x</span><span style="color:#9ECBFF"> ./test.sh</span><span style="color:#6A737D">  #使脚本具有执行权限</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> ./test.sh</span><span style="color:#6A737D">  #执行脚本</span></span></code></pre>
+<p>注意，一定要写成./test.sh，而不是test.sh。运行其它二进制的程序也一样，直接写test.sh，linux系统会去PATH里寻找有没有叫test.sh的，而只有/bin, /sbin, /usr/bin，/usr/sbin等在PATH里，你的当前目录通常不在PATH里，所以写成test.sh是会找不到命令的，要用./test.sh告诉系统说，就在当前目录找。
+通过这种方式运行bash脚本，第一行一定要写对，好让系统查找到正确的解释器。
+这里的“系统”，其实就是shell这个应用程序（想象一下Windows Explorer），但我故意写成系统，是方便理解，既然这个系统就是指shell，那么一个使用/bin/sh作为解释器的脚本是不是可以省去第一行呢？是的。</p>
+<h2 id="作为解释器参数"><strong>作为解释器参数</strong>****</h2>
+<p>这种运行方式是，直接运行解释器，其参数就是shell脚本的文件名，如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> /bin/sh</span><span style="color:#9ECBFF"> test.sh</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> /bin/php</span><span style="color:#9ECBFF"> test.php</span></span></code></pre>
+<p>这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。
+再看一个例子。下面的脚本使用 <strong>read</strong> 命令从 stdin 获取输入并赋值给 PERSON 变量，最后在 stdout 上输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"><span style="color:#6A737D"># Author : mozhiyan</span></span>
+<span class="line"><span style="color:#6A737D"># Copyright (c) http://see.xidian.edu.cn/cpp/linux/</span></span>
+<span class="line"><span style="color:#6A737D"># Script follows here:</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "What is your name?"</span></span>
+<span class="line"><span style="color:#79B8FF">read</span><span style="color:#9ECBFF"> PERSON</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Hello, </span><span style="color:#E1E4E8">$PERSON</span><span style="color:#9ECBFF">"</span></span></code></pre>
+<p>运行脚本：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> chmod</span><span style="color:#9ECBFF"> +x</span><span style="color:#9ECBFF"> ./test.sh</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> ./test.sh</span></span>
+<span class="line"><span style="color:#B392F0">What</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> your</span><span style="color:#9ECBFF"> name?</span></span>
+<span class="line"><span style="color:#B392F0">mozhiyan</span></span>
+<span class="line"><span style="color:#B392F0">Hello,</span><span style="color:#9ECBFF"> mozhiyan</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<h1 id="shell变量shell变量的定义删除变量只读变量变量类型"><strong>Shell变量：Shell变量的定义、删除变量、只读变量、变量类型</strong>****</h1>
+<p>Shell支持自定义变量。</p>
+<h2 id="定义变量"><strong>定义变量</strong>****</h2>
+<p>定义变量时，变量名不加美元符号（<code>$</code>），如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">variableName</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"value"</span></span></code></pre>
+<p>注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则：</p>
+<p>· 首个字符必须为字母（<code>a-z</code>，<code>A-Z</code>）。</p>
+<p>· 中间不能有空格，可以使用下划线（<code>_</code>）。</p>
+<p>· 不能使用标点符号。</p>
+<p>· 不能使用<code>bash</code>里的关键字（可用<code>help</code>命令查看保留关键字）。</p>
+<p>变量定义举例：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">myUrl</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"http://see.xidian.edu.cn/cpp/linux/"</span></span>
+<span class="line"><span style="color:#E1E4E8">myNum</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">100</span></span></code></pre>
+<h2 id="使用变量"><strong>使用变量</strong>****</h2>
+<p>使用一个定义过的变量，只要在变量名前面加美元符号（<code>$</code>）即可，如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">your_name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"mozhiyan"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> $your_name</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${your_name}</span></span></code></pre>
+<p>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> skill </span><span style="color:#F97583">in</span><span style="color:#9ECBFF"> Ada</span><span style="color:#9ECBFF"> Coffe</span><span style="color:#9ECBFF"> Action</span><span style="color:#9ECBFF"> Java</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">	echo</span><span style="color:#9ECBFF"> "I am good at ${</span><span style="color:#E1E4E8">skill</span><span style="color:#9ECBFF">}Script"</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>如果不给<code>skill</code>变量加花括号，写成<code>echo "I am good at $skillScript"</code>，解释器就会把<code>$skillScript</code>当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。
+推荐给所有变量加上花括号，这是个好的编程习惯。</p>
+<h2 id="重新定义变量"><strong>重新定义变量</strong>****</h2>
+<p>已定义的变量，可以被重新定义，如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">myUrl</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"http://see.xidian.edu.cn/cpp/linux/"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${myUrl}</span></span>
+<span class="line"><span style="color:#E1E4E8">myUrl</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"http://see.xidian.edu.cn/cpp/shell/"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${myUrl}</span></span></code></pre>
+<p>这样写是合法的，但注意，第二次赋值的时候不能写 <code>$myUrl="http://see.xidian.edu.cn/cpp/shell/"</code>，使用变量的时候才加美元符（<code>$</code>）。</p>
+<h2 id="只读变量"><strong>只读变量</strong>****</h2>
+<p>使用 <strong>readonly</strong> 命令可以将变量定义为只读变量，只读变量的值不能被改变。
+下面的例子尝试更改只读变量，结果报错：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">myUrl</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"http://see.xidian.edu.cn/cpp/shell/"</span></span>
+<span class="line"><span style="color:#F97583">readonly</span><span style="color:#E1E4E8"> myUrl</span></span>
+<span class="line"><span style="color:#E1E4E8">myUrl</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"http://see.xidian.edu.cn/cpp/danpianji/"</span></span></code></pre>
+<p>运行脚本，结果如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/bin/sh: NAME: This variable is read only.</span></span></code></pre>
+<h2 id="删除变量"><strong>删除变量</strong>****</h2>
+<p>使用 <strong>unset</strong> 命令可以删除变量。语法：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF"> unset</span><span style="color:#9ECBFF"> variable_name</span></span></code></pre>
+<p>变量被删除后不能再次使用；unset 命令不能删除只读变量。
+举个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"><span style="color:#E1E4E8">myUrl</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"http://see.xidian.edu.cn/cpp/u/xitong/"</span></span>
+<span class="line"><span style="color:#79B8FF">unset</span><span style="color:#9ECBFF"> myUrl</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> $myUrl</span></span></code></pre>
+<p>上面的脚本没有任何输出。</p>
+<h2 id="变量类型"><strong>变量类型</strong>****</h2>
+<p>运行shell时，会同时存在三种变量：</p>
+<h4 id="1-局部变量"><strong>1) 局部变量</strong>****</h4>
+<p>局部变量在脚本或命令中定义，仅在当前shell实例中有效，其他shell启动的程序不能访问局部变量。</p>
+<h4 id="2-环境变量"><strong>2) 环境变量</strong>****</h4>
+<p>所有的程序，包括shell启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候shell脚本也可以定义环境变量。</p>
+<h4 id="3-shell变量"><strong>3) shell变量</strong>****</h4>
+<p>shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行</p>
+<h1 id="shell特殊变量shell-0------和命令行参数"><strong>Shell特殊变量：Shell <code>$0</code>, <code>$#</code>, <code>$*</code>, <code>$@</code>, <code>$?</code>, `# 和命令行参数</strong>****</h1>
+<p>前面已经讲到，变量名只能包含数字、字母和下划线，因为某些包含其他字符的变量有特殊含义，这样的变量被称为特殊变量。
+例如，<code>$</code> 表示当前Shell进程的ID，即pid，看下面的代码：</p>
+<p><code>$echo $$</code></p>
+<p>运行结果</p>
+<p><code>29949</code></p>
+<table>
+<thead>
+<tr>
+<th>特殊变量列表</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>变量</strong>****</td>
+<td><strong>含义</strong>****</td>
+</tr>
+<tr>
+<td>$0</td>
+<td>当前脚本的文件名</td>
+</tr>
+<tr>
+<td>$n</td>
+<td>传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>传递给脚本或函数的参数个数。</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>传递给脚本或函数的所有参数。</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $* 稍有不同，下面将会讲到。</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>上个命令的退出状态，或函数的返回值。</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="命令行参数"><strong>命令行参数</strong>****</h2>
+<p>运行脚本时传递给脚本的参数称为命令行参数。命令行参数用<code>$n</code>表示，例如，<code>$1 </code>表示第一个参数，<code>$2</code> 表示第二个参数，依次类推。
+请看下面的脚本：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "File Name: </span><span style="color:#79B8FF">$0</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "First Parameter : </span><span style="color:#79B8FF">$1</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "First Parameter : </span><span style="color:#79B8FF">$2</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Quoted Values: </span><span style="color:#79B8FF">$@</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Quoted Values: </span><span style="color:#79B8FF">$*</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Total Number of Parameters : </span><span style="color:#79B8FF">$#</span><span style="color:#9ECBFF">"</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$./test.sh Zara Ali</span></span>
+<span class="line"><span>File Name : ./test.sh</span></span>
+<span class="line"><span>First Parameter : Zara</span></span>
+<span class="line"><span>Second Parameter : Ali</span></span>
+<span class="line"><span>Quoted Values: Zara Ali</span></span>
+<span class="line"><span>Quoted Values: Zara Ali</span></span>
+<span class="line"><span>Total Number of Parameters : 2</span></span></code></pre>
+<h2 id="-和--的区别"><strong><code>$*</code> 和 <code>$@</code> 的区别</strong>****</h2>
+<p><code>$*</code> 和<code>$@</code>都表示传递给函数或脚本的所有参数，</p>
+<p>不被双引号(“ “)包含时，都以<code>"$1" </code> <code>"$2"</code>  … <code>"$n" </code>的形式输出所有参数。
+但是当它们被双引号(” “)包含时，<code>"$*" </code>会将所有的参数作为一个整体，以<code>"$1 $2 … $n"</code>的形式输出所有参数；<code>"$@"</code> 会将各个参数分开，以<code>"$1" </code> <code>"$2"</code>  …  <code>"$n"</code> 的形式输出所有参数。</p>
+<p>下面的例子可以清楚的看到<code>$*</code>和<code> $@</code> 的区别：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$*</span><span style="color:#9ECBFF">="</span><span style="color:#79B8FF"> $*</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">\"$*\"</span><span style="color:#9ECBFF">="</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$*</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$@</span><span style="color:#9ECBFF">="</span><span style="color:#FFAB70"> $@</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">\"$@\"</span><span style="color:#9ECBFF">="</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$@</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "print each param from </span><span style="color:#79B8FF">$*</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> var </span><span style="color:#F97583">in</span><span style="color:#79B8FF"> $*</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$var</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">done</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "print each param from </span><span style="color:#79B8FF">$@</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> var </span><span style="color:#F97583">in</span><span style="color:#FFAB70"> $@</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$var</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">done</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "print each param from </span><span style="color:#79B8FF">\"$*\"</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> var </span><span style="color:#F97583">in</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$*</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$var</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">done</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "print each param from </span><span style="color:#79B8FF">\"$@\"</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> var </span><span style="color:#F97583">in</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$@</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$var</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>执行 ./test.sh “a” “b” “c” “d”，看到下面的结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">$*</span><span style="color:#E1E4E8">=  a b c d</span></span>
+<span class="line"><span style="color:#B392F0">"</span><span style="color:#79B8FF">$*</span><span style="color:#B392F0">"</span><span style="color:#9ECBFF">=</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> b</span><span style="color:#9ECBFF"> c</span><span style="color:#9ECBFF"> d</span></span>
+<span class="line"><span style="color:#FFAB70">$@</span><span style="color:#E1E4E8">=  a b c d</span></span>
+<span class="line"><span style="color:#B392F0">"</span><span style="color:#79B8FF">$@</span><span style="color:#B392F0">"</span><span style="color:#9ECBFF">=</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> b</span><span style="color:#9ECBFF"> c</span><span style="color:#9ECBFF"> d</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#9ECBFF"> each</span><span style="color:#9ECBFF"> param</span><span style="color:#9ECBFF"> from</span><span style="color:#79B8FF"> $*</span></span>
+<span class="line"><span style="color:#B392F0">a</span></span>
+<span class="line"><span style="color:#B392F0">b</span></span>
+<span class="line"><span style="color:#B392F0">c</span></span>
+<span class="line"><span style="color:#B392F0">d</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#9ECBFF"> each</span><span style="color:#9ECBFF"> param</span><span style="color:#9ECBFF"> from</span><span style="color:#FFAB70"> $@</span></span>
+<span class="line"><span style="color:#B392F0">a</span></span>
+<span class="line"><span style="color:#B392F0">b</span></span>
+<span class="line"><span style="color:#B392F0">c</span></span>
+<span class="line"><span style="color:#B392F0">d</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#9ECBFF"> each</span><span style="color:#9ECBFF"> param</span><span style="color:#9ECBFF"> from</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$*</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#B392F0">a</span><span style="color:#9ECBFF"> b</span><span style="color:#9ECBFF"> c</span><span style="color:#9ECBFF"> d</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#9ECBFF"> each</span><span style="color:#9ECBFF"> param</span><span style="color:#9ECBFF"> from</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">$@</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#B392F0">a</span></span>
+<span class="line"><span style="color:#B392F0">b</span></span>
+<span class="line"><span style="color:#B392F0">c</span></span>
+<span class="line"><span style="color:#B392F0">d</span></span></code></pre>
+<h2 id="退出状态"><strong>退出状态</strong>****</h2>
+<p><code>$? </code>可以获取上一个命令的退出状态。所谓退出状态，就是上一个命令执行后的返回结果。
+退出状态是一个数字，一般情况下，大部分命令执行成功会返回 0，失败返回 1。
+不过，也有一些命令返回其他值，表示不同类型的错误。
+下面例子中，命令成功执行：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$./test.sh</span><span style="color:#9ECBFF"> Zara</span><span style="color:#9ECBFF"> Ali</span></span>
+<span class="line"><span style="color:#B392F0">File</span><span style="color:#9ECBFF"> Name</span><span style="color:#9ECBFF"> :</span><span style="color:#9ECBFF"> ./test.sh</span></span>
+<span class="line"><span style="color:#B392F0">First</span><span style="color:#9ECBFF"> Parameter</span><span style="color:#9ECBFF"> :</span><span style="color:#9ECBFF"> Zara</span></span>
+<span class="line"><span style="color:#B392F0">Second</span><span style="color:#9ECBFF"> Parameter</span><span style="color:#9ECBFF"> :</span><span style="color:#9ECBFF"> Ali</span></span>
+<span class="line"><span style="color:#B392F0">Quoted</span><span style="color:#9ECBFF"> Values:</span><span style="color:#9ECBFF"> Zara</span><span style="color:#9ECBFF"> Ali</span></span>
+<span class="line"><span style="color:#B392F0">Quoted</span><span style="color:#9ECBFF"> Values:</span><span style="color:#9ECBFF"> Zara</span><span style="color:#9ECBFF"> Ali</span></span>
+<span class="line"><span style="color:#B392F0">Total</span><span style="color:#9ECBFF"> Number</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> Parameters</span><span style="color:#9ECBFF"> :</span><span style="color:#79B8FF"> 2</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> ?</span></span>
+<span class="line"><span style="color:#B392F0">0</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p><code>$?</code> 也可以表示函数的返回值，后续将会讲解。</p>
+<h1 id="shell替换shell变量替换命令替换转义字符"><strong>Shell替换：Shell变量替换，命令替换，转义字符</strong>****</h1>
+<p>如果表达式中包含特殊字符，Shell 将会进行替换。例如，在双引号中使用变量就是一种替换，转义字符也是一种替换。
+举个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">10</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> "Value of a is </span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> \n"</span></span></code></pre>
+<p>运行结果：</p>
+<p><code>Value of a is 10</code></p>
+<p>这里 <code>-e </code>表示对转义字符进行替换。如果不使用 <code>-e</code> 选项，将会原样输出：</p>
+<p><code>Value of a is 10\n</code></p>
+<p>下面的转义字符都可以用在<code>echo</code>中：</p>
+<table>
+<thead>
+<tr>
+<th><strong>转义字符</strong>****</th>
+<th><strong>含义</strong>****</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>\a</td>
+<td>警报，响铃</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格（删除键）</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页(FF)，将当前位置移到下页开头</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表符（tab键）</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表符</td>
+</tr>
+</tbody>
+</table>
+<p>可以使用<code>echo</code>命令的 <code>-E </code>选项禁止转义，默认也是不转义的；使用<code>-n</code>选项可以禁止插入换行符。</p>
+<h2 id="命令替换"><strong>命令替换</strong>****</h2>
+<p>命令替换是指Shell可以先执行命令，将输出结果暂时保存，在适当的地方输出。
+命令替换的语法：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>`command`</span></span></code></pre>
+<p>注意是反引号，不是单引号，这个键位于 Esc` 键下方。
+下面的例子中，将命令执行结果保存在变量中：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">DATE</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">date</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Date is </span><span style="color:#E1E4E8">$DATE</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">USERS</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">who</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> wc</span><span style="color:#79B8FF"> -l</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Logged in user are </span><span style="color:#E1E4E8">$USERS</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">UP</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">date</span><span style="color:#E1E4E8"> ; </span><span style="color:#B392F0">uptime</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Uptime is </span><span style="color:#E1E4E8">$UP</span><span style="color:#9ECBFF">"</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">Date</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> Thu</span><span style="color:#9ECBFF"> Jul</span><span style="color:#79B8FF">  2</span><span style="color:#9ECBFF"> 03:59:57</span><span style="color:#9ECBFF"> MST</span><span style="color:#79B8FF"> 2009</span></span>
+<span class="line"><span style="color:#B392F0">Logged</span><span style="color:#9ECBFF"> in</span><span style="color:#9ECBFF"> user</span><span style="color:#9ECBFF"> are</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#B392F0">Uptime</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> Thu</span><span style="color:#9ECBFF"> Jul</span><span style="color:#79B8FF">  2</span><span style="color:#9ECBFF"> 03:59:57</span><span style="color:#9ECBFF"> MST</span><span style="color:#79B8FF"> 2009</span></span>
+<span class="line"><span style="color:#B392F0">03:59:57</span><span style="color:#9ECBFF"> up</span><span style="color:#79B8FF"> 20</span><span style="color:#9ECBFF"> days,</span><span style="color:#9ECBFF"> 14:03,</span><span style="color:#79B8FF">  1</span><span style="color:#9ECBFF"> user,</span><span style="color:#9ECBFF">  load</span><span style="color:#9ECBFF"> avg:</span><span style="color:#9ECBFF"> 0.13,</span><span style="color:#9ECBFF"> 0.07,</span><span style="color:#79B8FF"> 0.15</span></span></code></pre>
+<h2 id="变量替换"><strong>变量替换</strong>****</h2>
+<p>变量替换可以根据变量的状态（是否为空、是否定义等）来改变它的值
+可以使用的变量替换形式：</p>
+<table>
+<thead>
+<tr>
+<th><strong>形式</strong>****</th>
+<th><strong>说明</strong>****</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>${var}</td>
+<td>变量本来的值</td>
+</tr>
+<tr>
+<td>${var:-word}</td>
+<td>如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。</td>
+</tr>
+<tr>
+<td>${var:=word}</td>
+<td>如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。</td>
+</tr>
+<tr>
+<td>${var:?message}</td>
+<td>如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。</td>
+</tr>
+<tr>
+<td>${var:+word}</td>
+<td>如果变量 var 被定义，那么返回 word，但不改变 var 的值。</td>
+</tr>
+</tbody>
+</table>
+<p>请看下面的例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${var</span><span style="color:#F97583">:-</span><span style="color:#9ECBFF">"Variable is not set"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "1 - Value of var is ${</span><span style="color:#E1E4E8">var</span><span style="color:#9ECBFF">}"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${var</span><span style="color:#F97583">:=</span><span style="color:#9ECBFF">"Variable is not set"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "2 - Value of var is ${</span><span style="color:#E1E4E8">var</span><span style="color:#9ECBFF">}"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">unset</span><span style="color:#9ECBFF"> var</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${var</span><span style="color:#F97583">:</span><span style="color:#E1E4E8">+</span><span style="color:#9ECBFF">"This is default value"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "3 - Value of var is </span><span style="color:#E1E4E8">$var</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">var</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Prefix"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${var</span><span style="color:#F97583">:</span><span style="color:#E1E4E8">+</span><span style="color:#9ECBFF">"This is default value"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "4 - Value of var is </span><span style="color:#E1E4E8">$var</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${var</span><span style="color:#F97583">:?</span><span style="color:#9ECBFF">"Print this message"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "5 - Value of var is ${</span><span style="color:#E1E4E8">var</span><span style="color:#9ECBFF">}"</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">Variable</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> not</span><span style="color:#9ECBFF"> set</span></span>
+<span class="line"><span style="color:#B392F0">1</span><span style="color:#9ECBFF"> -</span><span style="color:#9ECBFF"> Value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> var</span><span style="color:#9ECBFF"> is</span></span>
+<span class="line"><span style="color:#B392F0">Variable</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> not</span><span style="color:#9ECBFF"> set</span></span>
+<span class="line"><span style="color:#B392F0">2</span><span style="color:#9ECBFF"> -</span><span style="color:#9ECBFF"> Value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> var</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> Variable</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> not</span><span style="color:#9ECBFF"> set</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">3</span><span style="color:#9ECBFF"> -</span><span style="color:#9ECBFF"> Value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> var</span><span style="color:#9ECBFF"> is</span></span>
+<span class="line"><span style="color:#B392F0">This</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> default</span><span style="color:#9ECBFF"> value</span></span>
+<span class="line"><span style="color:#B392F0">4</span><span style="color:#9ECBFF"> -</span><span style="color:#9ECBFF"> Value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> var</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> Prefix</span></span>
+<span class="line"><span style="color:#B392F0">Prefix</span></span>
+<span class="line"><span style="color:#B392F0">5</span><span style="color:#9ECBFF"> -</span><span style="color:#9ECBFF"> Value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> var</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> Prefix</span></span></code></pre>
+<h1 id="shell运算符shell算数运算符关系运算符布尔运算符字符串运算符等"><strong>Shell运算符：Shell算数运算符、关系运算符、布尔运算符、字符串运算符等</strong>****</h1>
+<p>Bash 支持很多运算符，包括算数运算符、关系运算符、布尔运算符、字符串运算符和文件测试运算符。
+原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。
+expr 是一款表达式计算工具，使用它能完成表达式的求值操作。
+例如，两个数相加：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"><span style="color:#E1E4E8">val</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">`</span><span style="color:#B392F0">expr</span><span style="color:#79B8FF"> 2</span><span style="color:#9ECBFF"> + </span><span style="color:#79B8FF">2</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Total value : </span><span style="color:#E1E4E8">$val</span><span style="color:#9ECBFF">"</span></span></code></pre>
+<p>运行脚本输出：</p>
+<p><code>Total value : 4</code></p>
+<p>两点注意：</p>
+<p>· 表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样。</p>
+<p>· 完整的表达式要被(``)包含，注意这个字符不是常用的单引号，在 Esc 键下边。</p>
+<h2 id="算术运算符"><strong>算术运算符</strong>****</h2>
+<p>先来看一个使用算术运算符的例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"><span style="color:#6A737D"># 加法</span></span>
+<span class="line"><span style="color:#E1E4E8">a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">10</span></span>
+<span class="line"><span style="color:#E1E4E8">b</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">20</span></span>
+<span class="line"><span style="color:#E1E4E8">val</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">`</span><span style="color:#B392F0">expr</span><span style="color:#E1E4E8"> $a</span><span style="color:#9ECBFF"> + </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "a + b : </span><span style="color:#E1E4E8">$val</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#6A737D"># 减法</span></span>
+<span class="line"><span style="color:#E1E4E8">val</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">`</span><span style="color:#B392F0">expr</span><span style="color:#E1E4E8"> $a</span><span style="color:#9ECBFF"> - </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "a - b : </span><span style="color:#E1E4E8">$val</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#6A737D"># 乘法</span></span>
+<span class="line"><span style="color:#E1E4E8">val</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">`</span><span style="color:#B392F0">expr</span><span style="color:#E1E4E8"> $a</span><span style="color:#79B8FF"> \*</span><span style="color:#E1E4E8"> $b</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "a * b : </span><span style="color:#E1E4E8">$val</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#6A737D"># 除法</span></span>
+<span class="line"><span style="color:#E1E4E8">val</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">`</span><span style="color:#B392F0">expr</span><span style="color:#E1E4E8"> $b</span><span style="color:#9ECBFF"> / </span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "b / a : </span><span style="color:#E1E4E8">$val</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#6A737D"># 取余</span></span>
+<span class="line"><span style="color:#E1E4E8">val</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">`</span><span style="color:#B392F0">expr</span><span style="color:#E1E4E8"> $b</span><span style="color:#9ECBFF"> % </span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "b % a : </span><span style="color:#E1E4E8">$val</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#6A737D"># 相等</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "a is equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 不相等</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">!=</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "a is not equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>a + b : 30</span></span>
+<span class="line"><span>a - b : -10</span></span>
+<span class="line"><span>a * b : 200</span></span>
+<span class="line"><span>b / a : 2</span></span>
+<span class="line"><span>b % a : 0</span></span>
+<span class="line"><span>a is not equal to b</span></span></code></pre>
+<p>注意：</p>
+<p>· 乘号(<code>*</code>)前边必须加反斜杠(<code>\</code>)才能实现乘法运算；</p>
+<p>· <code>if...then...fi </code>是条件语句，后续将会讲解。</p>
+<table>
+<thead>
+<tr>
+<th>算术运算符列表</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>运算符</strong>****</td>
+<td><strong>说明</strong>****</td>
+<td><strong>举例</strong>****</td>
+</tr>
+<tr>
+<td>+</td>
+<td>加法</td>
+<td><code>expr $a + $b</code> 结果为 30。</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+<td><code>expr $a - $b</code> 结果为 10。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+<td><code>expr $a \* $b</code> 结果为  200。</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法</td>
+<td><code>expr $b / $a</code> 结果为 2。</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+<td><code>expr $b % $a</code> 结果为 0。</td>
+</tr>
+<tr>
+<td>=</td>
+<td>赋值</td>
+<td>a=$b 将把变量 b 的值赋给 a。</td>
+</tr>
+<tr>
+<td>==</td>
+<td>相等。用于比较两个数字，相同则返回 true。</td>
+<td>[ $a == $b ] 返回 false。</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不相等。用于比较两个数字，不相同则返回 true。</td>
+<td>[ $a != $b ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+<p>注意：条件表达式要放在方括号之间，并且要有空格，例如<code>[$a==$b]</code>是错误的，必须写成<code> [ $a == $b ]</code>。</p>
+<h2 id="关系运算符"><strong>关系运算符</strong>****</h2>
+<p>关系运算符只支持数字，不支持字符串，除非字符串的值是数字。
+先来看一个关系运算符的例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">10</span></span>
+<span class="line"><span style="color:#E1E4E8">b</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">20</span></span>
+<span class="line"><span style="color:#6A737D"># 相等</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-eq</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -eq </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> : a is equal to b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -eq </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is not equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 不相等</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-ne</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -ne </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is not equal to b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -ne </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> : a is equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 大于</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-gt</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -gt </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is greater than b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -gt </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is not greater than b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 小于</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-lt</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -lt </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is less than b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -lt </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is not less than b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 大于等于</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-ge</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -ge </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is greater or  equal to b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -ge </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is not greater or equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 小于等于</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-le</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -le </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is less or  equal to b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -le </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is not less or equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>10 -eq 20: a is not equal to b</span></span>
+<span class="line"><span>10 -ne 20: a is not equal to b</span></span>
+<span class="line"><span>10 -gt 20: a is not greater than b</span></span>
+<span class="line"><span>10 -lt 20: a is less than b</span></span>
+<span class="line"><span>10 -ge 20: a is not greater or equal to b</span></span>
+<span class="line"><span>10 -le 20: a is less or  equal to b</span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>关系运算符列表</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>运算符</strong>****</td>
+<td><strong>说明</strong>****</td>
+<td><strong>举例</strong>****</td>
+</tr>
+<tr>
+<td>-eq</td>
+<td>检测两个数是否相等，相等返回 true。</td>
+<td><code>[ $a -eq $b ] </code>返回 true。</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>检测两个数是否相等，不相等返回 true。</td>
+<td><code>[ $a -ne $b ] </code>返回 true。</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>检测左边的数是否大于右边的，如果是，则返回 true。</td>
+<td><code>[ $a -gt $b ]</code>返回 false。</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>检测左边的数是否小于右边的，如果是，则返回 true。</td>
+<td><code>[ $a -lt $b ] </code>返回 true。</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>检测左边的数是否大等于右边的，如果是，则返回 true。</td>
+<td><code>[ $a -ge $b ]</code> 返回 false。</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>检测左边的数是否小于等于右边的，如果是，则返回 true。</td>
+<td><code>[ $a -le $b ] </code>返回 true。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="布尔运算符"><strong>布尔运算符</strong>****</h2>
+<p>先来看一个布尔运算符的例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">10</span></span>
+<span class="line"><span style="color:#E1E4E8">b</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">20</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">!=</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> != </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> : a is not equal to b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> != </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># -a 与运算 and</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-lt</span><span style="color:#79B8FF"> 100</span><span style="color:#F97583"> -a</span><span style="color:#E1E4E8"> $b </span><span style="color:#F97583">-gt</span><span style="color:#79B8FF"> 15</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -lt 100 -a </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> -gt 15 : returns true"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -lt 100 -a </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> -gt 15 : returns false"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># -o 或运算 or</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-lt</span><span style="color:#79B8FF"> 100</span><span style="color:#F97583"> -o</span><span style="color:#E1E4E8"> $b </span><span style="color:#F97583">-gt</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -lt 100 -o </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> -gt 100 : returns true"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -lt 100 -o </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> -gt 100 : returns false"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># -o 或运算 or</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-lt</span><span style="color:#79B8FF"> 5</span><span style="color:#F97583"> -o</span><span style="color:#E1E4E8"> $b </span><span style="color:#F97583">-gt</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -lt 100 -o </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> -gt 100 : returns true"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> -lt 100 -o </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> -gt 100 : returns false"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>10 != 20 : a is not equal to b</span></span>
+<span class="line"><span>10 -lt 100 -a 20 -gt 15 : returns true</span></span>
+<span class="line"><span>10 -lt 100 -o 20 -gt 100 : returns true</span></span>
+<span class="line"><span>10 -lt 5 -o 20 -gt 100 : returns false</span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>布尔运算符列表</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>运算符</strong>****</td>
+<td><strong>说明</strong>****</td>
+<td><strong>举例</strong>****</td>
+</tr>
+<tr>
+<td>!</td>
+<td>非运算，表达式为 true 则返回 false，否则返回 true。</td>
+<td><code>[ ! false ] </code>返回 true。</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>或运算，有一个表达式为 true 则返回 true。</td>
+<td><code>[ $a -lt 20 -o $b -gt 100 ] </code>返回 true。</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>与运算，两个表达式都为 true 才返回 true。</td>
+<td><code>[ $a -lt 20 -a $b -gt 100 ]</code> 返回 false。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="字符串运算符"><strong>字符串运算符</strong>****</h2>
+<p>先来看一个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"abc"</span></span>
+<span class="line"><span style="color:#E1E4E8">b</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"efg"</span></span>
+<span class="line"><span style="color:#6A737D"># 相等返回true</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> = </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> : a is equal to b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> = </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is not equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 不相等返回true</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">!=</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> != </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF"> : a is not equal to b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> != </span><span style="color:#E1E4E8">$b</span><span style="color:#9ECBFF">: a is equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># -z 长度为0返回true </span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-z</span><span style="color:#E1E4E8"> $a ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "-z </span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> : string length is zero"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "-z </span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> : string length is not zero"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># -n 长度不为0返回true </span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-n</span><span style="color:#E1E4E8"> $a ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "-n </span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> : string length is not zero"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "-n </span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> : string length is zero"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 检测字符串是否为空，不为空返回 true</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> : string is not empty"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$a</span><span style="color:#9ECBFF"> : string is empty"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>abc = efg: a is not equal to b</span></span>
+<span class="line"><span>abc != efg : a is not equal to b</span></span>
+<span class="line"><span>-z abc : string length is not zero</span></span>
+<span class="line"><span>-n abc : string length is not zero</span></span>
+<span class="line"><span>abc : string is not empty</span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>字符串运算符列表</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>运算符</strong>****</td>
+<td><strong>说明</strong>****</td>
+<td><strong>举例</strong>****</td>
+</tr>
+<tr>
+<td>=</td>
+<td>检测两个字符串是否相等，相等返回 true。</td>
+<td><code>[ $a = $b ] </code>返回 false。</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>检测两个字符串是否相等，不相等返回 true。</td>
+<td><code>[ $a != $b ] </code>返回 true。</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>检测字符串长度是否为0，为0返回 true。</td>
+<td><code>[ -z $a ] </code>返回 false。</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>检测字符串长度是否为0，不为0返回 true。</td>
+<td><code>[ -z $a ]</code> 返回 true。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>检测字符串是否为空，不为空返回 true。</td>
+<td><code>[ $a ] </code>返回 true。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件测试运算符"><strong>文件测试运算符</strong>****</h2>
+<p>文件测试运算符用于检测 Unix 文件的各种属性。
+例如，变量 <code>file</code> 表示文件<code>“/var/www/tutorialspoint/unix/test.sh”</code>，它的大小为<code>100</code>字节，具有 <code>rwx</code> 权限。下面的代码，将检测该文件的各种属性：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">file</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/var/www/tutorialspoint/unix/test.sh"</span></span>
+<span class="line"><span style="color:#6A737D"># 检测文件是否可读 read</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-r</span><span style="color:#E1E4E8"> $file ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File has read access"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File does not have read access"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 检测文件是否可写 white</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-w</span><span style="color:#E1E4E8"> $file ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File has write permission"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File does not have write permission"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 检测文件是否可执行</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-x</span><span style="color:#E1E4E8"> $file ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File has execute permission"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File does not have execute permission"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 检测文件是否是普通文件（既不是目录，也不是设备文件） file</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-f</span><span style="color:#E1E4E8"> $file ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File is an ordinary file"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "This is sepcial file"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 检测文件是否是目录 dir</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-d</span><span style="color:#E1E4E8"> $file ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File is a directory"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "This is not a directory"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 检测文件是否为空（文件大小是否大于0）space</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-s</span><span style="color:#E1E4E8"> $file ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File size is zero"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File size is not zero"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"><span style="color:#6A737D"># 检测文件（包括目录）是否存在</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-e</span><span style="color:#E1E4E8"> $file ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File exists"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "File does not exist"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>File has read access</span></span>
+<span class="line"><span>File has write permission</span></span>
+<span class="line"><span>File has execute permission</span></span>
+<span class="line"><span>File is an ordinary file</span></span>
+<span class="line"><span>This is not a directory</span></span>
+<span class="line"><span>File size is zero</span></span>
+<span class="line"><span>File exists</span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>文件测试运算符列表</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>操作符</strong>****</td>
+<td><strong>说明</strong>****</td>
+<td><strong>举例</strong>****</td>
+</tr>
+<tr>
+<td>-b file</td>
+<td>检测文件是否是块设备文件，如果是，则返回 true。</td>
+<td><code>[ -b $file ]</code> 返回 false。</td>
+</tr>
+<tr>
+<td>-c file</td>
+<td>检测文件是否是字符设备文件，如果是，则返回 true。</td>
+<td><code>[ -b $file ]</code> 返回 false。</td>
+</tr>
+<tr>
+<td>-d file</td>
+<td>检测文件是否是目录，如果是，则返回 true。</td>
+<td><code>[ -d $file ]</code> 返回 false。</td>
+</tr>
+<tr>
+<td>-f file</td>
+<td>检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。</td>
+<td><code>[ -f $file ]</code> 返回 true。</td>
+</tr>
+<tr>
+<td>-g file</td>
+<td>检测文件是否设置了 SGID 位，如果是，则返回 true。</td>
+<td><code>[ -g $file ]</code> 返回 false。</td>
+</tr>
+<tr>
+<td>-k file</td>
+<td>检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。</td>
+<td><code>[ -k $file ]</code> 返回 false。</td>
+</tr>
+<tr>
+<td>-p file</td>
+<td>检测文件是否是具名管道，如果是，则返回 true。</td>
+<td><code>[ -p $file ] </code>返回 false。</td>
+</tr>
+<tr>
+<td>-u file</td>
+<td>检测文件是否设置了 SUID 位，如果是，则返回 true。</td>
+<td><code>[ -u $file ]</code> 返回 false。</td>
+</tr>
+<tr>
+<td>-r file</td>
+<td>检测文件是否可读，如果是，则返回 true。</td>
+<td><code>[ -r $file ]</code> 返回 true。</td>
+</tr>
+<tr>
+<td>-w file</td>
+<td>检测文件是否可写，如果是，则返回 true。</td>
+<td><code>[ -w $file ]</code> 返回 true。</td>
+</tr>
+<tr>
+<td>-x file</td>
+<td>检测文件是否可执行，如果是，则返回 true。</td>
+<td><code>[ -x $file ] </code>返回 true。</td>
+</tr>
+<tr>
+<td>-s file</td>
+<td>检测文件是否为空（文件大小是否大于0），不为空返回 true。</td>
+<td><code>[ -s $file ] </code>返回 true。</td>
+</tr>
+<tr>
+<td>-e file</td>
+<td>检测文件（包括目录）是否存在，如果是，则返回 true。</td>
+<td><code>[ -e $file ]</code> 返回 true。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Shell注释</strong>****</p>
+<p>以“#”开头的行就是注释，会被解释器忽略。
+sh里没有多行注释，只能每一行加一个#号。只能像这样：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#--------------------------------------------</span></span>
+<span class="line"><span style="color:#6A737D"># 这是一个自动打ipa的脚本，基于webfrogs的ipa-build书写：</span></span>
+<span class="line"><span style="color:#6A737D"># https://github.com/webfrogs/xcode_shell/blob/master/ipa-build</span></span>
+<span class="line"><span style="color:#6A737D"># 功能：自动为etao ios app打包，产出物为14个渠道的ipa包</span></span>
+<span class="line"><span style="color:#6A737D"># 特色：全自动打包，不需要输入任何参数</span></span>
+<span class="line"><span style="color:#6A737D">#--------------------------------------------</span></span>
+<span class="line"><span style="color:#6A737D">##### 用户配置区 开始 #####</span></span>
+<span class="line"><span style="color:#6A737D">#</span></span>
+<span class="line"><span style="color:#6A737D">#</span></span>
+<span class="line"><span style="color:#6A737D"># 项目根目录，推荐将此脚本放在项目的根目录，这里就不用改了</span></span>
+<span class="line"><span style="color:#6A737D"># 应用名，确保和Xcode里Product下的target_name.app名字一致</span></span>
+<span class="line"><span style="color:#6A737D">#</span></span>
+<span class="line"><span style="color:#6A737D">##### 用户配置区 结束  #####</span></span></code></pre>
+<p>如果在开发过程中，遇到大段的代码需要临时注释起来，过一会儿又取消注释，怎么办呢？每一行加个#符号太费力了，可以把这一段要注释的代码用一对花括号括起来，定义成一个函数，没有地方调用这个函数，这块代码就不会执行，达到了和注释一样的效果。</p>
+<h1 id="shell字符串"><strong>Shell字符串</strong>****</h1>
+<p>字符串是shell编程中最常用最有用的数据类型（除了数字和字符串，也没啥其它类型好用了），字符串可以用单引号，也可以用双引号，也可以不用引号。单双引号的区别跟PHP类似。</p>
+<h2 id="单引号"><strong>单引号</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">str</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">'this is a string'</span></span></code></pre>
+<p>单引号字符串的限制：</p>
+<p>· 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</p>
+<p>· 单引号字串中不能出现单引号（对单引号使用转义符后也不行）。</p>
+<h2 id="双引号"><strong>双引号</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">your_name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">'qinjx'</span></span>
+<span class="line"><span style="color:#E1E4E8">str</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Hello, I know your are </span><span style="color:#79B8FF">\"</span><span style="color:#E1E4E8">$your_name</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">! \n"</span></span></code></pre>
+<p>双引号的优点：</p>
+<p>· 双引号里可以有变量</p>
+<p>· 双引号里可以出现转义字符</p>
+<h2 id="拼接字符串"><strong>拼接字符串</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">your_name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"qinjx"</span></span>
+<span class="line"><span style="color:#E1E4E8">greeting</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"hello, "</span><span style="color:#E1E4E8">$your_name</span><span style="color:#9ECBFF">" !"</span></span>
+<span class="line"><span style="color:#E1E4E8">greeting_1</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"hello, ${</span><span style="color:#E1E4E8">your_name</span><span style="color:#9ECBFF">} !"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> $greeting $greeting_1</span></span></code></pre>
+<h2 id="获取字符串长度"><strong>获取字符串长度</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">string</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"abcd"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${</span><span style="color:#F97583">#</span><span style="color:#E1E4E8">string} </span><span style="color:#6A737D">#输出 4</span></span></code></pre>
+<h2 id="提取子字符串"><strong>提取子字符串</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">string</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"alibaba is a great company"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> ${string</span><span style="color:#F97583">:</span><span style="color:#E1E4E8">1</span><span style="color:#F97583">:</span><span style="color:#E1E4E8">4} </span><span style="color:#6A737D">#输出liba</span></span></code></pre>
+<h2 id="查找子字符串"><strong>查找子字符串</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">string</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"alibaba is a great company"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> `</span><span style="color:#B392F0">expr</span><span style="color:#9ECBFF"> index "</span><span style="color:#E1E4E8">$string</span><span style="color:#9ECBFF">" is`</span></span></code></pre>
+<h1 id="shell数组shell数组的定义数组长度"><strong>Shell数组：shell数组的定义、数组长度</strong>****</h1>
+<p>Shell在编程方面比Windows批处理强大很多，无论是在循环、运算。
+bash支持一维数组（不支持多维数组），并且没有限定数组的大小。类似与C语言，数组元素的下标由0开始编号。获取数组中的元素要利用下标，下标可以是整数或算术表达式，其值应大于或等于0。</p>
+<h2 id="定义数组"><strong>定义数组</strong>****</h2>
+<p>在Shell中，用括号来表示数组，数组元素用“空格”符号分割开。定义数组的一般形式为：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">array_name</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">value1</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> valuen</span><span style="color:#E1E4E8">)</span></span></code></pre>
+<p>例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">array_name</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">value0</span><span style="color:#9ECBFF"> value1</span><span style="color:#9ECBFF"> value2</span><span style="color:#9ECBFF"> value3</span><span style="color:#E1E4E8">)</span></span></code></pre>
+<p>或者</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">array_name</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#9ECBFF">value0</span></span>
+<span class="line"><span style="color:#9ECBFF">value1</span></span>
+<span class="line"><span style="color:#9ECBFF">value2</span></span>
+<span class="line"><span style="color:#9ECBFF">value3</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span></code></pre>
+<p>还可以单独定义数组的各个分量：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">array_name[0]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">value0</span></span>
+<span class="line"><span style="color:#E1E4E8">array_name[1]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">value1</span></span>
+<span class="line"><span style="color:#E1E4E8">array_name[2]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">value2</span></span></code></pre>
+<p>可以不使用连续的下标，而且下标的范围没有限制。</p>
+<h2 id="读取数组"><strong>读取数组</strong>****</h2>
+<p>读取数组元素值的一般格式是：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">${array_name[index]}</span></span></code></pre>
+<p>例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">valuen</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">${array_name[2]}</span></span></code></pre>
+<p>举个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">NAME[0]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Zara"</span></span>
+<span class="line"><span style="color:#E1E4E8">NAME[1]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Qadir"</span></span>
+<span class="line"><span style="color:#E1E4E8">NAME[2]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Mahnaz"</span></span>
+<span class="line"><span style="color:#E1E4E8">NAME[3]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Ayan"</span></span>
+<span class="line"><span style="color:#E1E4E8">NAME[4]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Daisy"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "First Index: ${</span><span style="color:#E1E4E8">NAME</span><span style="color:#9ECBFF">[0]}"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Second Index: ${</span><span style="color:#E1E4E8">NAME</span><span style="color:#9ECBFF">[1]}"</span></span></code></pre>
+<p>运行脚本，输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$./test.sh</span></span>
+<span class="line"><span style="color:#B392F0">First</span><span style="color:#9ECBFF"> Index:</span><span style="color:#9ECBFF"> Zara</span></span>
+<span class="line"><span style="color:#B392F0">Second</span><span style="color:#9ECBFF"> Index:</span><span style="color:#9ECBFF"> Qadir</span></span></code></pre>
+<p>使用@ 或 * 可以获取数组中的所有元素，例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">${array_name[</span><span style="color:#F97583">*</span><span style="color:#E1E4E8">]}</span></span>
+<span class="line"><span style="color:#E1E4E8">${array_name[</span><span style="color:#F97583">@</span><span style="color:#E1E4E8">]}</span></span></code></pre>
+<p>举个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">NAME[0]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Zara"</span></span>
+<span class="line"><span style="color:#E1E4E8">NAME[1]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Qadir"</span></span>
+<span class="line"><span style="color:#E1E4E8">NAME[2]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Mahnaz"</span></span>
+<span class="line"><span style="color:#E1E4E8">NAME[3]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Ayan"</span></span>
+<span class="line"><span style="color:#E1E4E8">NAME[4]</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Daisy"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "First Method: ${</span><span style="color:#E1E4E8">NAME</span><span style="color:#9ECBFF">[</span><span style="color:#F97583">*</span><span style="color:#9ECBFF">]}"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Second Method: ${</span><span style="color:#E1E4E8">NAME</span><span style="color:#9ECBFF">[</span><span style="color:#F97583">@</span><span style="color:#9ECBFF">]}"</span></span></code></pre>
+<p>运行脚本，输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$./test.sh</span></span>
+<span class="line"><span style="color:#B392F0">First</span><span style="color:#9ECBFF"> Method:</span><span style="color:#9ECBFF"> Zara</span><span style="color:#9ECBFF"> Qadir</span><span style="color:#9ECBFF"> Mahnaz</span><span style="color:#9ECBFF"> Ayan</span><span style="color:#9ECBFF"> Daisy</span></span>
+<span class="line"><span style="color:#B392F0">Second</span><span style="color:#9ECBFF"> Method:</span><span style="color:#9ECBFF"> Zara</span><span style="color:#9ECBFF"> Qadir</span><span style="color:#9ECBFF"> Mahnaz</span><span style="color:#9ECBFF"> Ayan</span><span style="color:#9ECBFF"> Daisy</span></span></code></pre>
+<h2 id="获取数组的长度"><strong>获取数组的长度</strong>****</h2>
+<p>获取数组长度的方法与获取字符串长度的方法相同，例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 取得数组元素的个数</span></span>
+<span class="line"><span style="color:#E1E4E8">length</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">${</span><span style="color:#F97583">#</span><span style="color:#E1E4E8">array_name[</span><span style="color:#F97583">@</span><span style="color:#E1E4E8">]}</span></span>
+<span class="line"><span style="color:#6A737D"># 或者</span></span>
+<span class="line"><span style="color:#E1E4E8">length</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">${</span><span style="color:#F97583">#</span><span style="color:#E1E4E8">array_name[</span><span style="color:#F97583">*</span><span style="color:#E1E4E8">]}</span></span>
+<span class="line"><span style="color:#6A737D"># 取得数组单个元素的长度</span></span>
+<span class="line"><span style="color:#E1E4E8">lengthn</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">${</span><span style="color:#F97583">#</span><span style="color:#E1E4E8">array_name[n]}</span></span></code></pre>
+<h1 id="shell-echo命令"><strong>Shell echo命令</strong>****</h1>
+<p><code>echo</code>是Shell的一个内部指令，用于在屏幕上打印出指定的字符串。命令格式：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> arg</span></span></code></pre>
+<p>您可以使用<code>echo</code>实现更复杂的输出格式控制。</p>
+<h2 id="显示转义字符"><strong>显示转义字符</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">It is a test</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">"</span></span></code></pre>
+<p>结果将是：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">"It is a test"</span></span></code></pre>
+<p>双引号也可以省略。</p>
+<h2 id="显示变量"><strong>显示变量</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"OK"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$name</span><span style="color:#9ECBFF"> It is a test"</span></span></code></pre>
+<p>结果将是：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">OK</span><span style="color:#9ECBFF"> It</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> test</span></span></code></pre>
+<p>同样双引号也可以省略。
+如果变量与其它字符相连的话，需要使用大括号（<code>{ }</code>）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">mouth</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">8</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "${</span><span style="color:#E1E4E8">mouth</span><span style="color:#9ECBFF">}-1-2009"</span></span></code></pre>
+<p>结果将是：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">8-1-2009</span></span></code></pre>
+<h2 id="显示换行"><strong>显示换行</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "OK!\n"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "It is a test"</span></span></code></pre>
+<p>输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">OK!</span></span>
+<span class="line"><span style="color:#B392F0">It</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> test</span></span></code></pre>
+<h2 id="显示不换行"><strong>显示不换行</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "OK!\c"</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "It is a test"</span></span></code></pre>
+<p>输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">OK!It</span><span style="color:#9ECBFF"> si</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> test</span></span></code></pre>
+<h2 id="显示结果重定向至文件"><strong>显示结果重定向至文件</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "It is a test"</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> myfile</span></span></code></pre>
+<h2 id="原样输出字符串"><strong>原样输出字符串</strong>****</h2>
+<p>若需要原样输出字符串（不进行转义），请使用单引号。例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> '$name\"'</span></span></code></pre>
+<h2 id="显示命令执行结果"><strong>显示命令执行结果</strong>****</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> `</span><span style="color:#B392F0">date</span><span style="color:#9ECBFF">`</span></span></code></pre>
+<p>结果将显示当前日期</p>
+<p><strong>从上面可看出，双引号可有可无，单引号主要用在原样输出中。</strong></p>
+<h1 id="shell-printf命令格式化输出语句"><strong>shell printf命令：格式化输出语句</strong>****</h1>
+<p><code>printf</code> 命令用于格式化输出， 是<code>echo</code>命令的增强版。它是C语言<code>printf()</code>库函数的一个有限的变形，并且在语法上有些不同。
+注意：<code>printf</code> 由 POSIX 标准所定义，移植性要比 <code>echo</code> 好。
+如同 <code>echo</code> 命令，<code>printf </code>命令也可以输出简单的字符串：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">$printf </span><span style="color:#9ECBFF">"Hello, Shell\n"</span></span>
+<span class="line"><span style="color:#B392F0">Hello,</span><span style="color:#9ECBFF"> Shell</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p><code>printf</code> 不像<code> echo</code> 那样会自动换行，必须显式添加换行符(<code>\n</code>)。
+<code>printf </code>命令的语法：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">printf</span><span style="color:#9ECBFF">  format-string</span><span style="color:#E1E4E8">  [arguments...]</span></span></code></pre>
+<p><code>format-string </code>为格式控制字符串，<code>arguments </code>为参数列表。
+<code>printf()</code>在C语言入门教程中已经讲到，功能和用法与 <code>printf</code> 命令类似，请查看：<a href="http://c.biancheng.net/cpp/html/33.html">C语言格式输出函数printf()详解</a>
+这里仅说明与C语言<code>printf()</code>函数的不同：</p>
+<p>· <code>printf</code> 命令不用加括号</p>
+<p>· <code>format-string</code> 可以没有引号，但最好加上，单引号双引号均可。</p>
+<p>· 参数多于格式控制符(<code>%</code>)时，<code>format-string</code> 可以重用，可以将所有参数都转换。</p>
+<p>· <code>arguments</code> 使用空格分隔，不用逗号。</p>
+<p>请看下面的例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># format-string为双引号</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> printf</span><span style="color:#9ECBFF"> "%d %s\n"</span><span style="color:#79B8FF"> 1</span><span style="color:#9ECBFF"> "abc"</span></span>
+<span class="line"><span style="color:#B392F0">1</span><span style="color:#9ECBFF"> abc</span></span>
+<span class="line"><span style="color:#6A737D"># 单引号与双引号效果一样 </span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> printf</span><span style="color:#9ECBFF"> '%d %s\n'</span><span style="color:#79B8FF"> 1</span><span style="color:#9ECBFF"> "abc"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">1</span><span style="color:#9ECBFF"> abc</span></span>
+<span class="line"><span style="color:#6A737D"># 没有引号也可以输出</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> printf</span><span style="color:#9ECBFF"> %s</span><span style="color:#9ECBFF"> abcdef</span></span>
+<span class="line"><span style="color:#B392F0">abcdef</span></span>
+<span class="line"><span style="color:#6A737D"># 格式只指定了一个参数，但多出的参数仍然会按照该格式输出，format-string 被重用</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> printf</span><span style="color:#9ECBFF"> %s</span><span style="color:#9ECBFF"> abc</span><span style="color:#9ECBFF"> def</span></span>
+<span class="line"><span style="color:#B392F0">abcdef</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> printf</span><span style="color:#9ECBFF"> "%s\n"</span><span style="color:#9ECBFF"> abc</span><span style="color:#9ECBFF"> def</span></span>
+<span class="line"><span style="color:#B392F0">abc</span></span>
+<span class="line"><span style="color:#B392F0">def</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> printf</span><span style="color:#9ECBFF"> "%s %s %s\n"</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> b</span><span style="color:#9ECBFF"> c</span><span style="color:#9ECBFF"> d</span><span style="color:#9ECBFF"> e</span><span style="color:#9ECBFF"> f</span><span style="color:#9ECBFF"> g</span><span style="color:#9ECBFF"> h</span><span style="color:#9ECBFF"> i</span><span style="color:#9ECBFF"> j</span></span>
+<span class="line"><span style="color:#B392F0">a</span><span style="color:#9ECBFF"> b</span><span style="color:#9ECBFF"> c</span></span>
+<span class="line"><span style="color:#B392F0">d</span><span style="color:#9ECBFF"> e</span><span style="color:#9ECBFF"> f</span></span>
+<span class="line"><span style="color:#B392F0">g</span><span style="color:#9ECBFF"> h</span><span style="color:#9ECBFF"> i</span></span>
+<span class="line"><span style="color:#B392F0">j</span></span>
+<span class="line"><span style="color:#6A737D"># 如果没有 arguments，那么 %s 用NULL代替，%d 用 0 代替</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> printf</span><span style="color:#9ECBFF"> "%s and %d \n"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">and</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#6A737D"># 如果以 %d 的格式来显示字符串，那么会有警告，提示无效的数字，此时默认置为 0</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> printf</span><span style="color:#9ECBFF"> "The first program always prints'%s,%d\n'"</span><span style="color:#9ECBFF"> Hello</span><span style="color:#9ECBFF"> Shell</span></span>
+<span class="line"><span style="color:#B392F0">-bash:</span><span style="color:#9ECBFF"> printf:</span><span style="color:#9ECBFF"> Shell:</span><span style="color:#9ECBFF"> invalid</span><span style="color:#9ECBFF"> number</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> first</span><span style="color:#9ECBFF"> program</span><span style="color:#9ECBFF"> always</span><span style="color:#9ECBFF"> prints</span><span style="color:#9ECBFF"> 'Hello,0'</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p>注意，根据POSIX标准，浮点格式<code>%e</code>、<code>%E</code>、<code>%f</code>、<code>%g</code>与<code>%G</code>是“不需要被支持”。这是因为awk支持浮点预算，且有它自己的<code>printf</code>语句。这样Shell程序中需要将浮点数值进行格式化的打印时，可使用小型的awk程序实现。然而，内建于bash、ksh93和zsh中的<code>printf</code>命令都支持浮点格式。</p>
+<h1 id="shell-if-else语句"><strong>Shell if else语句</strong>****</h1>
+<p>if语句通过关系运算符判断表达式的真假来决定执行哪个分支。Shell 有三种if … else 语句：</p>
+<p>· if … fi 语句；</p>
+<p>· if … else … fi 语句；</p>
+<p>· if … elif … else … fi 语句。</p>
+<h2 id="1-if--else-语句"><strong>1) if … else 语句</strong>****</h2>
+<p>if … else 语句的语法：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ expression ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#B392F0">   Statement(s</span><span style="color:#E1E4E8">) to be executed </span><span style="color:#F97583">if</span><span style="color:#B392F0"> expression</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>如果 <code>expression</code> 返回 <code>true</code>，<code>then </code>后边的语句将会被执行；如果返回 <code>false</code>，不会执行任何语句。
+最后必须以 <code>fi</code> 来结尾闭合 <code>if</code>，<code>fi</code> 就是 <code>if</code> 倒过来拼写，后面也会遇见。
+注意：<code>expression</code> 和方括号(<code>[ ]</code>)之间必须有空格，否则会有语法错误。
+举个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">10</span></span>
+<span class="line"><span style="color:#E1E4E8">b</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">20</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "a is equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">!=</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "a is not equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">a</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> not</span><span style="color:#9ECBFF"> equal</span><span style="color:#9ECBFF"> to</span><span style="color:#9ECBFF"> b</span></span></code></pre>
+<h2 id="2-if--else--fi-语句"><strong>2) if … else … fi 语句</strong>****</h2>
+<p>if … else … fi 语句的语法：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ expression ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#B392F0">   Statement(s</span><span style="color:#E1E4E8">) to be executed </span><span style="color:#F97583">if</span><span style="color:#B392F0"> expression</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#B392F0">   Statement(s</span><span style="color:#E1E4E8">) to be executed </span><span style="color:#F97583">if</span><span style="color:#B392F0"> expression</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> not</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>如果 expression 返回 true，那么 then 后边的语句将会被执行；否则，执行 else 后边的语句。
+举个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">10</span></span>
+<span class="line"><span style="color:#E1E4E8">b</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">20</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "a is equal to b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "a is not equal to b"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>执行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">a</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> not</span><span style="color:#9ECBFF"> equal</span><span style="color:#9ECBFF"> to</span><span style="color:#9ECBFF"> b</span></span></code></pre>
+<h2 id="3-if--elif--fi-语句"><strong>3) if … elif … fi 语句</strong>****</h2>
+<p>if … elif … fi 语句可以对多个条件进行判断，语法为：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ expression </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#B392F0">   Statement(s</span><span style="color:#E1E4E8">) to be executed </span><span style="color:#F97583">if</span><span style="color:#B392F0"> expression</span><span style="color:#79B8FF"> 1</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">elif</span><span style="color:#E1E4E8"> [ expression </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#B392F0">   Statement(s</span><span style="color:#E1E4E8">) to be executed </span><span style="color:#F97583">if</span><span style="color:#B392F0"> expression</span><span style="color:#79B8FF"> 2</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">elif</span><span style="color:#E1E4E8"> [ expression </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#B392F0">   Statement(s</span><span style="color:#E1E4E8">) to be executed </span><span style="color:#F97583">if</span><span style="color:#B392F0"> expression</span><span style="color:#79B8FF"> 3</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#B392F0">   Statement(s</span><span style="color:#E1E4E8">) to be executed </span><span style="color:#F97583">if</span><span style="color:#B392F0"> no</span><span style="color:#9ECBFF"> expression</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>哪一个 expression 的值为 true，就执行哪个 expression 后面的语句；如果都为 false，那么不执行任何语句。
+举个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">10</span></span>
+<span class="line"><span style="color:#E1E4E8">b</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">20</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "a is equal to b"</span></span>
+<span class="line"><span style="color:#F97583">elif</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-gt</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "a is greater than b"</span></span>
+<span class="line"><span style="color:#F97583">elif</span><span style="color:#E1E4E8"> [ $a </span><span style="color:#F97583">-lt</span><span style="color:#E1E4E8"> $b ]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "a is less than b"</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "None of the condition met"</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">a</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> less</span><span style="color:#9ECBFF"> than</span><span style="color:#9ECBFF"> b</span></span></code></pre>
+<p>if … else 语句也可以写成一行，以命令的方式来运行，像这样：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> test</span><span style="color:#E1E4E8"> $</span><span style="color:#9ECBFF">[2</span><span style="color:#79B8FF">*</span><span style="color:#9ECBFF">3]</span><span style="color:#79B8FF"> -eq</span><span style="color:#E1E4E8"> $</span><span style="color:#9ECBFF">[1+5]</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">then</span><span style="color:#79B8FF"> echo</span><span style="color:#9ECBFF"> 'The two numbers are equal!'</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">fi</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<p>if … else 语句也经常与 test 命令结合使用，如下所示：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">num1</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">$</span><span style="color:#9ECBFF">[2*3</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">num2</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">$</span><span style="color:#9ECBFF">[1+5</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> test</span><span style="color:#E1E4E8"> $</span><span style="color:#9ECBFF">[num1]</span><span style="color:#79B8FF"> -eq</span><span style="color:#E1E4E8"> $</span><span style="color:#9ECBFF">[num2]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'The two numbers are equal!'</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'The two numbers are not equal!'</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> two</span><span style="color:#9ECBFF"> numbers</span><span style="color:#9ECBFF"> are</span><span style="color:#9ECBFF"> equal!</span></span></code></pre>
+<p>test 命令用于检查某个条件是否成立，与方括号(<code>[ ]</code>)类似。</p>
+<h1 id="shell-test命令"><strong>Shell test命令</strong>****</h1>
+<p>Shell中的 test 命令用于检查某个条件是否成立，它可以进行数值、字符和文件三个方面的测试。</p>
+<h2 id="数值测试"><strong>数值测试</strong>****</h2>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong>****</th>
+<th><strong>说明</strong>****</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-eq</td>
+<td>等于则为真</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>不等于则为真</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>大于则为真</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>大于等于则为真</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>小于则为真</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>小于等于则为真</td>
+</tr>
+</tbody>
+</table>
+<p>例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">num1</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">100</span></span>
+<span class="line"><span style="color:#E1E4E8">num2</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">100</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> test</span><span style="color:#E1E4E8"> $</span><span style="color:#9ECBFF">[num1]</span><span style="color:#79B8FF"> -eq</span><span style="color:#E1E4E8"> $</span><span style="color:#9ECBFF">[num2]</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'The two numbers are equal!'</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'The two numbers are not equal!'</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> two</span><span style="color:#9ECBFF"> numbers</span><span style="color:#9ECBFF"> are</span><span style="color:#9ECBFF"> equal!</span></span></code></pre>
+<h2 id="字符串测试"><strong>字符串测试</strong>****</h2>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong>****</th>
+<th><strong>说明</strong>****</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>等于则为真</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不相等则为真</td>
+</tr>
+<tr>
+<td>-z 字符串</td>
+<td>字符串长度为0则为真</td>
+</tr>
+<tr>
+<td>-n 字符串</td>
+<td>字符串长度不为0则为真</td>
+</tr>
+</tbody>
+</table>
+<p>例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">num1</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">100</span></span>
+<span class="line"><span style="color:#E1E4E8">num2</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">100</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> test</span><span style="color:#9ECBFF"> num1=num2</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'The two strings are equal!'</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'The two strings are not equal!'</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> two</span><span style="color:#9ECBFF"> strings</span><span style="color:#9ECBFF"> are</span><span style="color:#9ECBFF"> equal!</span></span></code></pre>
+<h2 id="文件测试"><strong>文件测试</strong>****</h2>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong>****</th>
+<th><strong>说明</strong>****</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-e 文件名</td>
+<td>如果文件存在则为真</td>
+</tr>
+<tr>
+<td>-r 文件名</td>
+<td>如果文件存在且可读则为真</td>
+</tr>
+<tr>
+<td>-w 文件名</td>
+<td>如果文件存在且可写则为真</td>
+</tr>
+<tr>
+<td>-x 文件名</td>
+<td>如果文件存在且可执行则为真</td>
+</tr>
+<tr>
+<td>-s 文件名</td>
+<td>如果文件存在且至少有一个字符则为真</td>
+</tr>
+<tr>
+<td>-d 文件名</td>
+<td>如果文件存在且为目录则为真</td>
+</tr>
+<tr>
+<td>-f 文件名</td>
+<td>如果文件存在且为普通文件则为真</td>
+</tr>
+<tr>
+<td>-c 文件名</td>
+<td>如果文件存在且为字符型特殊文件则为真</td>
+</tr>
+<tr>
+<td>-b 文件名</td>
+<td>如果文件存在且为块特殊文件则为真</td>
+</tr>
+</tbody>
+</table>
+<p>例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> /bin</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> test</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> ./bash</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'The file already exists!'</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'The file does not exists!'</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> file</span><span style="color:#9ECBFF"> already</span><span style="color:#9ECBFF"> exists!</span></span></code></pre>
+<p>另外，Shell还提供了与(-a )、或( -o )、非( ! )三个逻辑操作符用于将测试条件连接起来，其优先级为：“!”最高，“-a”次之，“-o”最低。例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> /bin</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> test</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> ./notFile</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> ./bash</span></span>
+<span class="line"><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'One file exists at least!'</span></span>
+<span class="line"><span style="color:#F97583">else</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> 'Both dose not exists!'</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span></code></pre>
+<p>输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">One</span><span style="color:#9ECBFF"> file</span><span style="color:#9ECBFF"> exists</span><span style="color:#9ECBFF"> at</span><span style="color:#9ECBFF"> least!</span></span></code></pre>
+<h1 id="shell-case-esac语句"><strong>Shell case esac语句</strong>****</h1>
+<p>case … esac 与其他语言中的 switch … case 语句类似，是一种多分枝选择结构。
+case 语句匹配一个值或一个模式，如果匹配成功，执行相匹配的命令。case语句格式如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">case</span><span style="color:#E1E4E8"> 值 </span><span style="color:#F97583">in</span></span>
+<span class="line"><span style="color:#DBEDFF">模式1</span><span style="color:#F97583">)</span></span>
+<span class="line"><span style="color:#B392F0">    command1</span></span>
+<span class="line"><span style="color:#B392F0">    command2</span></span>
+<span class="line"><span style="color:#B392F0">    command3</span></span>
+<span class="line"><span style="color:#E1E4E8">    ;;</span></span>
+<span class="line"><span style="color:#DBEDFF">模式2）</span></span>
+<span class="line"><span style="color:#DBEDFF">    command1</span></span>
+<span class="line"><span style="color:#DBEDFF">    command2</span></span>
+<span class="line"><span style="color:#DBEDFF">    command3</span></span>
+<span class="line"><span style="color:#DBEDFF">    ;;</span></span>
+<span class="line"><span style="color:#F97583">*</span><span style="color:#F97583">)</span></span>
+<span class="line"><span style="color:#B392F0">    command1</span></span>
+<span class="line"><span style="color:#B392F0">    command2</span></span>
+<span class="line"><span style="color:#B392F0">    command3</span></span>
+<span class="line"><span style="color:#E1E4E8">    ;;</span></span>
+<span class="line"><span style="color:#F97583">esac</span></span></code></pre>
+<p>case工作方式如上所示。取值后面必须为关键字 in，每一模式必须以右括号结束。取值可以为变量或常数。匹配发现取值符合某一模式后，其间所有命令开始执行直至 ;;。;; 与其他语言中的 break 类似，意思是跳到整个 case 语句的最后。
+取值将检测匹配的每一个模式。一旦模式匹配，则执行完匹配模式相应命令后不再继续其他模式。如果无一匹配模式，使用星号 <code>*</code> 捕获该值，再执行后面的命令。
+下面的脚本提示输入1到4，与每一种模式进行匹配：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> 'Input a number between 1 to 4'</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> 'Your number is:\c'</span></span>
+<span class="line"><span style="color:#79B8FF">read</span><span style="color:#9ECBFF"> aNum</span></span>
+<span class="line"><span style="color:#F97583">case</span><span style="color:#E1E4E8"> $aNum </span><span style="color:#F97583">in</span></span>
+<span class="line"><span style="color:#DBEDFF">    1</span><span style="color:#F97583">)</span><span style="color:#79B8FF">  echo</span><span style="color:#9ECBFF"> 'You select 1'</span></span>
+<span class="line"><span style="color:#E1E4E8">    ;;</span></span>
+<span class="line"><span style="color:#DBEDFF">    2</span><span style="color:#F97583">)</span><span style="color:#79B8FF">  echo</span><span style="color:#9ECBFF"> 'You select 2'</span></span>
+<span class="line"><span style="color:#E1E4E8">    ;;</span></span>
+<span class="line"><span style="color:#DBEDFF">    3</span><span style="color:#F97583">)</span><span style="color:#79B8FF">  echo</span><span style="color:#9ECBFF"> 'You select 3'</span></span>
+<span class="line"><span style="color:#E1E4E8">    ;;</span></span>
+<span class="line"><span style="color:#DBEDFF">    4</span><span style="color:#F97583">)</span><span style="color:#79B8FF">  echo</span><span style="color:#9ECBFF"> 'You select 4'</span></span>
+<span class="line"><span style="color:#E1E4E8">    ;;</span></span>
+<span class="line"><span style="color:#F97583">    *)</span><span style="color:#79B8FF">  echo</span><span style="color:#9ECBFF"> 'You do not select a number between 1 to 4'</span></span>
+<span class="line"><span style="color:#E1E4E8">    ;;</span></span>
+<span class="line"><span style="color:#F97583">esac</span></span></code></pre>
+<p>输入不同的内容，会有不同的结果，例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">Input</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> number</span><span style="color:#9ECBFF"> between</span><span style="color:#79B8FF"> 1</span><span style="color:#9ECBFF"> to</span><span style="color:#79B8FF"> 4</span></span>
+<span class="line"><span style="color:#B392F0">Your</span><span style="color:#9ECBFF"> number</span><span style="color:#9ECBFF"> is:3</span></span>
+<span class="line"><span style="color:#B392F0">You</span><span style="color:#9ECBFF"> select</span><span style="color:#79B8FF"> 3</span></span></code></pre>
+<p>再举一个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">option</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">${1}</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">case</span><span style="color:#E1E4E8"> ${option} </span><span style="color:#F97583">in</span></span>
+<span class="line"><span style="color:#DBEDFF">   -f</span><span style="color:#F97583">)</span><span style="color:#E1E4E8"> FILE</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">${2}</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#79B8FF">      echo</span><span style="color:#9ECBFF"> "File name is </span><span style="color:#E1E4E8">$FILE</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">      ;;</span></span>
+<span class="line"><span style="color:#DBEDFF">   -d</span><span style="color:#F97583">)</span><span style="color:#E1E4E8"> DIR</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">${2}</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#79B8FF">      echo</span><span style="color:#9ECBFF"> "Dir name is </span><span style="color:#E1E4E8">$DIR</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">      ;;</span></span>
+<span class="line"><span style="color:#F97583">   *)</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#79B8FF">      echo</span><span style="color:#9ECBFF"> "`</span><span style="color:#B392F0">basename</span><span style="color:#79B8FF"> ${0}</span><span style="color:#9ECBFF">`:usage: [-f file] | [-d directory]"</span></span>
+<span class="line"><span style="color:#79B8FF">      exit</span><span style="color:#79B8FF"> 1</span><span style="color:#6A737D"> # Command to come out of the program with status 1</span></span>
+<span class="line"><span style="color:#E1E4E8">      ;;</span></span>
+<span class="line"><span style="color:#F97583">esac</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$./test.sh</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF">.sh:</span><span style="color:#9ECBFF"> usage:</span><span style="color:#E1E4E8"> [ </span><span style="color:#79B8FF">-f</span><span style="color:#9ECBFF"> filename</span><span style="color:#9ECBFF"> ]</span><span style="color:#F97583"> |</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-d</span><span style="color:#E1E4E8"> directory ]</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> ./test.sh</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> index.htm</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> vi</span><span style="color:#9ECBFF"> test.sh</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> ./test.sh</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> index.htm</span></span>
+<span class="line"><span style="color:#B392F0">File</span><span style="color:#9ECBFF"> name</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> index.htm</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> ./test.sh</span><span style="color:#79B8FF"> -d</span><span style="color:#9ECBFF"> unix</span></span>
+<span class="line"><span style="color:#B392F0">Dir</span><span style="color:#9ECBFF"> name</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> unix</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<h1 id="shell-for循环"><strong>Shell for循环</strong>****</h1>
+<p>与其他编程语言类似，Shell支持for循环。
+for循环一般格式为：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> 变量 in 列表</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#B392F0">    command1</span></span>
+<span class="line"><span style="color:#B392F0">    command2</span></span>
+<span class="line"><span style="color:#79B8FF">    ...</span></span>
+<span class="line"><span style="color:#B392F0">    commandN</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>列表是一组值（数字、字符串等）组成的序列，每个值通过空格分隔。每循环一次，就将列表中的下一个值赋给变量。
+in 列表是可选的，如果不用它，for 循环使用命令行的位置参数。
+例如，顺序输出当前列表中的数字：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> loop </span><span style="color:#F97583">in</span><span style="color:#9ECBFF"> 1</span><span style="color:#9ECBFF"> 2</span><span style="color:#9ECBFF"> 3</span><span style="color:#9ECBFF"> 4</span><span style="color:#9ECBFF"> 5</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The value is: </span><span style="color:#E1E4E8">$loop</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> is:</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> is:</span><span style="color:#79B8FF"> 2</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> is:</span><span style="color:#79B8FF"> 3</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> is:</span><span style="color:#79B8FF"> 4</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> is:</span><span style="color:#79B8FF"> 5</span></span></code></pre>
+<p>顺序输出字符串中的字符：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> str </span><span style="color:#F97583">in</span><span style="color:#9ECBFF"> 'This is a string'</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#E1E4E8"> $str</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">This</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> string</span></span></code></pre>
+<p>显示主目录下以 .bash 开头的文件：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> FILE </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> $HOME</span><span style="color:#9ECBFF">/.bash*</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#E1E4E8"> $FILE</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">/root/.bash_history</span></span>
+<span class="line"><span style="color:#B392F0">/root/.bash_logout</span></span>
+<span class="line"><span style="color:#B392F0">/root/.bash_profile</span></span>
+<span class="line"><span style="color:#B392F0">/root/.bashrc</span></span></code></pre>
+<h1 id="shell-while循环"><strong>Shell while循环</strong>****</h1>
+<p>while循环用于不断执行一系列命令，也用于从输入文件中读取数据；命令通常为测试条件。其格式为：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">while</span><span style="color:#79B8FF"> command</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#B392F0">   Statement(s</span><span style="color:#E1E4E8">) to be executed </span><span style="color:#F97583">if</span><span style="color:#79B8FF"> command</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>命令执行完毕，控制返回循环顶部，从头开始直至测试条件为假。
+以下是一个基本的while循环，测试条件是：如果COUNTER小于5，那么返回 true。COUNTER从0开始，每次循环处理时，COUNTER加1。运行上述脚本，返回数字1到5，然后终止。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">COUNTER</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">0</span></span>
+<span class="line"><span style="color:#F97583">while</span><span style="color:#E1E4E8"> [ $COUNTER </span><span style="color:#F97583">-lt</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#E1E4E8">    COUNTER</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">'expr $COUNTER+1'</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#E1E4E8"> $COUNTER</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>运行脚本，输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">1</span></span>
+<span class="line"><span style="color:#B392F0">2</span></span>
+<span class="line"><span style="color:#B392F0">3</span></span>
+<span class="line"><span style="color:#B392F0">4</span></span>
+<span class="line"><span style="color:#B392F0">5</span></span></code></pre>
+<p>while循环可用于读取键盘信息。下面的例子中，输入信息被设置为变量FILM，按<code>Ctrl-D</code>结束循环。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> 'type &lt;CTRL-D&gt; to terminate'</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> 'enter your most liked film: '</span></span>
+<span class="line"><span style="color:#F97583">while</span><span style="color:#79B8FF"> read</span><span style="color:#9ECBFF"> FILM</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "Yeah! great film the </span><span style="color:#E1E4E8">$FILM</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>运行脚本，输出类似下面：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">type</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">CTRL-</span><span style="color:#E1E4E8">D</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF"> to</span><span style="color:#9ECBFF"> terminate</span></span>
+<span class="line"><span style="color:#B392F0">enter</span><span style="color:#9ECBFF"> your</span><span style="color:#9ECBFF"> most</span><span style="color:#9ECBFF"> liked</span><span style="color:#9ECBFF"> film:</span><span style="color:#9ECBFF"> Sound</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> Music</span></span>
+<span class="line"><span style="color:#B392F0">Yeah!</span><span style="color:#9ECBFF"> great</span><span style="color:#9ECBFF"> film</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> Sound</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> Music</span></span></code></pre>
+<h1 id="shell-until循环"><strong>Shell until循环</strong>****</h1>
+<p>until 循环执行一系列命令直至条件为 true 时停止。until 循环与 while 循环在处理方式上刚好相反。一般while循环优于until循环，但在某些时候，也只是极少数情况下，until 循环更加有用。
+until 循环格式为：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">until</span><span style="color:#79B8FF"> command</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#B392F0">   Statement(s</span><span style="color:#E1E4E8">) to be executed </span><span style="color:#F97583">until</span><span style="color:#79B8FF"> command</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> true</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>command 一般为条件表达式，如果返回值为 false，则继续执行循环体内的语句，否则跳出循环。
+例如，使用 until 命令输出 0 ~ 9 的数字：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">until</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">!</span><span style="color:#E1E4E8"> $a </span><span style="color:#F97583">-lt</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#E1E4E8"> $a</span></span>
+<span class="line"><span style="color:#E1E4E8">   a</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">`</span><span style="color:#B392F0">expr</span><span style="color:#E1E4E8"> $a</span><span style="color:#9ECBFF"> + </span><span style="color:#79B8FF">1</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">0</span></span>
+<span class="line"><span style="color:#B392F0">1</span></span>
+<span class="line"><span style="color:#B392F0">2</span></span>
+<span class="line"><span style="color:#B392F0">3</span></span>
+<span class="line"><span style="color:#B392F0">4</span></span>
+<span class="line"><span style="color:#B392F0">5</span></span>
+<span class="line"><span style="color:#B392F0">6</span></span>
+<span class="line"><span style="color:#B392F0">7</span></span>
+<span class="line"><span style="color:#B392F0">8</span></span>
+<span class="line"><span style="color:#B392F0">9</span></span></code></pre>
+<h1 id="shell-break和continue命令"><strong>Shell break和continue命令</strong>****</h1>
+<p>在循环过程中，有时候需要在未达到循环结束条件时强制跳出循环，像大多数编程语言一样，Shell也使用 break 和 continue 来跳出循环。</p>
+<h2 id="break命令"><strong>break命令</strong>****</h2>
+<p>break命令允许跳出所有循环（终止执行后面的所有循环）。
+下面的例子中，脚本进入死循环直至用户输入数字大于5。要跳出这个循环，返回到shell提示符下，就要使用break命令。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">while</span><span style="color:#79B8FF"> :</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> "Input a number between 1 to 5: "</span></span>
+<span class="line"><span style="color:#79B8FF">    read</span><span style="color:#9ECBFF"> aNum</span></span>
+<span class="line"><span style="color:#F97583">    case</span><span style="color:#E1E4E8"> $aNum </span><span style="color:#F97583">in</span></span>
+<span class="line"><span style="color:#DBEDFF">        1</span><span style="color:#F97583">|</span><span style="color:#DBEDFF">2</span><span style="color:#F97583">|</span><span style="color:#DBEDFF">3</span><span style="color:#F97583">|</span><span style="color:#DBEDFF">4</span><span style="color:#F97583">|</span><span style="color:#DBEDFF">5</span><span style="color:#F97583">)</span><span style="color:#79B8FF"> echo</span><span style="color:#9ECBFF"> "Your number is </span><span style="color:#E1E4E8">$aNum</span><span style="color:#9ECBFF">!"</span></span>
+<span class="line"><span style="color:#E1E4E8">        ;;</span></span>
+<span class="line"><span style="color:#F97583">        *)</span><span style="color:#79B8FF"> echo</span><span style="color:#9ECBFF"> "You do not select a number between 1 to 5, game is over!"</span></span>
+<span class="line"><span style="color:#F97583">            break</span></span>
+<span class="line"><span style="color:#E1E4E8">        ;;</span></span>
+<span class="line"><span style="color:#F97583">    esac</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>在嵌套循环中，break 命令后面还可以跟一个整数，表示跳出第几层循环。例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">break</span><span style="color:#9ECBFF"> n</span></span></code></pre>
+<p>表示跳出第 n 层循环。
+下面是一个嵌套循环的例子，如果 var1 等于 2，并且 var2 等于 0，就跳出循环：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> var1 </span><span style="color:#F97583">in</span><span style="color:#9ECBFF"> 1</span><span style="color:#9ECBFF"> 2</span><span style="color:#9ECBFF"> 3</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#F97583">   for</span><span style="color:#E1E4E8"> var2 </span><span style="color:#F97583">in</span><span style="color:#9ECBFF"> 0</span><span style="color:#9ECBFF"> 5</span></span>
+<span class="line"><span style="color:#F97583">   do</span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> [ $var1 </span><span style="color:#F97583">-eq</span><span style="color:#79B8FF"> 2</span><span style="color:#F97583"> -a</span><span style="color:#E1E4E8"> $var2 </span><span style="color:#F97583">-eq</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">      then</span></span>
+<span class="line"><span style="color:#F97583">         break</span><span style="color:#79B8FF"> 2</span></span>
+<span class="line"><span style="color:#F97583">      else</span></span>
+<span class="line"><span style="color:#79B8FF">         echo</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$var1</span><span style="color:#E1E4E8"> $var2</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#F97583">      fi</span></span>
+<span class="line"><span style="color:#F97583">   done</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>如上，break 2 表示直接跳出外层循环。运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">1</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#B392F0">1</span><span style="color:#79B8FF"> 5</span></span></code></pre>
+<h2 id="continue命令"><strong>continue命令</strong>****</h2>
+<p>continue命令与break命令类似，只有一点差别，它不会跳出所有循环，仅仅跳出当前循环。
+对上面的例子进行修改：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"><span style="color:#F97583">while</span><span style="color:#79B8FF"> :</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> "Input a number between 1 to 5: "</span></span>
+<span class="line"><span style="color:#79B8FF">    read</span><span style="color:#9ECBFF"> aNum</span></span>
+<span class="line"><span style="color:#F97583">    case</span><span style="color:#E1E4E8"> $aNum </span><span style="color:#F97583">in</span></span>
+<span class="line"><span style="color:#DBEDFF">        1</span><span style="color:#F97583">|</span><span style="color:#DBEDFF">2</span><span style="color:#F97583">|</span><span style="color:#DBEDFF">3</span><span style="color:#F97583">|</span><span style="color:#DBEDFF">4</span><span style="color:#F97583">|</span><span style="color:#DBEDFF">5</span><span style="color:#F97583">)</span><span style="color:#79B8FF"> echo</span><span style="color:#9ECBFF"> "Your number is </span><span style="color:#E1E4E8">$aNum</span><span style="color:#9ECBFF">!"</span></span>
+<span class="line"><span style="color:#E1E4E8">        ;;</span></span>
+<span class="line"><span style="color:#F97583">        *)</span><span style="color:#79B8FF"> echo</span><span style="color:#9ECBFF"> "You do not select a number between 1 to 5!"</span></span>
+<span class="line"><span style="color:#F97583">            continue</span></span>
+<span class="line"><span style="color:#79B8FF">            echo</span><span style="color:#9ECBFF"> "Game is over!"</span></span>
+<span class="line"><span style="color:#E1E4E8">        ;;</span></span>
+<span class="line"><span style="color:#F97583">    esac</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>运行代码发现，当输入大于5的数字时，该例中的循环不会结束，语句</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "Game is over!"</span></span></code></pre>
+<p>永远不会被执行。
+同样，continue 后面也可以跟一个数字，表示跳出第几层循环。
+再看一个 continue 的例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">NUMS</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"1 2 3 4 5 6 7"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> NUM </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> $NUMS</span></span>
+<span class="line"><span style="color:#F97583">do</span></span>
+<span class="line"><span style="color:#E1E4E8">   Q</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">`</span><span style="color:#B392F0">expr</span><span style="color:#E1E4E8"> $NUM</span><span style="color:#9ECBFF"> % </span><span style="color:#79B8FF">2</span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#F97583">   if</span><span style="color:#E1E4E8"> [ $Q </span><span style="color:#F97583">-eq</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#F97583">   then</span></span>
+<span class="line"><span style="color:#79B8FF">      echo</span><span style="color:#9ECBFF"> "Number is an even number!!"</span></span>
+<span class="line"><span style="color:#F97583">      continue</span></span>
+<span class="line"><span style="color:#F97583">   fi</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "Found odd number"</span></span>
+<span class="line"><span style="color:#F97583">done</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">Found</span><span style="color:#9ECBFF"> odd</span><span style="color:#9ECBFF"> number</span></span>
+<span class="line"><span style="color:#B392F0">Number</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> an</span><span style="color:#9ECBFF"> even</span><span style="color:#9ECBFF"> number!!</span></span>
+<span class="line"><span style="color:#B392F0">Found</span><span style="color:#9ECBFF"> odd</span><span style="color:#9ECBFF"> number</span></span>
+<span class="line"><span style="color:#B392F0">Number</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> an</span><span style="color:#9ECBFF"> even</span><span style="color:#9ECBFF"> number!!</span></span>
+<span class="line"><span style="color:#B392F0">Found</span><span style="color:#9ECBFF"> odd</span><span style="color:#9ECBFF"> number</span></span>
+<span class="line"><span style="color:#B392F0">Number</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> an</span><span style="color:#9ECBFF"> even</span><span style="color:#9ECBFF"> number!!</span></span>
+<span class="line"><span style="color:#B392F0">Found</span><span style="color:#9ECBFF"> odd</span><span style="color:#9ECBFF"> number</span></span></code></pre>
+<h1 id="shell函数shell函数返回值删除函数在终端调用函数"><strong>Shell函数：Shell函数返回值、删除函数、在终端调用函数</strong>****</h1>
+<p>函数可以让我们将一个复杂功能划分成若干模块，让程序结构更加清晰，代码重复利用率更高。像其他编程语言一样，Shell 也支持函数。Shell 函数必须先定义后使用。
+Shell 函数的定义格式如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">function_name</span><span style="color:#E1E4E8"> () {</span></span>
+<span class="line"><span style="color:#B392F0">    list</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> commands</span></span>
+<span class="line"><span style="color:#E1E4E8">    [ return value ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>如果你愿意，也可以在函数名前加上关键字 function：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> function_name</span><span style="color:#E1E4E8"> () {</span></span>
+<span class="line"><span style="color:#B392F0">    list</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> commands</span></span>
+<span class="line"><span style="color:#E1E4E8">    [ return value ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>函数返回值，可以显式增加return语句；如果不加，会将最后一条命令运行结果作为返回值。
+Shell 函数返回值只能是整数，一般用来表示函数执行成功与否，0表示成功，其他值表示失败。如果 return 其他数据，比如一个字符串，往往会得到错误提示：“numeric argument required”。
+如果一定要让函数返回字符串，那么可以先定义一个变量，用来接收函数的计算结果，脚本在需要的时候访问这个变量来获得函数返回值。
+先来看一个例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Define your function here</span></span>
+<span class="line"><span style="color:#B392F0">Hello</span><span style="color:#E1E4E8"> () {</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "Url is http://see.xidian.edu.cn/cpp/shell/"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Invoke your function</span></span>
+<span class="line"><span style="color:#B392F0">Hello</span></span></code></pre>
+<p>运行结果：??</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$./test.sh</span></span>
+<span class="line"><span style="color:#B392F0">Hello</span><span style="color:#9ECBFF"> World</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p>调用函数只需要给出函数名，不需要加括号。
+再来看一个带有return语句的函数：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">funWithReturn</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The function is to get the sum of two numbers..."</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> "Input first number: "</span></span>
+<span class="line"><span style="color:#79B8FF">    read</span><span style="color:#9ECBFF"> aNum</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> "Input another number: "</span></span>
+<span class="line"><span style="color:#79B8FF">    read</span><span style="color:#9ECBFF"> anotherNum</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The two numbers are </span><span style="color:#E1E4E8">$aNum</span><span style="color:#9ECBFF"> and </span><span style="color:#E1E4E8">$anotherNum</span><span style="color:#9ECBFF"> !"</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> $(($aNum+$anotherNum))</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#B392F0">funWithReturn</span></span>
+<span class="line"><span style="color:#6A737D"># Capture value returnd by last command</span></span>
+<span class="line"><span style="color:#E1E4E8">ret</span><span style="color:#F97583">=</span><span style="color:#79B8FF">$?</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> "The sum of two numbers is </span><span style="color:#E1E4E8">$ret</span><span style="color:#9ECBFF"> !"</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> function</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> to</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> sum</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> two</span><span style="color:#9ECBFF"> numbers...</span></span>
+<span class="line"><span style="color:#B392F0">Input</span><span style="color:#9ECBFF"> first</span><span style="color:#9ECBFF"> number:</span><span style="color:#79B8FF"> 25</span></span>
+<span class="line"><span style="color:#B392F0">Input</span><span style="color:#9ECBFF"> another</span><span style="color:#9ECBFF"> number:</span><span style="color:#79B8FF"> 50</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> two</span><span style="color:#9ECBFF"> numbers</span><span style="color:#9ECBFF"> are</span><span style="color:#79B8FF"> 25</span><span style="color:#9ECBFF"> and</span><span style="color:#79B8FF"> 50</span><span style="color:#9ECBFF"> !</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> sum</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> two</span><span style="color:#9ECBFF"> numbers</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> 75</span><span style="color:#9ECBFF"> !</span></span></code></pre>
+<p>函数返回值在调用该函数后通过 <code>$? </code>来获得。
+再来看一个函数嵌套的例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Calling one function from another</span></span>
+<span class="line"><span style="color:#B392F0">number_one</span><span style="color:#E1E4E8"> () {</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "Url_1 is http://see.xidian.edu.cn/cpp/shell/"</span></span>
+<span class="line"><span style="color:#B392F0">   number_two</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">number_two</span><span style="color:#E1E4E8"> () {</span></span>
+<span class="line"><span style="color:#79B8FF">   echo</span><span style="color:#9ECBFF"> "Url_2 is http://see.xidian.edu.cn/cpp/u/xitong/"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">number_one</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">Url_1</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> http://see.xidian.edu.cn/cpp/shell/</span></span>
+<span class="line"><span style="color:#B392F0">Url_2</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> http://see.xidian.edu.cn/cpp/u/xitong/</span></span></code></pre>
+<p>像删除变量一样，删除函数也可以使用 unset 命令，不过要加上<code>.f</code>选项，如下所示：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">$unset .f function_name</span></span></code></pre>
+<p>如果你希望直接从终端调用函数，可以将函数定义在主目录下的 .profile 文件，这样每次登录后，在命令提示符后面输入函数名字就可以立即调用。</p>
+<h1 id="shell函数参数"><strong>Shell函数参数</strong>****</h1>
+<p>在Shell中，调用函数时可以向其传递参数。在函数体内部，通过<code>$n</code>的形式来获取参数的值，例如，<code>$1</code>表示第一个参数，<code>$2</code>表示第二个参数…
+带参数的函数示例：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">funWithParam</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The value of the first parameter is </span><span style="color:#79B8FF">$1</span><span style="color:#9ECBFF"> !"</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The value of the second parameter is </span><span style="color:#79B8FF">$2</span><span style="color:#9ECBFF"> !"</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The value of the tenth parameter is </span><span style="color:#E1E4E8">$10</span><span style="color:#9ECBFF"> !"</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The value of the tenth parameter is </span><span style="color:#79B8FF">${10}</span><span style="color:#9ECBFF"> !"</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The value of the eleventh parameter is </span><span style="color:#79B8FF">${11}</span><span style="color:#9ECBFF"> !"</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The amount of the parameters is </span><span style="color:#79B8FF">$#</span><span style="color:#9ECBFF"> !"</span><span style="color:#6A737D">  # 参数个数</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> "The string of the parameters is </span><span style="color:#79B8FF">$*</span><span style="color:#9ECBFF"> !"</span><span style="color:#6A737D">  # 传递给函数的所有参数</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#B392F0">funWithParam</span><span style="color:#79B8FF"> 1</span><span style="color:#79B8FF"> 2</span><span style="color:#79B8FF"> 3</span><span style="color:#79B8FF"> 4</span><span style="color:#79B8FF"> 5</span><span style="color:#79B8FF"> 6</span><span style="color:#79B8FF"> 7</span><span style="color:#79B8FF"> 8</span><span style="color:#79B8FF"> 9</span><span style="color:#79B8FF"> 34</span><span style="color:#79B8FF"> 73</span></span></code></pre>
+<p>运行脚本：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> first</span><span style="color:#9ECBFF"> parameter</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> 1</span><span style="color:#9ECBFF"> !</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> second</span><span style="color:#9ECBFF"> parameter</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> 2</span><span style="color:#9ECBFF"> !</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> tenth</span><span style="color:#9ECBFF"> parameter</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> 10</span><span style="color:#9ECBFF"> !</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> tenth</span><span style="color:#9ECBFF"> parameter</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> 34</span><span style="color:#9ECBFF"> !</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> value</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> eleventh</span><span style="color:#9ECBFF"> parameter</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> 73</span><span style="color:#9ECBFF"> !</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> amount</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> parameters</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> 12</span><span style="color:#9ECBFF"> !</span></span>
+<span class="line"><span style="color:#B392F0">The</span><span style="color:#9ECBFF"> string</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> parameters</span><span style="color:#9ECBFF"> is</span><span style="color:#79B8FF"> 1</span><span style="color:#79B8FF"> 2</span><span style="color:#79B8FF"> 3</span><span style="color:#79B8FF"> 4</span><span style="color:#79B8FF"> 5</span><span style="color:#79B8FF"> 6</span><span style="color:#79B8FF"> 7</span><span style="color:#79B8FF"> 8</span><span style="color:#79B8FF"> 9</span><span style="color:#79B8FF"> 34</span><span style="color:#79B8FF"> 73</span><span style="color:#9ECBFF"> !"</span></span></code></pre>
+<p>注意，<code>$10</code> 不能获取第十个参数，获取第十个参数需要<code>${10}</code>。当<code>n&gt;=10</code>时，需要使用<code>${n}</code>来获取参数。
+另外，还有几个特殊变量用来处理参数，前面已经提到：</p>
+<table>
+<thead>
+<tr>
+<th><strong>特殊变量</strong>****</th>
+<th><strong>说明</strong>****</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$#</code></td>
+<td>传递给函数的参数个数。</td>
+</tr>
+<tr>
+<td><code>$*</code></td>
+<td>显示所有传递给函数的参数。</td>
+</tr>
+<tr>
+<td><code>$@</code></td>
+<td>与<code>$*</code>相同，但是略有区别，请查看<a href="http://c.biancheng.net/cpp/view/2739.html">Shell特殊变量</a>。</td>
+</tr>
+<tr>
+<td><code>$?</code></td>
+<td>函数的返回值。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="shell输入输出重定向shell-here-documentdevnull文件"><strong>Shell输入输出重定向：Shell Here Document，/dev/null文件</strong>****</h1>
+<p>Unix 命令默认从标准输入设备(stdin)获取输入，将结果输出到标准输出设备(stdout)显示。一般情况下，标准输入设备就是键盘，标准输出设备就是终端，即显示器。</p>
+<h2 id="输出重定向"><strong>输出重定向</strong>****</h2>
+<p>命令的输出不仅可以是显示器，还可以很容易的转移向到文件，这被称为输出重定向。
+命令输出重定向的语法为：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> command</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> file</span></span></code></pre>
+<p>这样，输出到显示器的内容就可以被重定向到文件。
+例如，下面的命令在显示器上不会看到任何输出：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> who</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> users</span></span></code></pre>
+<p>打开 users 文件，可以看到下面的内容：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> cat</span><span style="color:#9ECBFF"> users</span></span>
+<span class="line"><span style="color:#B392F0">oko</span><span style="color:#9ECBFF">         tty01</span><span style="color:#9ECBFF">   Sep</span><span style="color:#79B8FF"> 12</span><span style="color:#9ECBFF"> 07:30</span></span>
+<span class="line"><span style="color:#B392F0">ai</span><span style="color:#9ECBFF">          tty15</span><span style="color:#9ECBFF">   Sep</span><span style="color:#79B8FF"> 12</span><span style="color:#9ECBFF"> 13:32</span></span>
+<span class="line"><span style="color:#B392F0">ruth</span><span style="color:#9ECBFF">        tty21</span><span style="color:#9ECBFF">   Sep</span><span style="color:#79B8FF"> 12</span><span style="color:#9ECBFF"> 10:10</span></span>
+<span class="line"><span style="color:#B392F0">pat</span><span style="color:#9ECBFF">         tty24</span><span style="color:#9ECBFF">   Sep</span><span style="color:#79B8FF"> 12</span><span style="color:#9ECBFF"> 13:07</span></span>
+<span class="line"><span style="color:#B392F0">steve</span><span style="color:#9ECBFF">       tty25</span><span style="color:#9ECBFF">   Sep</span><span style="color:#79B8FF"> 12</span><span style="color:#9ECBFF"> 13:03</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p>输出重定向会覆盖文件内容，请看下面的例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> echo</span><span style="color:#9ECBFF"> line</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> users</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> cat</span><span style="color:#9ECBFF"> users</span></span>
+<span class="line"><span style="color:#B392F0">line</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p>如果不希望文件内容被覆盖，可以使用 &gt;&gt; 追加到文件末尾，例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> echo</span><span style="color:#9ECBFF"> line</span><span style="color:#79B8FF"> 2</span><span style="color:#F97583"> &gt;&gt;</span><span style="color:#9ECBFF"> users</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> cat</span><span style="color:#9ECBFF"> users</span></span>
+<span class="line"><span style="color:#B392F0">line</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#B392F0">line</span><span style="color:#79B8FF"> 2</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<h2 id="输入重定向"><strong>输入重定向</strong>****</h2>
+<p>和输出重定向一样，Unix 命令也可以从文件获取输入，语法为：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">command</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF"> file</span></span></code></pre>
+<p>这样，本来需要从键盘获取输入的命令会转移到文件读取内容。
+注意：输出重定向是大于号(&gt;)，输入重定向是小于号(&lt;)。
+例如，计算 users 文件中的行数，可以使用下面的命令：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> wc</span><span style="color:#79B8FF"> -l</span><span style="color:#9ECBFF"> users</span></span>
+<span class="line"><span style="color:#B392F0">2</span><span style="color:#9ECBFF"> users</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p>也可以将输入重定向到 users 文件：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> wc</span><span style="color:#79B8FF"> -l</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF"> users</span></span>
+<span class="line"><span style="color:#B392F0">2</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p>注意：上面两个例子的结果不同：第一个例子，会输出文件名；第二个不会，因为它仅仅知道从标准输入读取内容。</p>
+<h2 id="重定向深入讲解"><strong>重定向深入讲解</strong>****</h2>
+<p>一般情况下，每个 Unix/Linux 命令运行时都会打开三个文件：</p>
+<p>· 标准输入文件(stdin)：stdin的文件描述符为0，Unix程序默认从stdin读取数据。</p>
+<p>· 标准输出文件(stdout)：stdout 的文件描述符为1，Unix程序默认向stdout输出数据。</p>
+<p>· 标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。</p>
+<p>默认情况下，command &gt; file 将 stdout 重定向到 file，command &lt; file 将stdin 重定向到 file。
+如果希望 stderr 重定向到 file，可以这样写：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">$command 2 </span><span style="color:#F97583">&gt;</span><span style="color:#E1E4E8"> file</span></span></code></pre>
+<p>如果希望 stderr 追加到 file 文件末尾，可以这样写：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">$command 2 </span><span style="color:#F97583">&gt;&gt;</span><span style="color:#E1E4E8"> file</span></span></code></pre>
+<p>2 表示标准错误文件(stderr)。
+如果希望将 stdout 和 stderr 合并后重定向到 file，可以这样写：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">$command </span><span style="color:#F97583">&gt;</span><span style="color:#E1E4E8"> file </span><span style="color:#F97583">2&gt;&amp;1</span></span></code></pre>
+<p>或</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">$command </span><span style="color:#F97583">&gt;&gt;</span><span style="color:#E1E4E8"> file </span><span style="color:#F97583">2&gt;&amp;1</span></span></code></pre>
+<p>如果希望对 stdin 和 stdout 都重定向，可以这样写：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">$command </span><span style="color:#F97583">&lt;</span><span style="color:#E1E4E8"> file1 </span><span style="color:#F97583">&gt;</span><span style="color:#E1E4E8">file2</span></span></code></pre>
+<p>command 命令将 stdin 重定向到 file1，将 stdout 重定向到 file2。</p>
+<table>
+<thead>
+<tr>
+<th>全部可用的重定向命令列表</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>命令</strong>****</td>
+<td><strong>说明</strong>****</td>
+</tr>
+<tr>
+<td>command &gt; file</td>
+<td>将输出重定向到 file。</td>
+</tr>
+<tr>
+<td>command &lt; file</td>
+<td>将输入重定向到 file。</td>
+</tr>
+<tr>
+<td>command &gt;&gt; file</td>
+<td>将输出以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td>n &gt; file</td>
+<td>将文件描述符为 n 的文件重定向到 file。</td>
+</tr>
+<tr>
+<td>n &gt;&gt; file</td>
+<td>将文件描述符为 n 的文件以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td>n &gt;&amp; m</td>
+<td>将输出文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td>n &lt;&amp; m</td>
+<td>将输入文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td>&lt;&lt; tag</td>
+<td>将开始标记 tag 和结束标记 tag 之间的内容作为输入。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="here-document"><strong>Here Document</strong>****</h2>
+<p>Here Document 目前没有统一的翻译，这里暂译为”嵌入文档“。Here Document 是 Shell 中的一种特殊的重定向方式，它的基本的形式如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">command</span><span style="color:#F97583"> &lt;&lt;</span><span style="color:#9ECBFF"> delimiter</span></span>
+<span class="line"><span style="color:#9ECBFF">    document</span></span>
+<span class="line"><span style="color:#9ECBFF">delimiter</span></span></code></pre>
+<p>它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。
+注意：</p>
+<p>· 结尾的delimiter 一定要顶格写，前面不能有任何字符，后面也不能有任何字符，包括空格和 tab 缩进。</p>
+<p>· 开始的delimiter前后的空格会被忽略掉。</p>
+<p>下面的例子，通过 wc -l 命令计算 document 的行数：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">$wc -l </span><span style="color:#F97583">&lt;&lt;</span><span style="color:#9ECBFF"> EOF</span></span>
+<span class="line"><span style="color:#9ECBFF">    This is a simple lookup program</span></span>
+<span class="line"><span style="color:#9ECBFF">    for good (and bad) restaurants</span></span>
+<span class="line"><span style="color:#9ECBFF">    in Cape Town.</span></span>
+<span class="line"><span style="color:#9ECBFF">EOF</span></span>
+<span class="line"><span style="color:#B392F0">3</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p>也可以 将 Here Document 用在脚本中，例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">cat</span><span style="color:#F97583"> &lt;&lt;</span><span style="color:#9ECBFF"> EOF</span></span>
+<span class="line"><span style="color:#9ECBFF">This is a simple lookup program</span></span>
+<span class="line"><span style="color:#9ECBFF">for good (and bad) restaurants</span></span>
+<span class="line"><span style="color:#9ECBFF">in Cape Town.</span></span>
+<span class="line"><span style="color:#9ECBFF">EOF</span></span></code></pre>
+<p>运行结果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">This</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> simple</span><span style="color:#9ECBFF"> lookup</span><span style="color:#9ECBFF"> program</span></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> good (</span><span style="color:#B392F0">and</span><span style="color:#9ECBFF"> bad</span><span style="color:#E1E4E8">) restaurants</span></span>
+<span class="line"><span style="color:#E1E4E8">in Cape Town.</span></span></code></pre>
+<p>下面的脚本通过 vi 编辑器将 document 保存到 test.txt 文件：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">filename</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">test.txt</span></span>
+<span class="line"><span style="color:#B392F0">vi</span><span style="color:#E1E4E8"> $filename </span><span style="color:#F97583">&lt;&lt;</span><span style="color:#9ECBFF">EndOfCommands</span></span>
+<span class="line"><span style="color:#9ECBFF">i</span></span>
+<span class="line"><span style="color:#9ECBFF">This file was created automatically from</span></span>
+<span class="line"><span style="color:#9ECBFF">a shell script</span></span>
+<span class="line"><span style="color:#9ECBFF">^[</span></span>
+<span class="line"><span style="color:#9ECBFF">ZZ</span></span>
+<span class="line"><span style="color:#9ECBFF">EndOfCommands</span></span></code></pre>
+<p>运行脚本：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> sh</span><span style="color:#9ECBFF"> test.sh</span></span>
+<span class="line"><span style="color:#B392F0">Vim:</span><span style="color:#9ECBFF"> Warning:</span><span style="color:#9ECBFF"> Input</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> not</span><span style="color:#9ECBFF"> from</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> terminal</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p>打开 test.txt，可以看到下面的内容：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> cat</span><span style="color:#9ECBFF"> test.txt</span></span>
+<span class="line"><span style="color:#B392F0">This</span><span style="color:#9ECBFF"> file</span><span style="color:#9ECBFF"> was</span><span style="color:#9ECBFF"> created</span><span style="color:#9ECBFF"> automatically</span><span style="color:#9ECBFF"> from</span></span>
+<span class="line"><span style="color:#B392F0">a</span><span style="color:#9ECBFF"> shell</span><span style="color:#9ECBFF"> script</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<h2 id="devnull-文件"><strong>/dev/null 文件</strong>****</h2>
+<p>如果希望执行某个命令，但又不希望在屏幕上显示输出结果，那么可以将输出重定向到 /dev/null：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> command</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> /dev/null</span></span></code></pre>
+<p>/dev/null 是一个特殊的文件，写入到它的内容都会被丢弃；如果尝试从该文件读取内容，那么什么也读不到。但是 /dev/null 文件非常有用，将命令的输出重定向到它，会起到”禁止输出“的效果。
+如果希望屏蔽 stdout 和 stderr，可以这样写：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> command</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> /dev/null</span><span style="color:#F97583"> 2&gt;&amp;1</span></span></code></pre>
+<h1 id="shell文件包含"><strong>Shell文件包含</strong>****</h1>
+<p>像其他语言一样，Shell 也可以包含外部脚本，将外部脚本的内容合并到当前脚本。
+Shell 中包含脚本可以使用：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">.</span><span style="color:#9ECBFF"> filename</span></span></code></pre>
+<p>或</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#79B8FF">source</span><span style="color:#9ECBFF"> filename</span></span></code></pre>
+<p>两种方式的效果相同，简单起见，一般使用点号(<code>.</code>)，但是注意点号(<code>.</code>)和文件名中间有一空格。
+例如，创建两个脚本，一个是被调用脚本 subscript.sh，内容如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">url</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"http://see.xidian.edu.cn/cpp/view/2738.html"</span></span></code></pre>
+<p>一个是主文件 main.sh，内容如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"><span style="color:#79B8FF">.</span><span style="color:#9ECBFF"> ./subscript.sh</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#E1E4E8"> $url</span></span></code></pre>
+<p>执行脚本：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">$chomd +x main.sh</span></span>
+<span class="line"><span style="color:#B392F0">./main.sh</span></span>
+<span class="line"><span style="color:#B392F0">http://see.xidian.edu.cn/cpp/view/2738.html</span></span>
+<span class="line"><span style="color:#B392F0">$</span></span></code></pre>
+<p>注意：被包含脚本不需要有执行权限。</p>
+</div></article></main><footer data-astro-cid-jo6i4kqk>&copy; 2026 Peony7. All rights reserved.<div class="social-links" data-astro-cid-jo6i4kqk><a href="https://github.com/Peony7" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-jo6i4kqk></path></svg></a></div></footer></body></html>

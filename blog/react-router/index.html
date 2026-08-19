@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-tldeq5d5><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/blog-astro/favicon.svg"><link rel="icon" href="/blog-astro/favicon.ico"><link rel="sitemap" href="/blog-astro/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Peony7 的博客" href="/blog-astro/rss.xml"><meta name="generator" content="Astro v7.2.3"><style>@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/89758defcfa85239.woff") format("woff");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff") format("woff");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.3717%;ascent-override:80.1033%;descent-override:25.2587%;line-gap-override:0%;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial Bold";src:local("Arial Bold");font-display:swap;font-weight:700;font-style:normal;size-adjust:92.2954%;ascent-override:86.2448%;descent-override:27.1953%;line-gap-override:0%;}:root{--font-atkinson:Atkinson-c7f4c4e8b285552f,"Atkinson-c7f4c4e8b285552f fallback: Arial","Atkinson-c7f4c4e8b285552f fallback: Arial Bold",sans-serif;}</style><link rel="preload" href="/blog-astro/_astro/fonts/89758defcfa85239.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://peony7.github.io/blog-astro/blog/react-router/"><!-- Primary Meta Tags --><title>路由的配置项</title><meta name="description" content="import React from 'react'"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://peony7.github.io/blog-astro/blog/react-router/"><meta property="og:title" content="路由的配置项"><meta property="og:description" content="import React from 'react'"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><style>:root{--accent:#2337ff;--accent-dark:#000d8a;--black:15, 18, 25;--gray:96, 115, 159;--gray-light:229, 233, 240;--gray-dark:34, 41, 57;--gray-gradient:rgba(var(--gray-light), 50%), #fff;--box-shadow:0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}body{font-family:var(--font-atkinson);text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));background-size:100% 600px;margin:0;padding:0;font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));margin:0 0 .5rem;line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{border-radius:8px;max-width:100%;height:auto}code{background-color:rgb(var(--gray-light));border-radius:2px;padding:2px 5px}pre{border-radius:8px;padding:1.5em}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);margin:0;padding:0 0 0 20px;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (width<=720px){body{font-size:18px}main{padding:1em}}.sr-only{clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%);white-space:nowrap;border:0;width:1px;height:1px;margin:0;padding:0;overflow:hidden;position:absolute!important}footer[data-astro-cid-jo6i4kqk]{background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center;padding:2em 1em 6em}.social-links[data-astro-cid-jo6i4kqk]{justify-content:center;gap:1em;margin-top:1em;display:flex}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]{color:rgb(var(--gray));text-decoration:none}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-evkijfd6]{text-decoration:none;display:inline-block}a[data-astro-cid-evkijfd6].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-nen7h5rs]{box-shadow:0 2px 8px rgba(var(--black), 5%);background:#fff;margin:0;padding:0 1em}h2[data-astro-cid-nen7h5rs]{margin:0;font-size:1em}h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs],h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{text-decoration:none}nav[data-astro-cid-nen7h5rs]{justify-content:space-between;align-items:center;display:flex}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{color:var(--black);border-bottom:4px solid #0000;padding:1em .5em;text-decoration:none}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{border-bottom-color:var(--accent);text-decoration:none}.social-links[data-astro-cid-nen7h5rs],.social-links[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{display:flex}@media (width<=720px){.social-links[data-astro-cid-nen7h5rs]{display:none}}
+main[data-astro-cid-tldeq5d5]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-tldeq5d5]{width:100%}.hero-image[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{box-shadow:var(--box-shadow);border-radius:12px;margin:0 auto;display:block}.prose[data-astro-cid-tldeq5d5]{width:720px;max-width:calc(100% - 2em);color:rgb(var(--gray-dark));margin:auto;padding:1em}.title[data-astro-cid-tldeq5d5]{text-align:center;margin-bottom:1em;padding:1em 0;line-height:1}.title[data-astro-cid-tldeq5d5] h1[data-astro-cid-tldeq5d5]{margin:0 0 .5em}.date[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));margin-bottom:.5em}.meta[data-astro-cid-tldeq5d5]{flex-wrap:wrap;justify-content:center;gap:.75em;margin-top:.5em;display:flex}.meta[data-astro-cid-tldeq5d5] .category[data-astro-cid-tldeq5d5]{color:var(--accent);background:#2337ff1f;border-radius:999px;padding:.15em .6em;font-size:.85em}.meta[data-astro-cid-tldeq5d5] .tags[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));font-size:.85em}.last-updated-on[data-astro-cid-tldeq5d5]{font-style:italic}
+</style></head><body data-astro-cid-tldeq5d5><header data-astro-cid-nen7h5rs><nav data-astro-cid-nen7h5rs><h2 data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs>Peony7 的博客</a></h2><div class="internal-links" data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>首页</a><a href="/blog-astro/blog" class="active" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>博客</a><a href="/blog-astro/about" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>关于</a></div><div class="social-links" data-astro-cid-nen7h5rs><a href="https://github.com/Peony7" target="_blank" data-astro-cid-nen7h5rs><span class="sr-only" data-astro-cid-nen7h5rs>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-nen7h5rs><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-nen7h5rs></path></svg></a></div></nav></header><main data-astro-cid-tldeq5d5><article data-astro-cid-tldeq5d5><div class="hero-image" data-astro-cid-tldeq5d5></div><div class="prose" data-astro-cid-tldeq5d5><div class="title" data-astro-cid-tldeq5d5><div class="date" data-astro-cid-tldeq5d5><time datetime="2017-05-17T15:35:12.000Z">2017年5月17日</time><div class="meta" data-astro-cid-tldeq5d5><span class="category" data-astro-cid-tldeq5d5>react</span></div></div><h1 data-astro-cid-tldeq5d5>路由的配置项</h1><hr data-astro-cid-tldeq5d5></div><h2 id="路由的基本使用方法">路由的基本使用方法</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { render } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-dom'</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Router, Route, Link } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-router'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> App</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">createClass</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#B392F0">  render</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        &lt;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">&gt;App&lt;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        &lt;</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">          &lt;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">&gt;&lt;</span><span style="color:#79B8FF">Link</span><span style="color:#B392F0"> to</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/about"</span><span style="color:#E1E4E8">&gt;About&lt;/</span><span style="color:#79B8FF">Link</span><span style="color:#E1E4E8">&gt;&lt;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">          &lt;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">&gt;&lt;</span><span style="color:#79B8FF">Link</span><span style="color:#B392F0"> to</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/inbox"</span><span style="color:#E1E4E8">&gt;Inbox&lt;/</span><span style="color:#79B8FF">Link</span><span style="color:#E1E4E8">&gt;&lt;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        &lt;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.props.children}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> About</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">createClass</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#B392F0">  render</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> &lt;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">&gt;About&lt;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> Inbox</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">createClass</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#B392F0">  render</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        &lt;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">&gt;Inbox&lt;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.props.children </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> "Welcome to your Inbox"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> Message</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">createClass</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#B392F0">  render</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> &lt;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">&gt;Message {</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">.props.params.id}&lt;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">render</span><span style="color:#E1E4E8">((</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;</span><span style="color:#79B8FF">Router</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{App}&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"about"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{About} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"inbox"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Inbox}&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"messages/:id"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Message} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;/</span><span style="color:#79B8FF">Route</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;/</span><span style="color:#79B8FF">Route</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;/</span><span style="color:#79B8FF">Router</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">), document.body)</span></span></code></pre>
+<p>如果路由按这种配置，我们就可以得到路由与URL的映射表：</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>App</td>
+</tr>
+<tr>
+<td>/about</td>
+<td>App -&gt; About</td>
+</tr>
+<tr>
+<td>/inbox</td>
+<td>App -&gt; Inbox</td>
+</tr>
+<tr>
+<td>/inbox/messages/:id</td>
+<td>App -&gt; Inbox -&gt; Message</td>
+</tr>
+</tbody>
+</table>
+<h2 id="router的基础配置">Router的基础配置</h2>
+<p><strong>（1）路由默认首页（<code>IndexRoute</code>）</strong></p>
+<p>当URL为<code>/</code>的时候，我们需要增加一个默认的初始显示子组件。我们可以通过<code>IndexRoute</code>来设置默认页。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { IndexRoute } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-router'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> Dashboard</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">createClass</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#B392F0">  render</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> &lt;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">&gt;Welcome to the app!&lt;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">render</span><span style="color:#E1E4E8">((</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;</span><span style="color:#79B8FF">Router</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{App}&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span><span style="color:#6A737D">/* Show the dashboard at / */</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">IndexRoute</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Dashboard} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"about"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{About} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"inbox"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Inbox}&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"messages/:id"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Message} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;/</span><span style="color:#79B8FF">Route</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;/</span><span style="color:#79B8FF">Route</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;/</span><span style="color:#79B8FF">Router</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">), document.body)</span></span></code></pre>
+<p>通过这样的设置，现在我们就有了默认元素了，这种方式类似于<code>apache</code>的直接根目录（<code>directorIndex</code>）或</p>
+<p>者是<code>nginx</code>的<code>index</code>.是对直接根路径匹配路由，下面我们来看现在这种方式下的路由与URL的关系：</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>App -&gt; Dashboard</td>
+</tr>
+<tr>
+<td>/about</td>
+<td>App -&gt; About</td>
+</tr>
+<tr>
+<td>/inbox</td>
+<td>App -&gt; Inbox</td>
+</tr>
+<tr>
+<td>/inbox/messages/:id</td>
+<td>App -&gt; Inbox -&gt; Message</td>
+</tr>
+</tbody>
+</table>
+<p>我们发现与上面相比，这里多了默认的首页路由：url为：<code>/</code>，路由的组件为<code>App -&gt;Dashboard</code></p>
+<p><strong>（2）从<code>URL</code>中解耦<code>UI</code></strong></p>
+<p>如果我们能从URL为<code>/inbox/messages/:id</code> 的路由中，移除<code>/inbox</code>使得路由的真正页面为：<code>/message/:id</code></p>
+<p>同时保留了<code>JSX</code>的页面结构，<a href="http://lib.csdn.net/base/react">React</a>-router允许我们使用这种缺省路径的方法。我们来看如下代码：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#B392F0">render</span><span style="color:#E1E4E8">((</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;</span><span style="color:#79B8FF">Router</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{App}&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">IndexRoute</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Dashboard} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"about"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{About} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"inbox"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Inbox} /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      {</span><span style="color:#6A737D">/* Use /messages/:id instead of /inbox/messages/:id */</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Inbox}&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"messages/:id"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Message} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;/</span><span style="color:#79B8FF">Route</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;/</span><span style="color:#79B8FF">Route</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;/</span><span style="color:#79B8FF">Router</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">), document.body)</span></span></code></pre>
+<p>注意：这里的<code>message</code>所在的父路由，缺省了<code>path</code>，这样实际上我们就将路由从<code>/inbox/message/:id</code>转化</p>
+<p>成为了<code>/message/:id</code>，但是整体的<code>JSX</code>结构并没有发生变化，只是缺省了<code>path</code>而已。这种缺省的方式，</p>
+<p>使得我们能够避免非常复杂的层层<code>url</code>的书写方式，这样使得我们整个路由的控制显得简单名了。这种方式</p>
+<p>的访问结果如下：</p>
+<table>
+<thead>
+<tr>
+<th>URl</th>
+<th>Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>App -&gt; Dashboard</td>
+</tr>
+<tr>
+<td>/about</td>
+<td>App -&gt; About</td>
+</tr>
+<tr>
+<td>/inbox</td>
+<td>App -&gt; Inbox</td>
+</tr>
+<tr>
+<td>/messages/:id</td>
+<td>App -&gt; Inbox -&gt; Message</td>
+</tr>
+</tbody>
+</table>
+<p>上图中，值得注意的是我们只要通过<code>url: /message/:id </code>就可以访问到组件：<code>App -&gt; Inbox -&gt; Message</code>，大大的简化了<code>url</code>，但是访问结果却与<code>inbox/message/:id</code>完全相同。</p>
+<p><strong>（3）重定向路由（<code>Redirect</code>）</strong></p>
+<p>通过<code>Redirect</code>，我们可以重新定向路由。我们来看下面的例子：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Redirect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-router'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">render</span><span style="color:#E1E4E8">((</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;</span><span style="color:#79B8FF">Router</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{App}&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">IndexRoute</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Dashboard} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"about"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{About} /&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"inbox"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Inbox}&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#6A737D">/* Redirect /inbox/messages/:id to /messages/:id */</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &lt;</span><span style="color:#79B8FF">Redirect</span><span style="color:#B392F0"> from</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"messages/:id"</span><span style="color:#B392F0"> to</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/messages/:id"</span><span style="color:#E1E4E8"> /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;/</span><span style="color:#79B8FF">Route</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Inbox}&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">        &lt;</span><span style="color:#79B8FF">Route</span><span style="color:#B392F0"> path</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"messages/:id"</span><span style="color:#B392F0"> component</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{Message} /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">      &lt;/</span><span style="color:#79B8FF">Route</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;/</span><span style="color:#79B8FF">Route</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;/</span><span style="color:#79B8FF">Router</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">), document.body)</span></span></code></pre>
+<p>现在，当我们访问<code>/inbox/message/:id</code>的时候，路由会自动跳转到新的<code>url：/message/:id</code>，这样我们就实现了路由的重定向。</p>
+<p><strong>（4）路由的leave和enter,路由的进入和移除的过程</strong></p>
+<p>路由定义了进入和移除时的<code>hook</code>，也就是路由的移入或者移除的时候会触发一定的事件，这些<code>hooks</code>是非常</p>
+<p>有用的，比如路由移入（进入访问）的时候需要做一个<strong>权限认证</strong>，或者说路由移除（移除访问）的时候需要</p>
+<p><strong>保存一些参数</strong>等，我们来看什么时候会触发<code>leave hook</code>，什么时候会触发<code>enter hook</code>。</p>
+<p>举一个例子：当我们从<code>url：/messages/5</code>，跳转到新的<code>url：/about</code>的过程。</p>
+<p>（a）首先触发<code>/messages/:id</code> 路由的<code>leave hook</code></p>
+<p>（b）再次触发<code>/inbox </code>路由的<code>leave hook</code></p>
+<p>（c）最后触发<code>/about </code>路由的<code>enter hook</code></p>
+<p><strong>（5）利用插件的方法来配置路由，并且同时根据leave和enter hook，在JS中实现Redirect</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> routes</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  path: </span><span style="color:#9ECBFF">'/'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  component: App,</span></span>
+<span class="line"><span style="color:#E1E4E8">  indexRoute: { component: Dashboard },</span></span>
+<span class="line"><span style="color:#E1E4E8">  childRoutes: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    { path: </span><span style="color:#9ECBFF">'about'</span><span style="color:#E1E4E8">, component: About },</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">      path: </span><span style="color:#9ECBFF">'inbox'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      component: Inbox,</span></span>
+<span class="line"><span style="color:#E1E4E8">      childRoutes: [{</span></span>
+<span class="line"><span style="color:#E1E4E8">        path: </span><span style="color:#9ECBFF">'messages/:id'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">        onEnter</span><span style="color:#E1E4E8">: ({ </span><span style="color:#FFAB70">params</span><span style="color:#E1E4E8"> }, </span><span style="color:#FFAB70">replace</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#B392F0"> replace</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`/messages/${</span><span style="color:#E1E4E8">params</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">id</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">      }]</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">      component: Inbox,</span></span>
+<span class="line"><span style="color:#E1E4E8">      childRoutes: [{</span></span>
+<span class="line"><span style="color:#E1E4E8">        path: </span><span style="color:#9ECBFF">'messages/:id'</span><span style="color:#E1E4E8">, component: Message</span></span>
+<span class="line"><span style="color:#E1E4E8">      }]</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">render</span><span style="color:#E1E4E8">(&lt;</span><span style="color:#79B8FF">Router</span><span style="color:#B392F0"> routes</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{routes} /&gt;, document.body)</span></span></code></pre>
+<p>这里通过<code>onEnter</code>中的方法来触发重定向，从而实现<code>Redirect</code>.</p>
+<h2 id="参考地址">参考地址</h2>
+<p><a href="http://blog.csdn.net/liwusen/article/details/53282245">Reacter-router（config）基础配置项</a></p>
+</div></article></main><footer data-astro-cid-jo6i4kqk>&copy; 2026 Peony7. All rights reserved.<div class="social-links" data-astro-cid-jo6i4kqk><a href="https://github.com/Peony7" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-jo6i4kqk></path></svg></a></div></footer></body></html>

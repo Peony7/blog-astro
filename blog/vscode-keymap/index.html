@@ -1,0 +1,993 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-tldeq5d5><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/blog-astro/favicon.svg"><link rel="icon" href="/blog-astro/favicon.ico"><link rel="sitemap" href="/blog-astro/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Peony7 的博客" href="/blog-astro/rss.xml"><meta name="generator" content="Astro v7.2.3"><style>@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/89758defcfa85239.woff") format("woff");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff") format("woff");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.3717%;ascent-override:80.1033%;descent-override:25.2587%;line-gap-override:0%;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial Bold";src:local("Arial Bold");font-display:swap;font-weight:700;font-style:normal;size-adjust:92.2954%;ascent-override:86.2448%;descent-override:27.1953%;line-gap-override:0%;}:root{--font-atkinson:Atkinson-c7f4c4e8b285552f,"Atkinson-c7f4c4e8b285552f fallback: Arial","Atkinson-c7f4c4e8b285552f fallback: Arial Bold",sans-serif;}</style><link rel="preload" href="/blog-astro/_astro/fonts/89758defcfa85239.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://peony7.github.io/blog-astro/blog/vscode-keymap/"><!-- Primary Meta Tags --><title>Visual Studio Code 常用快捷键(WIN)</title><meta name="description" content="F1或 Ctrl+Shift+P: 打开命令面板。在打开的输入框内，可以输入任何命令，例如："><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://peony7.github.io/blog-astro/blog/vscode-keymap/"><meta property="og:title" content="Visual Studio Code 常用快捷键(WIN)"><meta property="og:description" content="F1或 Ctrl+Shift+P: 打开命令面板。在打开的输入框内，可以输入任何命令，例如："><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><style>:root{--accent:#2337ff;--accent-dark:#000d8a;--black:15, 18, 25;--gray:96, 115, 159;--gray-light:229, 233, 240;--gray-dark:34, 41, 57;--gray-gradient:rgba(var(--gray-light), 50%), #fff;--box-shadow:0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}body{font-family:var(--font-atkinson);text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));background-size:100% 600px;margin:0;padding:0;font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));margin:0 0 .5rem;line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{border-radius:8px;max-width:100%;height:auto}code{background-color:rgb(var(--gray-light));border-radius:2px;padding:2px 5px}pre{border-radius:8px;padding:1.5em}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);margin:0;padding:0 0 0 20px;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (width<=720px){body{font-size:18px}main{padding:1em}}.sr-only{clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%);white-space:nowrap;border:0;width:1px;height:1px;margin:0;padding:0;overflow:hidden;position:absolute!important}footer[data-astro-cid-jo6i4kqk]{background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center;padding:2em 1em 6em}.social-links[data-astro-cid-jo6i4kqk]{justify-content:center;gap:1em;margin-top:1em;display:flex}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]{color:rgb(var(--gray));text-decoration:none}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-evkijfd6]{text-decoration:none;display:inline-block}a[data-astro-cid-evkijfd6].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-nen7h5rs]{box-shadow:0 2px 8px rgba(var(--black), 5%);background:#fff;margin:0;padding:0 1em}h2[data-astro-cid-nen7h5rs]{margin:0;font-size:1em}h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs],h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{text-decoration:none}nav[data-astro-cid-nen7h5rs]{justify-content:space-between;align-items:center;display:flex}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{color:var(--black);border-bottom:4px solid #0000;padding:1em .5em;text-decoration:none}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{border-bottom-color:var(--accent);text-decoration:none}.social-links[data-astro-cid-nen7h5rs],.social-links[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{display:flex}@media (width<=720px){.social-links[data-astro-cid-nen7h5rs]{display:none}}
+main[data-astro-cid-tldeq5d5]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-tldeq5d5]{width:100%}.hero-image[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{box-shadow:var(--box-shadow);border-radius:12px;margin:0 auto;display:block}.prose[data-astro-cid-tldeq5d5]{width:720px;max-width:calc(100% - 2em);color:rgb(var(--gray-dark));margin:auto;padding:1em}.title[data-astro-cid-tldeq5d5]{text-align:center;margin-bottom:1em;padding:1em 0;line-height:1}.title[data-astro-cid-tldeq5d5] h1[data-astro-cid-tldeq5d5]{margin:0 0 .5em}.date[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));margin-bottom:.5em}.meta[data-astro-cid-tldeq5d5]{flex-wrap:wrap;justify-content:center;gap:.75em;margin-top:.5em;display:flex}.meta[data-astro-cid-tldeq5d5] .category[data-astro-cid-tldeq5d5]{color:var(--accent);background:#2337ff1f;border-radius:999px;padding:.15em .6em;font-size:.85em}.meta[data-astro-cid-tldeq5d5] .tags[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));font-size:.85em}.last-updated-on[data-astro-cid-tldeq5d5]{font-style:italic}
+</style></head><body data-astro-cid-tldeq5d5><header data-astro-cid-nen7h5rs><nav data-astro-cid-nen7h5rs><h2 data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs>Peony7 的博客</a></h2><div class="internal-links" data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>首页</a><a href="/blog-astro/blog" class="active" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>博客</a><a href="/blog-astro/about" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>关于</a></div><div class="social-links" data-astro-cid-nen7h5rs><a href="https://github.com/Peony7" target="_blank" data-astro-cid-nen7h5rs><span class="sr-only" data-astro-cid-nen7h5rs>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-nen7h5rs><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-nen7h5rs></path></svg></a></div></nav></header><main data-astro-cid-tldeq5d5><article data-astro-cid-tldeq5d5><div class="hero-image" data-astro-cid-tldeq5d5></div><div class="prose" data-astro-cid-tldeq5d5><div class="title" data-astro-cid-tldeq5d5><div class="date" data-astro-cid-tldeq5d5><time datetime="2017-05-05T09:59:54.000Z">2017年5月5日</time><div class="meta" data-astro-cid-tldeq5d5><span class="tags" data-astro-cid-tldeq5d5>#keymap</span></div></div><h1 data-astro-cid-tldeq5d5>Visual Studio Code 常用快捷键(WIN)</h1><hr data-astro-cid-tldeq5d5></div><h2 id="主命令框">主命令框</h2>
+<p><code>F1</code>或 <code>Ctrl+Shift+P</code>: 打开命令面板。在打开的输入框内，可以输入任何命令，例如：</p>
+<ul>
+<li>
+<p>按一下 <code>Backspace </code>会进入到<code> Ctrl+P</code> 模式</p>
+</li>
+<li>
+<p>在<code>Ctrl+P</code>下输入 <code>&gt; </code>可以进入<code>Ctrl+Shift+P</code>模式</p>
+</li>
+</ul>
+<p>在 <code>Ctrl+P</code> 窗口下还可以:</p>
+<ul>
+<li>直接输入文件名，跳转到文件</li>
+<li><code>? </code>列出当前可执行的动作</li>
+<li><code>!</code> 显示 Errors或 Warnings，也可以 <code>Ctrl+Shift+M</code></li>
+<li><code>: </code>跳转到行数，也可以 <code>Ctrl+G </code>直接进入</li>
+<li><code>@ </code>跳转到 <code>symbol</code>（搜索变量或者函数），也可以 <code>Ctrl+Shift+O </code>直接进入</li>
+<li><code>@ </code>根据分类跳转 <code>symbol</code>，查找属性或函数，也可以 <code>Ctrl+Shift+O</code> 后输入<code>:</code>进入</li>
+<li><code>#</code>根据名字查找 <code>symbol</code>，也可以 <code>Ctrl+T</code></li>
+</ul>
+<h2 id="快捷键">快捷键</h2>
+<h3 id="basic-editing">Basic Editing</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ctrl+X</strong></td>
+<td>Cut line (empty selection)</td>
+<td>剪切</td>
+</tr>
+<tr>
+<td><strong>Ctrl+C</strong></td>
+<td>Copy line (empty selection)</td>
+<td>复制</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Shift+K</strong></td>
+<td>Delete Line</td>
+<td>删除当前行</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Enter</strong></td>
+<td>Insert Line Below</td>
+<td>向下插入空行</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Shift+Enter</strong></td>
+<td>Insert Line Above</td>
+<td>向上插入空行</td>
+</tr>
+<tr>
+<td><strong>Alt+Down</strong></td>
+<td>Move Line Down</td>
+<td>向下移动当前行</td>
+</tr>
+<tr>
+<td><strong>Alt+Up</strong></td>
+<td>Move Line Up</td>
+<td>向上移动当前行</td>
+</tr>
+<tr>
+<td><strong>Shift+Alt+Down</strong></td>
+<td>Copy Line Down</td>
+<td>向下插入当前行内容</td>
+</tr>
+<tr>
+<td><strong>Shift+Alt+Up</strong></td>
+<td>Copy Line Up</td>
+<td>向上插入当前行内容</td>
+</tr>
+<tr>
+<td><strong>Ctrl+D</strong></td>
+<td>Add Selection To Next Find Match</td>
+<td><code>editor.action.addSelectionToNextFindMatch</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+D</td>
+<td>Move Last Selection To Next Find Match</td>
+<td><code>editor.action.moveSelectionToNextFindMatch</code></td>
+</tr>
+<tr>
+<td><strong>Ctrl+U</strong></td>
+<td>Undo last cursor operation</td>
+<td>回退光标操作位置</td>
+</tr>
+<tr>
+<td>Shift+Alt+I</td>
+<td>Insert cursor at end of each line selected</td>
+<td><code>editor.action.insertCursorAtEndOfEachLineSelected</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+L</td>
+<td>Select all occurrences of current selection</td>
+<td><code>editor.action.selectHighlights</code></td>
+</tr>
+<tr>
+<td>Ctrl+F2</td>
+<td>Select all occurrences of current word</td>
+<td><code>editor.action.changeAll</code></td>
+</tr>
+<tr>
+<td><strong>Ctrl+I</strong></td>
+<td>Select current line</td>
+<td>选中当前行内容</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Down</td>
+<td>Insert Cursor Below</td>
+<td><code>editor.action.insertCursorBelow</code></td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Up</td>
+<td>Insert Cursor Above</td>
+<td><code>editor.action.insertCursorAbove</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+\</td>
+<td>Jump to matching bracket</td>
+<td><code>editor.action.jumpToBracket</code></td>
+</tr>
+<tr>
+<td><strong>Ctrl+]</strong></td>
+<td>Indent Line</td>
+<td>增加当前行缩进</td>
+</tr>
+<tr>
+<td><strong>Ctrl+[</strong></td>
+<td>Outdent Line</td>
+<td>减少当前行缩进</td>
+</tr>
+<tr>
+<td><strong>Home</strong></td>
+<td>Go to Beginning of Line</td>
+<td>光标定位到行首</td>
+</tr>
+<tr>
+<td><strong>End</strong></td>
+<td>Go to End of Line</td>
+<td>光标定位到行尾</td>
+</tr>
+<tr>
+<td><strong>Ctrl+End</strong></td>
+<td>Go to End of File</td>
+<td>光标定位到文件的尾部</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Home</strong></td>
+<td>Go to Beginning of File</td>
+<td>光标定位到文件的开头</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Down</strong></td>
+<td>Scroll Line Down</td>
+<td>滚动条向下移动</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Up</strong></td>
+<td>Scroll Line Up</td>
+<td>滚动条向上移动</td>
+</tr>
+<tr>
+<td><strong>Alt+PageDown</strong></td>
+<td>Scroll Page Down</td>
+<td>滚动条向下移动一屏</td>
+</tr>
+<tr>
+<td><strong>Alt+PageUp</strong></td>
+<td>Scroll Page Up</td>
+<td>滚动条向上移动一屏</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+[</td>
+<td>Fold (collapse) region</td>
+<td>折叠代码</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+]</td>
+<td>Unfold (uncollapse) region</td>
+<td>展开代码</td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+[</td>
+<td>Fold (collapse) all subregions</td>
+<td><code>editor.foldRecursively</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+]</td>
+<td>Unfold (uncollapse) all subregions</td>
+<td><code>editor.unfoldRecursively</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+0</td>
+<td>Fold (collapse) all regions</td>
+<td><code>editor.foldAll</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+J</td>
+<td>Unfold (uncollapse) all regions</td>
+<td><code>editor.unfoldAll</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+C</td>
+<td>Add Line Comment</td>
+<td><code>editor.action.addCommentLine</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+U</td>
+<td>Remove Line Comment</td>
+<td><code>editor.action.removeCommentLine</code></td>
+</tr>
+<tr>
+<td><strong>Ctrl+/</strong></td>
+<td>Toggle Line Comment</td>
+<td>注释(或取消注释)当前行代码,<code>//注释内容</code></td>
+</tr>
+<tr>
+<td><strong>Shift+Alt+A</strong></td>
+<td>Toggle Block Comment</td>
+<td>注释(或取消注释)选择代码,<code>/*注释内容*/</code></td>
+</tr>
+<tr>
+<td><strong>Ctrl+F</strong></td>
+<td>Find</td>
+<td>查找</td>
+</tr>
+<tr>
+<td><strong>Ctrl+H</strong></td>
+<td>Replace</td>
+<td>替换</td>
+</tr>
+<tr>
+<td><strong>F3</strong></td>
+<td>Command</td>
+<td>Command id</td>
+</tr>
+<tr>
+<td><strong>Shift+F3</strong></td>
+<td>Cut line (empty selection)</td>
+<td>剪切</td>
+</tr>
+<tr>
+<td><strong>Ctrl+C</strong></td>
+<td>Copy line (empty selection)</td>
+<td>复制</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Shift+K</strong></td>
+<td>Delete Line</td>
+<td>删除当前行</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Enter</strong></td>
+<td>Insert Line Below</td>
+<td>向下插入空行</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Shift+Enter</strong></td>
+<td>Insert Line Above</td>
+<td>向上插入空行</td>
+</tr>
+<tr>
+<td><strong>Alt+Down</strong></td>
+<td>Move Line Down</td>
+<td>向下移动当前行</td>
+</tr>
+<tr>
+<td><strong>Alt+Up</strong></td>
+<td>Move Line Up</td>
+<td>向上移动当前行</td>
+</tr>
+<tr>
+<td><strong>Shift+Alt+Down</strong></td>
+<td>Copy Line Down</td>
+<td>向下插入当前行内容</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rich-languages-editing">Rich Languages Editing</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+Space</td>
+<td>Trigger Suggest</td>
+<td><code>editor.action.triggerSuggest</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Space</td>
+<td>Trigger Parameter Hints</td>
+<td><code>editor.action.triggerParameterHints</code></td>
+</tr>
+<tr>
+<td><strong>Shift+Alt+F</strong></td>
+<td>Format Document</td>
+<td><code>editor.action.formatDocument</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+F</td>
+<td>Format Selection</td>
+<td><code>editor.action.formatSelection</code></td>
+</tr>
+<tr>
+<td>F12</td>
+<td>Go to Definition</td>
+<td><code>editor.action.goToDeclaration</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+I</td>
+<td>Show Hover</td>
+<td><code>editor.action.showHover</code></td>
+</tr>
+<tr>
+<td>Alt+F12</td>
+<td>Peek Definition</td>
+<td><code>editor.action.previewDeclaration</code></td>
+</tr>
+<tr>
+<td>Ctrl+K F12</td>
+<td>Open Definition to the Side</td>
+<td><code>editor.action.openDeclarationToTheSide</code></td>
+</tr>
+<tr>
+<td>Ctrl+.</td>
+<td>Quick Fix</td>
+<td><code>editor.action.quickFix</code></td>
+</tr>
+<tr>
+<td>Shift+F12</td>
+<td>Show References</td>
+<td><code>editor.action.referenceSearch.trigger</code></td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Rename Symbol</td>
+<td><code>editor.action.rename</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+.</td>
+<td>Replace with Next Value</td>
+<td><code>editor.action.inPlaceReplace.down</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+,</td>
+<td>Replace with Previous Value</td>
+<td><code>editor.action.inPlaceReplace.up</code></td>
+</tr>
+<tr>
+<td>Shift+Alt+Right</td>
+<td>Expand AST Select</td>
+<td><code>editor.action.smartSelect.grow</code></td>
+</tr>
+<tr>
+<td>Shift+Alt+Left</td>
+<td>Shrink AST Select</td>
+<td><code>editor.action.smartSelect.shrink</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+X</td>
+<td>Trim Trailing Whitespace</td>
+<td><code>editor.action.trimTrailingWhitespace</code></td>
+</tr>
+<tr>
+<td>Ctrl+K M</td>
+<td>Change Language Mode</td>
+<td><code>workbench.action.editor.changeLanguageMode</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="navigation">Navigation</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+T</td>
+<td>Show All Symbols</td>
+<td><code>workbench.action.showAllSymbols</code></td>
+</tr>
+<tr>
+<td>Ctrl+G</td>
+<td>Go to Line…</td>
+<td><code>workbench.action.gotoLine</code></td>
+</tr>
+<tr>
+<td>Ctrl+P</td>
+<td>Go to File…, Quick Open</td>
+<td><code>workbench.action.quickOpen</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+O</td>
+<td>Go to Symbol…</td>
+<td><code>workbench.action.gotoSymbol</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+M</td>
+<td>Show Problems</td>
+<td><code>workbench.actions.view.problems</code></td>
+</tr>
+<tr>
+<td>F8</td>
+<td>Go to Next Error or Warning</td>
+<td><code>editor.action.marker.next</code></td>
+</tr>
+<tr>
+<td>Shift+F8</td>
+<td>Go to Previous Error or Warning</td>
+<td><code>editor.action.marker.prev</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+P</td>
+<td>Show All Commands</td>
+<td><code>workbench.action.showCommands</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Tab</td>
+<td>Navigate Editor Group History</td>
+<td><code>workbench.action.openPreviousRecentlyUsedEditorInGroup</code></td>
+</tr>
+<tr>
+<td>Alt+Left</td>
+<td>Go Back</td>
+<td><code>workbench.action.navigateBack</code></td>
+</tr>
+<tr>
+<td>Alt+Right</td>
+<td>Go Forward</td>
+<td><code>workbench.action.navigateForward</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="editorwindow-management">Editor/Window Management</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+Shift+N</td>
+<td>New Window</td>
+<td><code>workbench.action.newWindow</code></td>
+</tr>
+<tr>
+<td>Ctrl+W</td>
+<td>Close Window</td>
+<td><code>workbench.action.closeWindow</code></td>
+</tr>
+<tr>
+<td>Ctrl+F4</td>
+<td>Close Editor</td>
+<td><code>workbench.action.closeActiveEditor</code></td>
+</tr>
+<tr>
+<td>Ctrl+K F</td>
+<td>Close Folder</td>
+<td><code>workbench.action.closeFolder</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Cycle Between Editor Groups</td>
+<td><code>workbench.action.navigateEditorGroups</code></td>
+</tr>
+<tr>
+<td>Ctrl+\</td>
+<td>Split Editor</td>
+<td><code>workbench.action.splitEditor</code></td>
+</tr>
+<tr>
+<td>Ctrl+1</td>
+<td>Focus into First Editor Group</td>
+<td><code>workbench.action.focusFirstEditorGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+2</td>
+<td>Focus into Second Editor Group</td>
+<td><code>workbench.action.focusSecondEditorGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+3</td>
+<td>Focus into Third Editor Group</td>
+<td><code>workbench.action.focusThirdEditorGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+Left</td>
+<td>Focus into Editor Group on the Left</td>
+<td><code>workbench.action.focusPreviousGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+Right</td>
+<td>Focus into Editor Group on the Right</td>
+<td><code>workbench.action.focusNextGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+PageUp</td>
+<td>Move Editor Left</td>
+<td><code>workbench.action.moveEditorLeftInGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+PageDown</td>
+<td>Move Editor Right</td>
+<td><code>workbench.action.moveEditorRightInGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Left</td>
+<td>Move Active Editor Group Left</td>
+<td><code>workbench.action.moveActiveEditorGroupLeft</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Right</td>
+<td>Move Active Editor Group Right</td>
+<td><code>workbench.action.moveActiveEditorGroupRight</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="file-management">File Management</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+N</td>
+<td>New File</td>
+<td><code>workbench.action.files.newUntitledFile</code></td>
+</tr>
+<tr>
+<td>Ctrl+O</td>
+<td>Open File…</td>
+<td><code>workbench.action.files.openFile</code></td>
+</tr>
+<tr>
+<td>Ctrl+S</td>
+<td>Save</td>
+<td><code>workbench.action.files.save</code></td>
+</tr>
+<tr>
+<td>Ctrl+K S</td>
+<td>Save All</td>
+<td><code>workbench.action.files.saveAll</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+S</td>
+<td>Save As…</td>
+<td><code>workbench.action.files.saveAs</code></td>
+</tr>
+<tr>
+<td>Ctrl+F4</td>
+<td>Close</td>
+<td><code>workbench.action.closeActiveEditor</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Close Others</td>
+<td><code>workbench.action.closeOtherEditors</code></td>
+</tr>
+<tr>
+<td>Ctrl+K W</td>
+<td>Close Group</td>
+<td><code>workbench.action.closeEditorsInGroup</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Close Other Groups</td>
+<td><code>workbench.action.closeEditorsInOtherGroups</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Close Group to Left</td>
+<td><code>workbench.action.closeEditorsToTheLeft</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Close Group to Right</td>
+<td><code>workbench.action.closeEditorsToTheRight</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+W</td>
+<td>Close All</td>
+<td><code>workbench.action.closeAllEditors</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+T</td>
+<td>Reopen Closed Editor</td>
+<td><code>workbench.action.reopenClosedEditor</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Enter</td>
+<td>Keep Open</td>
+<td><code>workbench.action.keepEditor</code></td>
+</tr>
+<tr>
+<td>Ctrl+Tab</td>
+<td>Open Next</td>
+<td><code>workbench.action.openNextRecentlyUsedEditorInGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Tab</td>
+<td>Open Previous</td>
+<td><code>workbench.action.openPreviousRecentlyUsedEditorInGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+K P</td>
+<td>Copy Path of Active File</td>
+<td><code>workbench.action.files.copyPathOfActiveFile</code></td>
+</tr>
+<tr>
+<td>Ctrl+K R</td>
+<td>Reveal Active File in Windows</td>
+<td><code>workbench.action.files.revealActiveFileInWindows</code></td>
+</tr>
+<tr>
+<td>Ctrl+K O</td>
+<td>Show Opened File in New Window</td>
+<td><code>workbench.action.files.showOpenedFileInNewWindow</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Compare Opened File With</td>
+<td><code>workbench.files.action.compareFileWith</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="display">Display</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F11</td>
+<td>Toggle Full Screen</td>
+<td><code>workbench.action.toggleFullScreen</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Z</td>
+<td>Toggle Zen Mode</td>
+<td><code>workbench.action.toggleZenMode</code></td>
+</tr>
+<tr>
+<td>Escape Escape</td>
+<td>Leave Zen Mode</td>
+<td><code>workbench.action.exitZenMode</code></td>
+</tr>
+<tr>
+<td>Ctrl+=</td>
+<td>Zoom in</td>
+<td><code>workbench.action.zoomIn</code></td>
+</tr>
+<tr>
+<td>Ctrl+-</td>
+<td>Zoom out</td>
+<td><code>workbench.action.zoomOut</code></td>
+</tr>
+<tr>
+<td>Ctrl+Numpad0</td>
+<td>Reset Zoom</td>
+<td><code>workbench.action.zoomReset</code></td>
+</tr>
+<tr>
+<td>Ctrl+B</td>
+<td>Toggle Sidebar Visibility</td>
+<td><code>workbench.action.toggleSidebarVisibility</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+E</td>
+<td>Show Explorer / Toggle Focus</td>
+<td><code>workbench.view.explorer</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+D</td>
+<td>Show Debug</td>
+<td><code>workbench.view.debug</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+G</td>
+<td>Show Source Control</td>
+<td><code>workbench.view.scm</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+X</td>
+<td>Show Extensions</td>
+<td><code>workbench.view.extensions</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+U</td>
+<td>Show Output</td>
+<td><code>workbench.action.output.toggleOutput</code></td>
+</tr>
+<tr>
+<td>Ctrl+Q</td>
+<td>Quick Open View</td>
+<td><code>workbench.action.quickOpenView</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F</td>
+<td>Show Search</td>
+<td><code>workbench.view.search</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+H</td>
+<td>Replace in Files</td>
+<td><code>workbench.action.replaceInFiles</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+J</td>
+<td>Toggle Search Details</td>
+<td><code>workbench.action.search.toggleQueryDetails</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+C</td>
+<td>Open New Command Prompt</td>
+<td><code>workbench.action.terminal.openNativeConsole</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+V</td>
+<td>Toggle Markdown Preview</td>
+<td><code>markdown.showPreview</code></td>
+</tr>
+<tr>
+<td>Ctrl+K V</td>
+<td>Open Preview to the Side</td>
+<td><code>markdown.showPreviewToSide</code></td>
+</tr>
+<tr>
+<td><strong>Ctrl+`</strong></td>
+<td>Toggle Integrated Terminal</td>
+<td>workbench.action.terminal.toggleTerminal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="preferences">Preferences</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+,</td>
+<td>Open User Settings</td>
+<td><code>workbench.action.openGlobalSettings</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Open Workspace Settings</td>
+<td><code>workbench.action.openWorkspaceSettings</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+S</td>
+<td>Open Keyboard Shortcuts</td>
+<td><code>workbench.action.openGlobalKeybindings</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Open User Snippets</td>
+<td><code>workbench.action.openSnippets</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+T</td>
+<td>Select Color Theme</td>
+<td><code>workbench.action.selectTheme</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Configure Display Language</td>
+<td><code>workbench.action.configureLocale</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug">Debug</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F9</td>
+<td>Toggle Breakpoint</td>
+<td><code>editor.debug.action.toggleBreakpoint</code></td>
+</tr>
+<tr>
+<td>F5</td>
+<td>Start</td>
+<td><code>workbench.action.debug.start</code></td>
+</tr>
+<tr>
+<td>F5</td>
+<td>Continue</td>
+<td><code>workbench.action.debug.continue</code></td>
+</tr>
+<tr>
+<td>Ctrl+F5</td>
+<td>Start (without debugging)</td>
+<td><code>workbench.action.debug.run</code></td>
+</tr>
+<tr>
+<td>F6</td>
+<td>Pause</td>
+<td><code>workbench.action.debug.pause</code></td>
+</tr>
+<tr>
+<td>F11</td>
+<td>Step Into</td>
+<td><code>workbench.action.debug.stepInto</code></td>
+</tr>
+<tr>
+<td>Shift+F11</td>
+<td>Step Out</td>
+<td><code>workbench.action.debug.stepOut</code></td>
+</tr>
+<tr>
+<td>F10</td>
+<td>Step Over</td>
+<td><code>workbench.action.debug.stepOver</code></td>
+</tr>
+<tr>
+<td>Shift+F5</td>
+<td>Stop</td>
+<td><code>workbench.action.debug.stop</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+I</td>
+<td>Show Hover</td>
+<td><code>editor.debug.action.showDebugHover</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tasks">Tasks</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+Shift+B</td>
+<td>Run Build Task</td>
+<td><code>workbench.action.tasks.build</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Run Test Task</td>
+<td><code>workbench.action.tasks.test</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="extensions">Extensions</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unassigned</td>
+<td>Install Extension</td>
+<td><code>workbench.extensions.action.installExtension</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Show Installed Extensions</td>
+<td><code>workbench.extensions.action.showInstalledExtensions</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Show Outdated Extensions</td>
+<td><code>workbench.extensions.action.listOutdatedExtensions</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Show Recommended Extensions</td>
+<td><code>workbench.extensions.action.showRecommendedExtensions</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Show Popular Extensions</td>
+<td><code>workbench.extensions.action.showPopularExtensions</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Update All Extensions</td>
+<td><code>workbench.extensions.action.updateAllExtensions</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="修改默认快捷键">修改默认快捷键</h2>
+<p>打开默认键盘快捷方式设置：
+<code>File -&gt; Preferences -&gt; Keyboard Shortcuts</code></p>
+<p>修改<code> keybindings.json</code>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">[</span></span>
+<span class="line"><span style="color:#6A737D">  // ctrl+space 被切换输入法快捷键占用</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#79B8FF">  "key"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ctrl+alt+space"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "command"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editor.action.triggerSuggest"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "when"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editorTextFocus"</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#6A737D">  // ctrl+d 删除一行</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#79B8FF">  "key"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ctrl+d"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "command"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editor.action.deleteLines"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "when"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editorTextFocus"</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#6A737D">  // 与删除一行的快捷键互换</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#79B8FF">  "key"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ctrl+shift+k"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "command"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editor.action.addSelectionToNextFindMatch"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "when"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editorFocus"</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#6A737D">  // ctrl+shift+/多行注释</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#79B8FF">  "key"</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">"ctrl+shift+/"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "command"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editor.action.blockComment"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "when"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editorTextFocus"</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#6A737D">  // 定制与 sublime 相同的大小写转换快捷键，需安装 TextTransform 插件</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#79B8FF">  "key"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ctrl+k ctrl+u"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "command"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"uppercase"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "when"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editorTextFocus"</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#79B8FF">  "key"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ctrl+k ctrl+l"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "command"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"lowercase"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "when"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"editorTextFocus"</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">]</span></span></code></pre>
+<h2 id="前端开发必备插件">前端开发必备插件</h2>
+<ul>
+<li>PostCSS Sorting</li>
+<li>stylelint</li>
+<li>stylefmt</li>
+<li>ESLint</li>
+<li>javascript standard format</li>
+<li>beautify</li>
+<li>Babel ES6/ES7</li>
+<li>Debugger for Chrome</li>
+<li>Add jsdoc comments</li>
+<li>javascript(ES6) code snippets</li>
+<li>vue</li>
+<li>weex</li>
+<li>Reactjs code snippets</li>
+<li>React Native Tools</li>
+<li>Npm Intellisense</li>
+<li>Instant Markdown</li>
+<li>Markdown Shortcuts</li>
+<li>TextTransform</li>
+</ul>
+<h2 id="相关参考">相关参考</h2>
+<p><a href="https://code.visualstudio.com/docs/customization/keybindings">官方快捷键</a></p>
+</div></article></main><footer data-astro-cid-jo6i4kqk>&copy; 2026 Peony7. All rights reserved.<div class="social-links" data-astro-cid-jo6i4kqk><a href="https://github.com/Peony7" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-jo6i4kqk></path></svg></a></div></footer></body></html>

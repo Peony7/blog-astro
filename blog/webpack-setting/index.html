@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-tldeq5d5><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/blog-astro/favicon.svg"><link rel="icon" href="/blog-astro/favicon.ico"><link rel="sitemap" href="/blog-astro/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Peony7 的博客" href="/blog-astro/rss.xml"><meta name="generator" content="Astro v7.2.3"><style>@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/89758defcfa85239.woff") format("woff");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff") format("woff");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.3717%;ascent-override:80.1033%;descent-override:25.2587%;line-gap-override:0%;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial Bold";src:local("Arial Bold");font-display:swap;font-weight:700;font-style:normal;size-adjust:92.2954%;ascent-override:86.2448%;descent-override:27.1953%;line-gap-override:0%;}:root{--font-atkinson:Atkinson-c7f4c4e8b285552f,"Atkinson-c7f4c4e8b285552f fallback: Arial","Atkinson-c7f4c4e8b285552f fallback: Arial Bold",sans-serif;}</style><link rel="preload" href="/blog-astro/_astro/fonts/89758defcfa85239.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://peony7.github.io/blog-astro/blog/webpack-setting/"><!-- Primary Meta Tags --><title>webpack3.0 配置</title><meta name="description" content="const path = require('path');"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://peony7.github.io/blog-astro/blog/webpack-setting/"><meta property="og:title" content="webpack3.0 配置"><meta property="og:description" content="const path = require('path');"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><style>:root{--accent:#2337ff;--accent-dark:#000d8a;--black:15, 18, 25;--gray:96, 115, 159;--gray-light:229, 233, 240;--gray-dark:34, 41, 57;--gray-gradient:rgba(var(--gray-light), 50%), #fff;--box-shadow:0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}body{font-family:var(--font-atkinson);text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));background-size:100% 600px;margin:0;padding:0;font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));margin:0 0 .5rem;line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{border-radius:8px;max-width:100%;height:auto}code{background-color:rgb(var(--gray-light));border-radius:2px;padding:2px 5px}pre{border-radius:8px;padding:1.5em}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);margin:0;padding:0 0 0 20px;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (width<=720px){body{font-size:18px}main{padding:1em}}.sr-only{clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%);white-space:nowrap;border:0;width:1px;height:1px;margin:0;padding:0;overflow:hidden;position:absolute!important}footer[data-astro-cid-jo6i4kqk]{background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center;padding:2em 1em 6em}.social-links[data-astro-cid-jo6i4kqk]{justify-content:center;gap:1em;margin-top:1em;display:flex}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]{color:rgb(var(--gray));text-decoration:none}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-evkijfd6]{text-decoration:none;display:inline-block}a[data-astro-cid-evkijfd6].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-nen7h5rs]{box-shadow:0 2px 8px rgba(var(--black), 5%);background:#fff;margin:0;padding:0 1em}h2[data-astro-cid-nen7h5rs]{margin:0;font-size:1em}h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs],h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{text-decoration:none}nav[data-astro-cid-nen7h5rs]{justify-content:space-between;align-items:center;display:flex}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{color:var(--black);border-bottom:4px solid #0000;padding:1em .5em;text-decoration:none}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{border-bottom-color:var(--accent);text-decoration:none}.social-links[data-astro-cid-nen7h5rs],.social-links[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{display:flex}@media (width<=720px){.social-links[data-astro-cid-nen7h5rs]{display:none}}
+main[data-astro-cid-tldeq5d5]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-tldeq5d5]{width:100%}.hero-image[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{box-shadow:var(--box-shadow);border-radius:12px;margin:0 auto;display:block}.prose[data-astro-cid-tldeq5d5]{width:720px;max-width:calc(100% - 2em);color:rgb(var(--gray-dark));margin:auto;padding:1em}.title[data-astro-cid-tldeq5d5]{text-align:center;margin-bottom:1em;padding:1em 0;line-height:1}.title[data-astro-cid-tldeq5d5] h1[data-astro-cid-tldeq5d5]{margin:0 0 .5em}.date[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));margin-bottom:.5em}.meta[data-astro-cid-tldeq5d5]{flex-wrap:wrap;justify-content:center;gap:.75em;margin-top:.5em;display:flex}.meta[data-astro-cid-tldeq5d5] .category[data-astro-cid-tldeq5d5]{color:var(--accent);background:#2337ff1f;border-radius:999px;padding:.15em .6em;font-size:.85em}.meta[data-astro-cid-tldeq5d5] .tags[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));font-size:.85em}.last-updated-on[data-astro-cid-tldeq5d5]{font-style:italic}
+</style></head><body data-astro-cid-tldeq5d5><header data-astro-cid-nen7h5rs><nav data-astro-cid-nen7h5rs><h2 data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs>Peony7 的博客</a></h2><div class="internal-links" data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>首页</a><a href="/blog-astro/blog" class="active" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>博客</a><a href="/blog-astro/about" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>关于</a></div><div class="social-links" data-astro-cid-nen7h5rs><a href="https://github.com/Peony7" target="_blank" data-astro-cid-nen7h5rs><span class="sr-only" data-astro-cid-nen7h5rs>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-nen7h5rs><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-nen7h5rs></path></svg></a></div></nav></header><main data-astro-cid-tldeq5d5><article data-astro-cid-tldeq5d5><div class="hero-image" data-astro-cid-tldeq5d5></div><div class="prose" data-astro-cid-tldeq5d5><div class="title" data-astro-cid-tldeq5d5><div class="date" data-astro-cid-tldeq5d5><time datetime="2017-06-26T00:00:00.000Z">2017年6月26日</time><div class="meta" data-astro-cid-tldeq5d5><span class="tags" data-astro-cid-tldeq5d5>#webpack</span></div></div><h1 data-astro-cid-tldeq5d5>webpack3.0 配置</h1><hr data-astro-cid-tldeq5d5></div><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> path</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'path'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  entry: </span><span style="color:#9ECBFF">"./app/entry"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string | object | array</span></span>
+<span class="line"><span style="color:#E1E4E8">  entry: [</span><span style="color:#9ECBFF">"./app/entry1"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"./app/entry2"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">  entry: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    a: </span><span style="color:#9ECBFF">"./app/entry-a"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    b: [</span><span style="color:#9ECBFF">"./app/entry-b1"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"./app/entry-b2"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#6A737D">  // 这里应用程序开始执行</span></span>
+<span class="line"><span style="color:#6A737D">  // webpack 开始打包</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  output: {</span></span>
+<span class="line"><span style="color:#6A737D">    // webpack 如何输出结果的相关选项</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    path: path.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">"dist"</span><span style="color:#E1E4E8">), </span><span style="color:#6A737D">// string</span></span>
+<span class="line"><span style="color:#6A737D">    // 所有输出文件的目标路径</span></span>
+<span class="line"><span style="color:#6A737D">    // 必须是绝对路径（使用 Node.js 的 path 模块）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    filename: </span><span style="color:#9ECBFF">"bundle.js"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string</span></span>
+<span class="line"><span style="color:#E1E4E8">    filename: </span><span style="color:#9ECBFF">"[name].js"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 用于多个入口点(entry point)（出口点？）</span></span>
+<span class="line"><span style="color:#E1E4E8">    filename: </span><span style="color:#9ECBFF">"[chunkhash].js"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 用于长效缓存</span></span>
+<span class="line"><span style="color:#6A737D">    // 「入口分块(entry chunk)」的文件名模板（出口分块？）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    publicPath: </span><span style="color:#9ECBFF">"/assets/"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string</span></span>
+<span class="line"><span style="color:#E1E4E8">    publicPath: </span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    publicPath: </span><span style="color:#9ECBFF">"https://cdn.example.com/"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    // 输出解析文件的目录，url 相对于 HTML 页面</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    library: </span><span style="color:#9ECBFF">"MyLibrary"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string,</span></span>
+<span class="line"><span style="color:#6A737D">    // 导出库(exported library)的名称</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"umd"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 通用模块定义</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"umd2"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 通用模块定义</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"commonjs2"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// exported with module.exports</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"commonjs-module"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 使用 module.exports 导出</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"commonjs"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 作为 exports 的属性导出</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"amd"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 使用 AMD 定义方法来定义</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"this"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 在 this 上设置属性</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"var"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 变量定义于根作用域下</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"assign"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 盲分配(blind assignment)</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"window"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 在 window 对象上设置属性</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"global"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// property set to global object</span></span>
+<span class="line"><span style="color:#E1E4E8">    libraryTarget: </span><span style="color:#9ECBFF">"jsonp"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// jsonp wrapper</span></span>
+<span class="line"><span style="color:#6A737D">    // 导出库(exported library)的类型</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /* 高级输出配置（点击显示） */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    pathinfo: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// boolean</span></span>
+<span class="line"><span style="color:#6A737D">    // 在生成代码时，引入相关的模块、导出、请求等有帮助的路径信息。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    chunkFilename: </span><span style="color:#9ECBFF">"[id].js"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    chunkFilename: </span><span style="color:#9ECBFF">"[chunkhash].js"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 长效缓存(/guides/caching)</span></span>
+<span class="line"><span style="color:#6A737D">    // 「附加分块(additional chunk)」的文件名模板</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    jsonpFunction: </span><span style="color:#9ECBFF">"myWebpackJsonp"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string</span></span>
+<span class="line"><span style="color:#6A737D">    // 用于加载分块的 JSONP 函数名</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    sourceMapFilename: </span><span style="color:#9ECBFF">"[file].map"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string</span></span>
+<span class="line"><span style="color:#E1E4E8">    sourceMapFilename: </span><span style="color:#9ECBFF">"sourcemaps/[file].map"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string</span></span>
+<span class="line"><span style="color:#6A737D">    // 「source map 位置」的文件名模板</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    devtoolModuleFilenameTemplate: </span><span style="color:#9ECBFF">"webpack:///[resource-path]"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string</span></span>
+<span class="line"><span style="color:#6A737D">    // 「devtool 中模块」的文件名模板</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    devtoolFallbackModuleFilenameTemplate: </span><span style="color:#9ECBFF">"webpack:///[resource-path]?[hash]"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string</span></span>
+<span class="line"><span style="color:#6A737D">    // 「devtool 中模块」的文件名模板（用于冲突）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    umdNamedDefine: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// boolean</span></span>
+<span class="line"><span style="color:#6A737D">    // 在 UMD 库中使用命名的 AMD 模块</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    crossOriginLoading: </span><span style="color:#9ECBFF">"use-credentials"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 枚举</span></span>
+<span class="line"><span style="color:#E1E4E8">    crossOriginLoading: </span><span style="color:#9ECBFF">"anonymous"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    crossOriginLoading: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    // 指定运行时如何发出跨域请求问题</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /* 专家级输出配置（自行承担风险） */</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  module: {</span></span>
+<span class="line"><span style="color:#6A737D">    // 关于模块配置</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    rules: [</span></span>
+<span class="line"><span style="color:#6A737D">      // 模块规则（配置 loader、解析器等选项）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#E1E4E8">        test:</span><span style="color:#9ECBFF"> /</span><span style="color:#85E89D;font-weight:bold">\.</span><span style="color:#DBEDFF">jsx</span><span style="color:#F97583">?$</span><span style="color:#9ECBFF">/</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        include: [</span></span>
+<span class="line"><span style="color:#E1E4E8">          path.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">"app"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">        ],</span></span>
+<span class="line"><span style="color:#E1E4E8">        exclude: [</span></span>
+<span class="line"><span style="color:#E1E4E8">          path.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">"app/demo-files"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">        ],</span></span>
+<span class="line"><span style="color:#6A737D">        // 这里是匹配条件，每个选项都接收一个正则表达式或字符串</span></span>
+<span class="line"><span style="color:#6A737D">        // test 和 include 具有相同的作用，都是必须匹配选项</span></span>
+<span class="line"><span style="color:#6A737D">        // exclude 是必不匹配选项（优先于 test 和 include）</span></span>
+<span class="line"><span style="color:#6A737D">        // 最佳实践：</span></span>
+<span class="line"><span style="color:#6A737D">        // - 只在 test 和 文件名匹配 中使用正则表达式</span></span>
+<span class="line"><span style="color:#6A737D">        // - 在 include 和 exclude 中使用绝对路径数组</span></span>
+<span class="line"><span style="color:#6A737D">        // - 尽量避免 exclude，更倾向于使用 include</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        issuer: { test, include, exclude },</span></span>
+<span class="line"><span style="color:#6A737D">        // issuer 条件（导入源）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        enforce: </span><span style="color:#9ECBFF">"pre"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        enforce: </span><span style="color:#9ECBFF">"post"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">        // 标识应用这些规则，即使规则覆盖（高级选项）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        loader: </span><span style="color:#9ECBFF">"babel-loader"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">        // 应该应用的 loader，它相对上下文解析</span></span>
+<span class="line"><span style="color:#6A737D">        // 为了更清晰，`-loader` 后缀在 webpack 2 中不再是可选的</span></span>
+<span class="line"><span style="color:#6A737D">        // 查看 webpack 1 升级指南。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        options: {</span></span>
+<span class="line"><span style="color:#E1E4E8">          presets: [</span><span style="color:#9ECBFF">"es2015"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#6A737D">        // loader 的可选项</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#E1E4E8">        test: </span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\.</span><span style="color:#9ECBFF">html$"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        use: [</span></span>
+<span class="line"><span style="color:#6A737D">          // 应用多个 loader 和选项</span></span>
+<span class="line"><span style="color:#9ECBFF">          "htmllint-loader"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          {</span></span>
+<span class="line"><span style="color:#E1E4E8">            loader: </span><span style="color:#9ECBFF">"html-loader"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            options: {</span></span>
+<span class="line"><span style="color:#6A737D">              /* ... */</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">          }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      { oneOf: [ </span><span style="color:#6A737D">/* rules */</span><span style="color:#E1E4E8"> ] },</span></span>
+<span class="line"><span style="color:#6A737D">      // 只使用这些嵌套规则之一</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      { rules: [ </span><span style="color:#6A737D">/* rules */</span><span style="color:#E1E4E8"> ] },</span></span>
+<span class="line"><span style="color:#6A737D">      // 使用所有这些嵌套规则（合并可用条件）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      { resource: { and: [ </span><span style="color:#6A737D">/* 条件 */</span><span style="color:#E1E4E8"> ] } },</span></span>
+<span class="line"><span style="color:#6A737D">      // 仅当所有条件都匹配时才匹配</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      { resource: { or: [ </span><span style="color:#6A737D">/* 条件 */</span><span style="color:#E1E4E8"> ] } },</span></span>
+<span class="line"><span style="color:#E1E4E8">      { resource: [ </span><span style="color:#6A737D">/* 条件 */</span><span style="color:#E1E4E8"> ] },</span></span>
+<span class="line"><span style="color:#6A737D">      // 任意条件匹配时匹配（默认为数组）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      { resource: { not: </span><span style="color:#6A737D">/* 条件 */</span><span style="color:#E1E4E8"> } }</span></span>
+<span class="line"><span style="color:#6A737D">      // 条件不匹配时匹配</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /* 高级模块配置（点击展示） */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    noParse: [</span></span>
+<span class="line"><span style="color:#9ECBFF">      /</span><span style="color:#DBEDFF">special-library</span><span style="color:#85E89D;font-weight:bold">\.</span><span style="color:#DBEDFF">js</span><span style="color:#F97583">$</span><span style="color:#9ECBFF">/</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#6A737D">    // 不解析这里的模块</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    unknownContextRequest: </span><span style="color:#9ECBFF">"."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    unknownContextRecursive: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    unknownContextRegExp:</span><span style="color:#9ECBFF"> /</span><span style="color:#F97583">^</span><span style="color:#85E89D;font-weight:bold">\.\/</span><span style="color:#79B8FF">.</span><span style="color:#F97583">*$</span><span style="color:#9ECBFF">/</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    unknownContextCritical: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    exprContextRequest: </span><span style="color:#9ECBFF">"."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    exprContextRegExp:</span><span style="color:#9ECBFF"> /</span><span style="color:#F97583">^</span><span style="color:#85E89D;font-weight:bold">\.\/</span><span style="color:#79B8FF">.</span><span style="color:#F97583">*$</span><span style="color:#9ECBFF">/</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    exprContextRecursive: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    exprContextCritical: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    wrappedContextRegExp:</span><span style="color:#9ECBFF"> /</span><span style="color:#79B8FF">.</span><span style="color:#F97583">*</span><span style="color:#9ECBFF">/</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    wrappedContextRecursive: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    wrappedContextCritical: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    // specifies default behavior for dynamic requests</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  resolve: {</span></span>
+<span class="line"><span style="color:#6A737D">    // 解析模块请求的选项</span></span>
+<span class="line"><span style="color:#6A737D">    // （不适用于对 loader 解析）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    modules: [</span></span>
+<span class="line"><span style="color:#9ECBFF">      "node_modules"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      path.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">"app"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#6A737D">    // 用于查找模块的目录</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    extensions: [</span><span style="color:#9ECBFF">".js"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">".json"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">".jsx"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">".css"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#6A737D">    // 使用的扩展名</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    alias: {</span></span>
+<span class="line"><span style="color:#6A737D">      // 模块别名列表</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">      "module"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"new-module"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">      // 起别名："module" -&gt; "new-module" 和 "module/path/file" -&gt; "new-module/path/file"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">      "only-module$"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"new-module"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">      // 起别名 "only-module" -&gt; "new-module"，但不匹配 "module/path/file" -&gt; "new-module/path/file"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">      "module"</span><span style="color:#E1E4E8">: path.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">"app/third/module.js"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#6A737D">      // 起别名 "module" -&gt; "./app/third/module.js" 和 "module/file" 会导致错误</span></span>
+<span class="line"><span style="color:#6A737D">      // 模块别名相对于当前上下文导入</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#6A737D">    /* 可供选择的别名语法（点击展示） */</span></span>
+<span class="line"><span style="color:#E1E4E8">    alias: [</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#E1E4E8">        name: </span><span style="color:#9ECBFF">"module"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">        // 旧的请求</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        alias: </span><span style="color:#9ECBFF">"new-module"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">        // 新的请求</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        onlyModule: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#6A737D">        // 如果为 true，只有 "module" 是别名</span></span>
+<span class="line"><span style="color:#6A737D">        // 如果为 false，"module/inner/path" 也是别名</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /* 高级解析选项（点击展示） */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    symlinks: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    // 遵循符号链接(symlinks)到新位置</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    descriptionFiles: [</span><span style="color:#9ECBFF">"package.json"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#6A737D">    // 从 package 描述中读取的文件</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    mainFields: [</span><span style="color:#9ECBFF">"main"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#6A737D">    // 从描述文件中读取的属性</span></span>
+<span class="line"><span style="color:#6A737D">    // 当请求文件夹时</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    aliasFields: [</span><span style="color:#9ECBFF">"browser"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#6A737D">    // 从描述文件中读取的属性</span></span>
+<span class="line"><span style="color:#6A737D">    // 以对此 package 的请求起别名</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    enforceExtension: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    // 如果为 true，请求必不包括扩展名</span></span>
+<span class="line"><span style="color:#6A737D">    // 如果为 false，请求可以包括扩展名</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    moduleExtensions: [</span><span style="color:#9ECBFF">"-module"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">    enforceModuleExtension: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    // 类似 extensions/enforceExtension，但是用模块名替换文件</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    unsafeCache: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    unsafeCache: {},</span></span>
+<span class="line"><span style="color:#6A737D">    // 为解析的请求启用缓存</span></span>
+<span class="line"><span style="color:#6A737D">    // 这是不安全，因为文件夹结构可能会改动</span></span>
+<span class="line"><span style="color:#6A737D">    // 但是性能改善是很大的</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    cachePredicate</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">path</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">request</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    // predicate function which selects requests for caching</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    plugins: [</span></span>
+<span class="line"><span style="color:#6A737D">      // ...</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#6A737D">    // 应用于解析器的附加插件</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  performance: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    hints: </span><span style="color:#9ECBFF">"warning"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 枚举</span></span>
+<span class="line"><span style="color:#E1E4E8">    hints: </span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 性能提示中抛出错误</span></span>
+<span class="line"><span style="color:#E1E4E8">    hints: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 关闭性能提示</span></span>
+<span class="line"><span style="color:#E1E4E8">    maxAssetSize: </span><span style="color:#79B8FF">200000</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 整数类型（以字节为单位）</span></span>
+<span class="line"><span style="color:#E1E4E8">    maxEntrypointSize: </span><span style="color:#79B8FF">400000</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 整数类型（以字节为单位）</span></span>
+<span class="line"><span style="color:#B392F0">    assetFilter</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">assetFilename</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">      // 提供资源文件名的断言函数</span></span>
+<span class="line"><span style="color:#F97583">      return</span><span style="color:#E1E4E8"> assetFilename.</span><span style="color:#B392F0">endsWith</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'.css'</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> assetFilename.</span><span style="color:#B392F0">endsWith</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'.js'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  devtool: </span><span style="color:#9ECBFF">"source-map"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// enum</span></span>
+<span class="line"><span style="color:#E1E4E8">  devtool: </span><span style="color:#9ECBFF">"inline-source-map"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 嵌入到源文件中</span></span>
+<span class="line"><span style="color:#E1E4E8">  devtool: </span><span style="color:#9ECBFF">"eval-source-map"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 将 SourceMap 嵌入到每个模块中</span></span>
+<span class="line"><span style="color:#E1E4E8">  devtool: </span><span style="color:#9ECBFF">"hidden-source-map"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// SourceMap 不在源文件中引用</span></span>
+<span class="line"><span style="color:#E1E4E8">  devtool: </span><span style="color:#9ECBFF">"cheap-source-map"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 没有模块映射(module mappings)的 SourceMap 低级变体(cheap-variant)</span></span>
+<span class="line"><span style="color:#E1E4E8">  devtool: </span><span style="color:#9ECBFF">"cheap-module-source-map"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 有模块映射(module mappings)的 SourceMap 低级变体</span></span>
+<span class="line"><span style="color:#E1E4E8">  devtool: </span><span style="color:#9ECBFF">"eval"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 没有模块映射，而是命名模块。以牺牲细节达到最快。</span></span>
+<span class="line"><span style="color:#6A737D">  // 通过在浏览器调试工具(browser devtools)中添加元信息(meta info)增强调试</span></span>
+<span class="line"><span style="color:#6A737D">  // 牺牲了构建速度的 `source-map' 是最详细的。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  context: __dirname, </span><span style="color:#6A737D">// string（绝对路径！）</span></span>
+<span class="line"><span style="color:#6A737D">  // webpack 的主目录</span></span>
+<span class="line"><span style="color:#6A737D">  // entry 和 module.rules.loader 选项</span></span>
+<span class="line"><span style="color:#6A737D">  // 相对于此目录解析</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  target: </span><span style="color:#9ECBFF">"web"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 枚举</span></span>
+<span class="line"><span style="color:#E1E4E8">  target: </span><span style="color:#9ECBFF">"webworker"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// WebWorker</span></span>
+<span class="line"><span style="color:#E1E4E8">  target: </span><span style="color:#9ECBFF">"node"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// node.js 通过 require</span></span>
+<span class="line"><span style="color:#E1E4E8">  target: </span><span style="color:#9ECBFF">"async-node"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// Node.js 通过 fs and vm</span></span>
+<span class="line"><span style="color:#E1E4E8">  target: </span><span style="color:#9ECBFF">"node-webkit"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// nw.js</span></span>
+<span class="line"><span style="color:#E1E4E8">  target: </span><span style="color:#9ECBFF">"electron-main"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// electron，主进程(main process)</span></span>
+<span class="line"><span style="color:#E1E4E8">  target: </span><span style="color:#9ECBFF">"electron-renderer"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// electron，渲染进程(renderer process)</span></span>
+<span class="line"><span style="color:#B392F0">  target</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">compiler</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> { </span><span style="color:#6A737D">/* ... */</span><span style="color:#E1E4E8"> }, </span><span style="color:#6A737D">// 自定义</span></span>
+<span class="line"><span style="color:#6A737D">  // 包(bundle)应该运行的环境</span></span>
+<span class="line"><span style="color:#6A737D">  // 更改 块加载行为(chunk loading behavior) 和 可用模块(available module)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  externals: [</span><span style="color:#9ECBFF">"react"</span><span style="color:#E1E4E8">,</span><span style="color:#9ECBFF"> /</span><span style="color:#F97583">^</span><span style="color:#DBEDFF">@angular</span><span style="color:#85E89D;font-weight:bold">\/</span><span style="color:#9ECBFF">/</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">  externals: </span><span style="color:#9ECBFF">"react"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// string（精确匹配）</span></span>
+<span class="line"><span style="color:#E1E4E8">  externals:</span><span style="color:#9ECBFF"> /</span><span style="color:#F97583">^</span><span style="color:#79B8FF">[a-z</span><span style="color:#85E89D;font-weight:bold">\-</span><span style="color:#79B8FF">]</span><span style="color:#F97583">+</span><span style="color:#DBEDFF">(</span><span style="color:#F97583">$|</span><span style="color:#85E89D;font-weight:bold">\/</span><span style="color:#DBEDFF">)</span><span style="color:#9ECBFF">/</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 正则</span></span>
+<span class="line"><span style="color:#E1E4E8">  externals: { </span><span style="color:#6A737D">// 对象</span></span>
+<span class="line"><span style="color:#E1E4E8">    angular: </span><span style="color:#9ECBFF">"this angular"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// this["angular"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    react: { </span><span style="color:#6A737D">// UMD</span></span>
+<span class="line"><span style="color:#E1E4E8">      commonjs: </span><span style="color:#9ECBFF">"react"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      commonjs2: </span><span style="color:#9ECBFF">"react"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      amd: </span><span style="color:#9ECBFF">"react"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      root: </span><span style="color:#9ECBFF">"React"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  externals</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">request</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> { </span><span style="color:#6A737D">/* ... */</span><span style="color:#F97583"> return</span><span style="color:#9ECBFF"> "commonjs "</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> request }</span></span>
+<span class="line"><span style="color:#6A737D">  // 不要遵循/打包这些模块，而是在运行时从环境中请求他们</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  stats: </span><span style="color:#9ECBFF">"errors-only"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  stats: { </span><span style="color:#6A737D">//object</span></span>
+<span class="line"><span style="color:#E1E4E8">    assets: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    colors: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    errors: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    errorDetails: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    hash: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    // ...</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#6A737D">  // 精确控制要显示的 bundle 信息</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  devServer: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    proxy: { </span><span style="color:#6A737D">// proxy URLs to backend development server</span></span>
+<span class="line"><span style="color:#9ECBFF">      '/api'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'http://localhost:3000'</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    contentBase: path.</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">'public'</span><span style="color:#E1E4E8">), </span><span style="color:#6A737D">// boolean | string | array, static file location</span></span>
+<span class="line"><span style="color:#E1E4E8">    compress: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// enable gzip compression</span></span>
+<span class="line"><span style="color:#E1E4E8">    historyApiFallback: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// true for index.html upon 404, object for multiple paths</span></span>
+<span class="line"><span style="color:#E1E4E8">    hot: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// hot module replacement. Depends on HotModuleReplacementPlugin</span></span>
+<span class="line"><span style="color:#E1E4E8">    https: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// true for self-signed, object for cert authority</span></span>
+<span class="line"><span style="color:#E1E4E8">    noInfo: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// only errors &amp; warns on hot reload</span></span>
+<span class="line"><span style="color:#6A737D">    // ...</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  plugins: [</span></span>
+<span class="line"><span style="color:#6A737D">    // ...</span></span>
+<span class="line"><span style="color:#E1E4E8">  ],</span></span>
+<span class="line"><span style="color:#6A737D">  // 附加插件列表</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  /* 高级配置（点击展示） */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  resolveLoader: { </span><span style="color:#6A737D">/* 等同于 resolve */</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#6A737D">  // 独立解析选项的 loader</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  profile: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// boolean</span></span>
+<span class="line"><span style="color:#6A737D">  // 捕获时机信息</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  bail: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">//boolean</span></span>
+<span class="line"><span style="color:#6A737D">  // 在第一个错误出错时抛出，而不是无视错误。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  cache: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// boolean</span></span>
+<span class="line"><span style="color:#6A737D">  // 禁用/启用缓存</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  watch: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// boolean</span></span>
+<span class="line"><span style="color:#6A737D">  // 启用观察</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  watchOptions: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    aggregateTimeout: </span><span style="color:#79B8FF">1000</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// in ms</span></span>
+<span class="line"><span style="color:#6A737D">    // 将多个更改聚合到单个重构建(rebuild)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    poll: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    poll: </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// 间隔单位 ms</span></span>
+<span class="line"><span style="color:#6A737D">    // 启用轮询观察模式</span></span>
+<span class="line"><span style="color:#6A737D">    // 必须用在不通知更改的文件系统中</span></span>
+<span class="line"><span style="color:#6A737D">    // 即 nfs shares（译者注：Network FileSystem，最大的功能就是可以透過網路，讓不同的機器、不同的作業系統、可以彼此分享個別的檔案 ( share file )）</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  node: {</span></span>
+<span class="line"><span style="color:#6A737D">    /* TODO */</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  recordsPath: path.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">"build/records.json"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  recordsInputPath: path.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">"build/records.json"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  recordsOutputPath: path.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">"build/records.json"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#6A737D">  // TODO</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+</div></article></main><footer data-astro-cid-jo6i4kqk>&copy; 2026 Peony7. All rights reserved.<div class="social-links" data-astro-cid-jo6i4kqk><a href="https://github.com/Peony7" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-jo6i4kqk></path></svg></a></div></footer></body></html>

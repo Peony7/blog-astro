@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-tldeq5d5><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/blog-astro/favicon.svg"><link rel="icon" href="/blog-astro/favicon.ico"><link rel="sitemap" href="/blog-astro/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Peony7 的博客" href="/blog-astro/rss.xml"><meta name="generator" content="Astro v7.2.3"><style>@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/89758defcfa85239.woff") format("woff");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff") format("woff");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.3717%;ascent-override:80.1033%;descent-override:25.2587%;line-gap-override:0%;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial Bold";src:local("Arial Bold");font-display:swap;font-weight:700;font-style:normal;size-adjust:92.2954%;ascent-override:86.2448%;descent-override:27.1953%;line-gap-override:0%;}:root{--font-atkinson:Atkinson-c7f4c4e8b285552f,"Atkinson-c7f4c4e8b285552f fallback: Arial","Atkinson-c7f4c4e8b285552f fallback: Arial Bold",sans-serif;}</style><link rel="preload" href="/blog-astro/_astro/fonts/89758defcfa85239.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://peony7.github.io/blog-astro/blog/git-commend/"><!-- Primary Meta Tags --><title>常用 Git 命令清单</title><meta name="description" content="几个专用名词的译名如下："><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://peony7.github.io/blog-astro/blog/git-commend/"><meta property="og:title" content="常用 Git 命令清单"><meta property="og:description" content="几个专用名词的译名如下："><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><style>:root{--accent:#2337ff;--accent-dark:#000d8a;--black:15, 18, 25;--gray:96, 115, 159;--gray-light:229, 233, 240;--gray-dark:34, 41, 57;--gray-gradient:rgba(var(--gray-light), 50%), #fff;--box-shadow:0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}body{font-family:var(--font-atkinson);text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));background-size:100% 600px;margin:0;padding:0;font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));margin:0 0 .5rem;line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{border-radius:8px;max-width:100%;height:auto}code{background-color:rgb(var(--gray-light));border-radius:2px;padding:2px 5px}pre{border-radius:8px;padding:1.5em}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);margin:0;padding:0 0 0 20px;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (width<=720px){body{font-size:18px}main{padding:1em}}.sr-only{clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%);white-space:nowrap;border:0;width:1px;height:1px;margin:0;padding:0;overflow:hidden;position:absolute!important}footer[data-astro-cid-jo6i4kqk]{background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center;padding:2em 1em 6em}.social-links[data-astro-cid-jo6i4kqk]{justify-content:center;gap:1em;margin-top:1em;display:flex}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]{color:rgb(var(--gray));text-decoration:none}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-evkijfd6]{text-decoration:none;display:inline-block}a[data-astro-cid-evkijfd6].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-nen7h5rs]{box-shadow:0 2px 8px rgba(var(--black), 5%);background:#fff;margin:0;padding:0 1em}h2[data-astro-cid-nen7h5rs]{margin:0;font-size:1em}h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs],h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{text-decoration:none}nav[data-astro-cid-nen7h5rs]{justify-content:space-between;align-items:center;display:flex}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{color:var(--black);border-bottom:4px solid #0000;padding:1em .5em;text-decoration:none}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{border-bottom-color:var(--accent);text-decoration:none}.social-links[data-astro-cid-nen7h5rs],.social-links[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{display:flex}@media (width<=720px){.social-links[data-astro-cid-nen7h5rs]{display:none}}
+main[data-astro-cid-tldeq5d5]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-tldeq5d5]{width:100%}.hero-image[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{box-shadow:var(--box-shadow);border-radius:12px;margin:0 auto;display:block}.prose[data-astro-cid-tldeq5d5]{width:720px;max-width:calc(100% - 2em);color:rgb(var(--gray-dark));margin:auto;padding:1em}.title[data-astro-cid-tldeq5d5]{text-align:center;margin-bottom:1em;padding:1em 0;line-height:1}.title[data-astro-cid-tldeq5d5] h1[data-astro-cid-tldeq5d5]{margin:0 0 .5em}.date[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));margin-bottom:.5em}.meta[data-astro-cid-tldeq5d5]{flex-wrap:wrap;justify-content:center;gap:.75em;margin-top:.5em;display:flex}.meta[data-astro-cid-tldeq5d5] .category[data-astro-cid-tldeq5d5]{color:var(--accent);background:#2337ff1f;border-radius:999px;padding:.15em .6em;font-size:.85em}.meta[data-astro-cid-tldeq5d5] .tags[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));font-size:.85em}.last-updated-on[data-astro-cid-tldeq5d5]{font-style:italic}
+</style></head><body data-astro-cid-tldeq5d5><header data-astro-cid-nen7h5rs><nav data-astro-cid-nen7h5rs><h2 data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs>Peony7 的博客</a></h2><div class="internal-links" data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>首页</a><a href="/blog-astro/blog" class="active" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>博客</a><a href="/blog-astro/about" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>关于</a></div><div class="social-links" data-astro-cid-nen7h5rs><a href="https://github.com/Peony7" target="_blank" data-astro-cid-nen7h5rs><span class="sr-only" data-astro-cid-nen7h5rs>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-nen7h5rs><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-nen7h5rs></path></svg></a></div></nav></header><main data-astro-cid-tldeq5d5><article data-astro-cid-tldeq5d5><div class="hero-image" data-astro-cid-tldeq5d5></div><div class="prose" data-astro-cid-tldeq5d5><div class="title" data-astro-cid-tldeq5d5><div class="date" data-astro-cid-tldeq5d5><time datetime="2017-05-10T17:27:06.000Z">2017年5月11日</time></div><h1 data-astro-cid-tldeq5d5>常用 Git 命令清单</h1><hr data-astro-cid-tldeq5d5></div><p><strong><img src="/blog-astro/images/git-commend/bg2015120901.png" alt="img"></strong></p>
+<p>几个专用名词的译名如下：</p>
+<ul>
+<li>Workspace：工作区</li>
+<li>Index / Stage：暂存区</li>
+<li>Repository：仓库区（或本地仓库）</li>
+<li>Remote：远程仓库</li>
+</ul>
+<h2 id="新建代码库">新建代码库</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 在当前目录新建一个Git代码库</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> init</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 新建一个目录，将其初始化为Git代码库</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> init</span><span style="color:#E1E4E8"> [project-name]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 下载一个项目和它的整个代码历史</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> clone</span><span style="color:#E1E4E8"> [url]</span></span></code></pre>
+<h2 id="配置">配置</h2>
+<p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 显示当前的Git配置</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> config</span><span style="color:#79B8FF"> --list</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 编辑Git配置文件</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> config</span><span style="color:#79B8FF"> -e</span><span style="color:#E1E4E8"> [--global]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 设置提交代码时的用户信息</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> config</span><span style="color:#E1E4E8"> [--global] user.name </span><span style="color:#9ECBFF">"[name]"</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> config</span><span style="color:#E1E4E8"> [--global] user.email </span><span style="color:#9ECBFF">"[email address]"</span></span></code></pre>
+<h2 id="增加删除文件">增加/删除文件</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 添加指定文件到暂存区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> add</span><span style="color:#E1E4E8"> [file1] [file2] ...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 添加指定目录到暂存区，包括子目录</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> add</span><span style="color:#E1E4E8"> [dir]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 添加当前目录的所有文件到暂存区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 添加每个变化前，都会要求确认</span></span>
+<span class="line"><span style="color:#6A737D"># 对于同一个文件的多处变化，可以实现分次提交</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> add</span><span style="color:#79B8FF"> -p</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 删除工作区文件，并且将这次删除放入暂存区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> rm</span><span style="color:#E1E4E8"> [file1] [file2] ...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 改名文件，并且将这个改名放入暂存区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> mv</span><span style="color:#E1E4E8"> [file-original] [file-renamed]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 停止追踪指定文件(删除的文件追踪不了)，但该文件会保留在工作区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> rm</span><span style="color:#79B8FF"> --cached</span><span style="color:#E1E4E8"> [file]</span></span></code></pre>
+<h2 id="代码提交">代码提交</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 提交暂存区到仓库区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> commit</span><span style="color:#79B8FF"> -m</span><span style="color:#E1E4E8"> [message]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 提交暂存区的指定文件到仓库区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> commit</span><span style="color:#E1E4E8"> [file1] [file2] ... -m [message]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 提交工作区自上次commit之后的变化，直接到仓库区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> commit</span><span style="color:#79B8FF"> -a</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 提交时显示所有diff信息</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> commit</span><span style="color:#79B8FF"> -v</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 使用一次新的commit，替代上一次提交</span></span>
+<span class="line"><span style="color:#6A737D"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> commit</span><span style="color:#79B8FF"> --amend</span><span style="color:#79B8FF"> -m</span><span style="color:#E1E4E8"> [message]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 重做上一次commit，并包括指定文件的新变化</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> commit</span><span style="color:#79B8FF"> --amend</span><span style="color:#E1E4E8"> [file1] [file2] ...</span></span></code></pre>
+<h2 id="分支">分支</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 列出所有本地分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> branch</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 列出所有远程分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> branch</span><span style="color:#79B8FF"> -r</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 列出所有本地分支和远程分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> branch</span><span style="color:#79B8FF"> -a</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 新建一个分支，但依然停留在当前分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> branch</span><span style="color:#E1E4E8"> [branch-name]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 新建一个分支，并切换到该分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> checkout</span><span style="color:#79B8FF"> -b</span><span style="color:#E1E4E8"> [branch]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 新建一个分支，指向指定commit</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> branch</span><span style="color:#E1E4E8"> [branch] [commit]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 新建一个分支，与指定的远程分支建立追踪关系</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> branch</span><span style="color:#79B8FF"> --track</span><span style="color:#E1E4E8"> [branch] [remote-branch]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 切换到指定分支，并更新工作区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> checkout</span><span style="color:#E1E4E8"> [branch-name]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 切换到上一个分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> checkout</span><span style="color:#9ECBFF"> -</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 建立追踪关系，在现有分支与指定的远程分支之间</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> branch</span><span style="color:#79B8FF"> --set-upstream</span><span style="color:#E1E4E8"> [branch] [remote-branch]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 合并指定分支到当前分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> merge</span><span style="color:#E1E4E8"> [branch]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 选择一个commit，合并进当前分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> cherry-pick</span><span style="color:#E1E4E8"> [commit]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 删除分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> branch</span><span style="color:#79B8FF"> -d</span><span style="color:#E1E4E8"> [branch-name]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 删除远程分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> origin</span><span style="color:#79B8FF"> --delete</span><span style="color:#E1E4E8"> [branch-name]</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> branch</span><span style="color:#79B8FF"> -dr</span><span style="color:#E1E4E8"> [remote/branch]</span></span></code></pre>
+<h2 id="标签">标签</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 列出所有tag</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> tag</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 新建一个tag在当前commit</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> tag</span><span style="color:#E1E4E8"> [tag]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 新建一个tag在指定commit</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> tag</span><span style="color:#E1E4E8"> [tag] [commit]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 删除本地tag</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> tag</span><span style="color:#79B8FF"> -d</span><span style="color:#E1E4E8"> [tag]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 删除远程tag</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> origin</span><span style="color:#9ECBFF"> :refs/tags/[tagName]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 查看tag信息</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> show</span><span style="color:#E1E4E8"> [tag]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 提交指定tag</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> push</span><span style="color:#E1E4E8"> [remote] [tag]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 提交所有tag</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> push</span><span style="color:#E1E4E8"> [remote] --tags</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 新建一个分支，指向某个tag</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> checkout</span><span style="color:#79B8FF"> -b</span><span style="color:#E1E4E8"> [branch] [tag]</span></span></code></pre>
+<h2 id="查看信息">查看信息</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示有变更的文件</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> status</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示当前分支的版本历史</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> log</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示commit历史，以及每次commit发生变更的文件</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> log</span><span style="color:#79B8FF"> --stat</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 搜索提交历史，根据关键词</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> log</span><span style="color:#79B8FF"> -S</span><span style="color:#E1E4E8"> [keyword]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示某个commit之后的所有变动，每个commit占据一行</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> log</span><span style="color:#E1E4E8"> [tag] HEAD --pretty</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">format:%s</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> log</span><span style="color:#E1E4E8"> [tag] HEAD --grep feature</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示某个文件的版本历史，包括文件改名</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> log</span><span style="color:#79B8FF"> --follow</span><span style="color:#E1E4E8"> [file]</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> whatchanged</span><span style="color:#E1E4E8"> [file]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示指定文件相关的每一次diff</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> log</span><span style="color:#79B8FF"> -p</span><span style="color:#E1E4E8"> [file]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示过去5次提交</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> log</span><span style="color:#79B8FF"> -5</span><span style="color:#79B8FF"> --pretty</span><span style="color:#79B8FF"> --oneline</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示所有提交过的用户，按提交次数排序</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> shortlog</span><span style="color:#79B8FF"> -sn</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示指定文件是什么人在什么时间修改过</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> blame</span><span style="color:#E1E4E8"> [file]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示暂存区和工作区的差异</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> diff</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示暂存区和上一个commit的差异</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> diff</span><span style="color:#79B8FF"> --cached</span><span style="color:#E1E4E8"> [file]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示工作区与当前分支最新commit之间的差异</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> diff</span><span style="color:#9ECBFF"> HEAD</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示两次提交之间的差异</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> diff</span><span style="color:#E1E4E8"> [first-branch]...[second-branch]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示今天你写了多少行代码</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> diff</span><span style="color:#79B8FF"> --shortstat</span><span style="color:#9ECBFF"> "@{0 day ago}"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示某次提交的元数据和内容变化</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> show</span><span style="color:#E1E4E8"> [commit]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示某次提交发生变化的文件</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> show</span><span style="color:#79B8FF"> --name-only</span><span style="color:#E1E4E8"> [commit]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示某次提交时，某个文件的内容</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> show</span><span style="color:#E1E4E8"> [commit]:[filename]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 显示当前分支的最近几次提交</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> reflog</span></span></code></pre>
+<h2 id="远程同步">远程同步</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"> # 下载远程仓库的所有变动</span></span>
+<span class="line"><span style="color:#B392F0"> $</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> fetch</span><span style="color:#E1E4E8"> [remote]</span></span>
+<span class="line"><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"> # 显示所有远程仓库</span></span>
+<span class="line"><span style="color:#B392F0"> $</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> remote</span><span style="color:#79B8FF"> -v</span></span>
+<span class="line"><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"> # 显示某个远程仓库的信息</span></span>
+<span class="line"><span style="color:#B392F0"> $</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> remote</span><span style="color:#9ECBFF"> show</span><span style="color:#E1E4E8"> [remote]</span></span>
+<span class="line"><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"> # 增加一个新的远程仓库，并命名</span></span>
+<span class="line"><span style="color:#B392F0"> $</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> remote</span><span style="color:#9ECBFF"> add</span><span style="color:#E1E4E8"> [shortname] [url]</span></span>
+<span class="line"><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"> # 取回远程仓库的变化，并与本地分支合并</span></span>
+<span class="line"><span style="color:#B392F0"> $</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> pull</span><span style="color:#E1E4E8"> [remote] [branch]</span></span>
+<span class="line"><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"> # 上传本地指定分支到远程仓库</span></span>
+<span class="line"><span style="color:#B392F0"> $</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> push</span><span style="color:#E1E4E8"> [remote] [branch]</span></span>
+<span class="line"><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"> # 强行推送当前分支到远程仓库，即使有冲突</span></span>
+<span class="line"><span style="color:#B392F0"> $</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> push</span><span style="color:#E1E4E8"> [remote] --force</span></span>
+<span class="line"><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"> # 推送所有分支到远程仓库</span></span>
+<span class="line"><span style="color:#B392F0"> $</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> push</span><span style="color:#E1E4E8"> [remote] --all</span></span></code></pre>
+<h2 id="撤销">撤销</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 恢复暂存区的指定文件到工作区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> checkout</span><span style="color:#E1E4E8"> [file]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 恢复某个commit的指定文件到暂存区和工作区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> checkout</span><span style="color:#E1E4E8"> [commit] [file]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 恢复暂存区的所有文件到工作区</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> checkout</span><span style="color:#9ECBFF"> .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> reset</span><span style="color:#E1E4E8"> [file]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 重置暂存区与工作区，与上一次commit保持一致</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> reset</span><span style="color:#79B8FF"> --hard</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> reset</span><span style="color:#E1E4E8"> [commit]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> reset</span><span style="color:#79B8FF"> --hard</span><span style="color:#E1E4E8"> [commit]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> reset</span><span style="color:#79B8FF"> --keep</span><span style="color:#E1E4E8"> [commit]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 新建一个commit，用来撤销指定commit</span></span>
+<span class="line"><span style="color:#6A737D"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> revert</span><span style="color:#E1E4E8"> [commit]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 暂时将未提交的变化移除，稍后再移入</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> stash</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> stash</span><span style="color:#9ECBFF"> pop</span></span></code></pre>
+<h2 id="其他">其他</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 生成一个可供发布的压缩包</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> archive</span></span></code></pre>
+<h2 id="参考地址">参考地址</h2>
+<p><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html">http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html</a></p>
+</div></article></main><footer data-astro-cid-jo6i4kqk>&copy; 2026 Peony7. All rights reserved.<div class="social-links" data-astro-cid-jo6i4kqk><a href="https://github.com/Peony7" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-jo6i4kqk></path></svg></a></div></footer></body></html>

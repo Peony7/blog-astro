@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-tldeq5d5><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/blog-astro/favicon.svg"><link rel="icon" href="/blog-astro/favicon.ico"><link rel="sitemap" href="/blog-astro/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Peony7 的博客" href="/blog-astro/rss.xml"><meta name="generator" content="Astro v7.2.3"><style>@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/89758defcfa85239.woff") format("woff");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff") format("woff");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.3717%;ascent-override:80.1033%;descent-override:25.2587%;line-gap-override:0%;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial Bold";src:local("Arial Bold");font-display:swap;font-weight:700;font-style:normal;size-adjust:92.2954%;ascent-override:86.2448%;descent-override:27.1953%;line-gap-override:0%;}:root{--font-atkinson:Atkinson-c7f4c4e8b285552f,"Atkinson-c7f4c4e8b285552f fallback: Arial","Atkinson-c7f4c4e8b285552f fallback: Arial Bold",sans-serif;}</style><link rel="preload" href="/blog-astro/_astro/fonts/89758defcfa85239.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/blog-astro/_astro/fonts/14aa8dd5744dd4bc.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://peony7.github.io/blog-astro/blog/linux-vi/"><!-- Primary Meta Tags --><title>linux vi 命令详解</title><meta name="description" content="vi编辑器是所有Unix及Linux系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于…"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://peony7.github.io/blog-astro/blog/linux-vi/"><meta property="og:title" content="linux vi 命令详解"><meta property="og:description" content="vi编辑器是所有Unix及Linux系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于…"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><style>:root{--accent:#2337ff;--accent-dark:#000d8a;--black:15, 18, 25;--gray:96, 115, 159;--gray-light:229, 233, 240;--gray-dark:34, 41, 57;--gray-gradient:rgba(var(--gray-light), 50%), #fff;--box-shadow:0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}body{font-family:var(--font-atkinson);text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));background-size:100% 600px;margin:0;padding:0;font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));margin:0 0 .5rem;line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{border-radius:8px;max-width:100%;height:auto}code{background-color:rgb(var(--gray-light));border-radius:2px;padding:2px 5px}pre{border-radius:8px;padding:1.5em}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);margin:0;padding:0 0 0 20px;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (width<=720px){body{font-size:18px}main{padding:1em}}.sr-only{clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%);white-space:nowrap;border:0;width:1px;height:1px;margin:0;padding:0;overflow:hidden;position:absolute!important}footer[data-astro-cid-jo6i4kqk]{background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center;padding:2em 1em 6em}.social-links[data-astro-cid-jo6i4kqk]{justify-content:center;gap:1em;margin-top:1em;display:flex}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]{color:rgb(var(--gray));text-decoration:none}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-evkijfd6]{text-decoration:none;display:inline-block}a[data-astro-cid-evkijfd6].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-nen7h5rs]{box-shadow:0 2px 8px rgba(var(--black), 5%);background:#fff;margin:0;padding:0 1em}h2[data-astro-cid-nen7h5rs]{margin:0;font-size:1em}h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs],h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{text-decoration:none}nav[data-astro-cid-nen7h5rs]{justify-content:space-between;align-items:center;display:flex}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{color:var(--black);border-bottom:4px solid #0000;padding:1em .5em;text-decoration:none}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{border-bottom-color:var(--accent);text-decoration:none}.social-links[data-astro-cid-nen7h5rs],.social-links[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{display:flex}@media (width<=720px){.social-links[data-astro-cid-nen7h5rs]{display:none}}
+main[data-astro-cid-tldeq5d5]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-tldeq5d5]{width:100%}.hero-image[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{box-shadow:var(--box-shadow);border-radius:12px;margin:0 auto;display:block}.prose[data-astro-cid-tldeq5d5]{width:720px;max-width:calc(100% - 2em);color:rgb(var(--gray-dark));margin:auto;padding:1em}.title[data-astro-cid-tldeq5d5]{text-align:center;margin-bottom:1em;padding:1em 0;line-height:1}.title[data-astro-cid-tldeq5d5] h1[data-astro-cid-tldeq5d5]{margin:0 0 .5em}.date[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));margin-bottom:.5em}.meta[data-astro-cid-tldeq5d5]{flex-wrap:wrap;justify-content:center;gap:.75em;margin-top:.5em;display:flex}.meta[data-astro-cid-tldeq5d5] .category[data-astro-cid-tldeq5d5]{color:var(--accent);background:#2337ff1f;border-radius:999px;padding:.15em .6em;font-size:.85em}.meta[data-astro-cid-tldeq5d5] .tags[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));font-size:.85em}.last-updated-on[data-astro-cid-tldeq5d5]{font-style:italic}
+</style></head><body data-astro-cid-tldeq5d5><header data-astro-cid-nen7h5rs><nav data-astro-cid-nen7h5rs><h2 data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs>Peony7 的博客</a></h2><div class="internal-links" data-astro-cid-nen7h5rs><a href="/blog-astro/" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>首页</a><a href="/blog-astro/blog" class="active" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>博客</a><a href="/blog-astro/about" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>关于</a></div><div class="social-links" data-astro-cid-nen7h5rs><a href="https://github.com/Peony7" target="_blank" data-astro-cid-nen7h5rs><span class="sr-only" data-astro-cid-nen7h5rs>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-nen7h5rs><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-nen7h5rs></path></svg></a></div></nav></header><main data-astro-cid-tldeq5d5><article data-astro-cid-tldeq5d5><div class="hero-image" data-astro-cid-tldeq5d5></div><div class="prose" data-astro-cid-tldeq5d5><div class="title" data-astro-cid-tldeq5d5><div class="date" data-astro-cid-tldeq5d5><time datetime="2017-05-11T10:33:03.000Z">2017年5月11日</time></div><h1 data-astro-cid-tldeq5d5>linux vi 命令详解</h1><hr data-astro-cid-tldeq5d5></div><p><code>vi</code>编辑器是所有<code>Unix</code>及<code>Linux</code>系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对<code>Unix</code>及<code>Linux</code>系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍<code>vi</code>的地方进一步了解它。<code>vi</code>也是<code>Linux</code>中最基本的文本编 辑器，学会它后，您将在<code>Linux</code>的世界里畅行无阻。</p>
+<h2 id="vi的基本概念">vi的基本概念</h2>
+<p>基本上<code>vi</code>可以分为三种状态，分别是:</p>
+<ul>
+<li>命令模式（command mode）</li>
+<li>插入模式（Insert mode）</li>
+<li>底行模式（last line mode）</li>
+</ul>
+<p>各模式的功能区别如下：</p>
+<p><strong>命令行模式command mode）</strong></p>
+<p>控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入插入模式下，或者到底行模式。</p>
+<p><strong>插入模式（Insert mode）</strong></p>
+<p>只有在插入模式下，才可以做文字输入，按<code>ESC</code>键可回到命令行模式。</p>
+<p><strong>底行模式（last line mode）</strong></p>
+<p>将文件保存或退出<code>vi</code>，也可以设置编辑环境，如寻找字符串、列出行号……等。</p>
+<p>不过一般我们在使用时把vi简化成两个模式，就是将底行模式也算入命令行模式。</p>
+<h2 id="vi的基本操作">vi的基本操作</h2>
+<p><strong>进入vi</strong></p>
+<p>在系统提示符号输入vi及文件名称后，就进入<code>vi</code>全屏幕编辑画面：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> vi</span><span style="color:#9ECBFF"> myfile</span><span style="color:#9ECBFF"> 　</span></span></code></pre>
+<p>不过有一点要特别注意，就是您进入vi之后，是处于「命令行模式」，您要切换到「插入模式」才能够输入文字。初次使用<code>vi</code>的人都会想先用上下左右键移动光标，结果电脑一直哔哔叫，把自己气个半死，所以进入vi后，先不要乱动，转换到 「插入模式」再说吧！</p>
+<p><strong>切换至插入模式   编辑文件</strong></p>
+<p>在「命令行模式」下按一下字母 <code>i</code>  就可以进入「插入模式」，这时候你就可以开始输入文字了。</p>
+<p><strong>切换至命令行模式</strong></p>
+<p>您目前处于「插入模式」，您就只能一直输入文字。回到「命令行模式」，按一下 <code>ESC</code>  键就行啦。</p>
+<p><strong>切换至底行模式    退出vi及保存文件</strong></p>
+<p>在「命令行模式」下，按一下 <code>:</code> 冒号键进入「底行模式」，输入下面的命令：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># 将文章以指定的文件名filename保存</span></span>
+<span class="line"><span style="color:#79B8FF">:</span><span style="color:#9ECBFF"> w</span><span style="color:#9ECBFF"> filename</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"># 存盘并退出vi</span></span>
+<span class="line"><span style="color:#79B8FF">:</span><span style="color:#9ECBFF"> wq</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"># 不存盘强制退出vi</span></span>
+<span class="line"><span style="color:#79B8FF">:</span><span style="color:#9ECBFF"> q!</span><span style="color:#E1E4E8"> </span></span></code></pre>
+<h2 id="命令行模式command-mode功能键">命令行模式（command mode）功能键</h2>
+<p><strong>插入模式</strong></p>
+<p>按<code>i</code> 进入插入模式后，是从光标当前位置开始输入文件；</p>
+<p>按<code>a</code>进入插入模式后，是从目前光标所在位置的下一个位置开始输入文字；</p>
+<p>按<code>o</code>进入插入模式后，是插入新的一行，从行首开始输入文字。</p>
+<p><strong>从插入模式切换为命令行模式</strong></p>
+<p>按<code>ESC</code>键</p>
+<p><strong>移动光标</strong></p>
+<p><code>vi</code>可以直接用键盘上的光标来上下左右移动，但正规的vi是用小写英文字母<code>h(左)</code>、<code>j(下)</code>、<code>k(上)</code>、<code>l(右)</code>，分别控制光标左、下、上、右移一格。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+B</code></td>
+<td>屏幕往“后”移动一页</td>
+</tr>
+<tr>
+<td><code>Ctrl+F</code></td>
+<td>屏幕往“前”移动一页</td>
+</tr>
+<tr>
+<td><code>Ctrl+U</code></td>
+<td>屏幕往“后”移动半页</td>
+</tr>
+<tr>
+<td><code>Ctrl+D</code></td>
+<td>屏幕往“前”移动半页</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>移到文章的开头</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>移动到文章的最后</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>移动到光标所在行的“行尾”</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>移动到光标所在行的“行首”</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>光标跳到下个字的开头</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>光标跳到下个字的字尾</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>光标回到上个字的开头</td>
+</tr>
+<tr>
+<td><code>#l</code></td>
+<td>光标移到该行的第#个位置，如：<code>5l</code>，<code>56l</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>删除文字</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>每按一次，删除光标所在位置的“后面”一个字符</td>
+</tr>
+<tr>
+<td><code>#x</code></td>
+<td>例如，<code>6x</code>表示删除光标所在位置的“后面” <code>6</code> 个字符</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>大写的 <code>X</code> ，每按一次，删除光标所在位置的“前面”一个字符</td>
+</tr>
+<tr>
+<td><code>#X</code></td>
+<td>例如，<code>20X</code>表示删除光标所在位置的“前面” <code>20</code> 个字符</td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td>删除光标所在行</td>
+</tr>
+<tr>
+<td><code>#dd</code></td>
+<td>从光标所在行开始删除#行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>复制</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yw</code></td>
+<td>将光标所在之处到字尾的字符复制到缓冲区中</td>
+</tr>
+<tr>
+<td><code>#yw</code></td>
+<td>复制<code>#</code>个字到缓冲区</td>
+</tr>
+<tr>
+<td><code>yy</code></td>
+<td>复制光标所在行到缓冲区</td>
+</tr>
+<tr>
+<td><code>#yy</code></td>
+<td>例如，<code>6yy</code>表示拷贝从光标所在的该行“往下数”6行文字</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>将缓冲区内的字符贴到光标所在位置。注意：所有与“y”有关的复制命令都必须与“p”配合才能完成复制与粘贴功能</td>
+</tr>
+</tbody>
+</table>
+<p><strong>替换</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r</code></td>
+<td>替换光标所在处的字符</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>替换光标所到之处的字符，直到按下<code>ESC</code>键为止</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回复上一次操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u</code></td>
+<td>如果您误执行一个命令，可以马上按下<code>u</code>，回到上一个操作。按多次“u”可以执行多次回复</td>
+</tr>
+</tbody>
+</table>
+<p><strong>更改</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cw</code></td>
+<td>更改光标所在处的字到字尾处</td>
+</tr>
+<tr>
+<td><code>c#w</code></td>
+<td>例如，<code>c3w</code>表示更改3个字</td>
+</tr>
+</tbody>
+</table>
+<p><strong>跳至指定的行</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+G</code></td>
+<td>列出光标所在行的行号</td>
+</tr>
+<tr>
+<td><code>#G</code></td>
+<td>例如，<code>15G</code>，表示移动光标至文章的第<code>15</code>行行首</td>
+</tr>
+</tbody>
+</table>
+<h2 id="底行模式last-line-mode下命令简介">底行模式（last line mode）下命令简介</h2>
+<p>在使用「底行模式」之前，请记住先按<code>ESC</code>键确定您已经处于「命令行模式」下后，再按<code>:</code>冒号即可进入「底行模式」。</p>
+<p><strong>列出行号</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set nu</code></td>
+<td>输入「set nu」后，会在文件中的每一行前面列出行号。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>跳到文件中的某一行</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#</code></td>
+<td>「#」号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>查找字符</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/关键字</code></td>
+<td>先按「/」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往后寻找到您要的关键字为止。</td>
+</tr>
+<tr>
+<td><code>?关键字</code></td>
+<td>先按「?」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往前寻找到您要的关键字为止。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>保存文件</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>w</code></td>
+<td>在冒号输入字母「w」就可以将文件保存起来。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>离开vi</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q</code></td>
+<td>按「q」就是退出，如果无法离开vi，可以在「q」后跟一个「!」强制离开vi。</td>
+</tr>
+<tr>
+<td><code>qw</code></td>
+<td>一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="参考地址">参考地址</h2>
+<p><a href="http://www.cnblogs.com/mahang/archive/2011/09/01/2161672.html">http://www.cnblogs.com/mahang/archive/2011/09/01/2161672.html</a></p>
+</div></article></main><footer data-astro-cid-jo6i4kqk>&copy; 2026 Peony7. All rights reserved.<div class="social-links" data-astro-cid-jo6i4kqk><a href="https://github.com/Peony7" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>GitHub</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-jo6i4kqk></path></svg></a></div></footer></body></html>
