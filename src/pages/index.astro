@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 3em 0;
+			}
+			.intro {
+				text-align: center;
+				margin-bottom: 3em;
+			}
+			.intro h1 {
+				font-size: 2.369rem;
+				margin: 0 0 0.5em;
+				color: rgb(var(--black));
+			}
+			.intro p {
+				color: rgb(var(--gray));
+				margin: 0;
+			}
+			section h2 {
+				font-size: 1.2rem;
+				color: rgb(var(--gray-dark));
+				border-bottom: 1px solid rgba(var(--gray), 30%);
+				padding-bottom: 0.5em;
+			}
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				padding: 1em 0;
+				border-bottom: 1px solid rgba(var(--gray), 20%);
+			}
+			ul li a {
+				text-decoration: none;
+			}
+			.title {
+				margin: 0 0 0.25em;
+				color: rgb(var(--black));
+				line-height: 1.3;
+			}
+			ul li a:hover .title {
+				color: var(--accent);
+			}
+			.meta {
+				margin: 0;
+				color: rgb(var(--gray));
+				font-size: 0.9em;
+			}
+			.meta .category {
+				margin-left: 0.75em;
+				padding: 0.1em 0.6em;
+				border-radius: 999px;
+				background: rgba(35, 55, 255, 0.12);
+				color: var(--accent);
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="intro">
+				<h1>{SITE_TITLE}</h1>
+				<p>{SITE_DESCRIPTION}</p>
+			</section>
+			<section>
+				<h2>全部文章</h2>
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`${base}/blog/${post.id}/`}>
+									<h3 class="title">{post.data.title}</h3>
+									<p class="meta">
+										<FormattedDate date={post.data.pubDate} />
+										{post.data.category && <span class="category">{post.data.category}</span>}
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

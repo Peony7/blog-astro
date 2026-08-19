@@ -1,0 +1,43 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<BaseHead title={`关于 - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 3em 0;
+				color: rgb(var(--gray-dark));
+			}
+			h1 {
+				color: rgb(var(--black));
+			}
+			a {
+				color: var(--accent);
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>关于我</h1>
+			<p>你好，我是 Peony7。这个博客记录我自己的东西，还有一切有意思的事。</p>
+			<p>
+				文章从 2017 年开始积累，主要涵盖前端技术笔记：CSS、JavaScript / ES6、React、Sass、
+				Git、Shell、Linux 等主题。
+			</p>
+			<p>
+				GitHub：<a href="https://github.com/Peony7">@Peony7</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
